@@ -1,0 +1,28 @@
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="info">
+  </div>
+
+</body>
+<script>
+  $.ajax({
+    url: 'https://api.mediastack.com/v1/news',
+    data: {
+      access_key: 'e177df418057f4c5e3fd48eecde924f9',
+      languages: 'en',
+      countries: 'us',
+      limit: 30,
+      offset: 30,
+    }
+  }).done(function(data) {
+    document.getElementById("info").innerHTML = "worked";
+    console.log(JSON.parse(data));
+  });
+</script>
+
+</html>
