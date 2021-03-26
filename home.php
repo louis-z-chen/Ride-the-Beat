@@ -7,6 +7,7 @@
 <html>
 <head>
 	<title>Stock Watch</title>
+	hi
 
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
