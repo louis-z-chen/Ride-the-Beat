@@ -23,52 +23,32 @@
 	.container-1 {
 		display: flex;
 		padding: 20px;
-		flex-basis: : 100%;
+		flex-basis: : 80%;
 		justify-content: space-between;
   	align-items: center;
 		margin: auto;
-		/*flex-basis: 900px;*/
-
 
 	}
 	.container-1 div{
-		/*border: 1px solid white;*/
 		background-color: #535353;
 		border-radius: 15px;
 	}
 
-	/*.container-2{
-		display: flex;
-		justify-content: space-between;
-		padding: 10px;
-
-	}
-
-	.container-2 div{
-		border: 1px solid green;
-		display: flex;
-		justify-content: space-between;
-		background-color: #535353;
-	}
-
-	.container-3{
-		display: flex;
-		padding: 10px;
-	}
-	.container-3 div{
-		display: flex;
-		justify-content: space-between;
-		background-color: #535353;
-	}*/
 
 	.box-1{
-		flex: 2;
 		margin: 20px;
-		flex-basis: auto;
+		flex-basis: 80%;
+		flex-wrap: wrap;
+		flex: 0 0 65%
 
 	}
 	.box-2{
-		flex: 1;
+		margin-right: 60px;
+		margin-left: 20px;
+		flex-basis: 50%;
+		flex: 0 0 10%
+		flex-wrap: wrap;
+
 
 	}
 	.box-3{
@@ -93,7 +73,41 @@
 		display: flex;
 		margin: 20px;
 		flex-basis: auto;
+		color: #FFFFFF;
+		font-size: 16px;
+		font-family: rubik;
+		border: 1px solid red;
+		flex-direction: row;
+
 	}
+	.box-6{
+		display: flex;
+		margin: 20px;
+		flex-basis: auto;
+		color: #FFFFFF;
+		font-size: 16px;
+		font-family: rubik;
+		border: 1px solid yellow;
+	}
+	.album-1{
+		display: flex;
+		border: 1px solid green;
+	}
+
+	.line-break {
+		flex-basis: 100%;
+  	height: 0;
+	}
+	.title{
+		margin: 20px;
+		color: #FFFFFF;
+	}
+	.allalbums{
+		width: 100px;
+		height: 100px;
+		margin:auto;
+	}
+
 
 
 </style>
@@ -104,15 +118,37 @@
 <div class="container-1">
   <div class="box-1">
 		<h3>Box one</h3>
-		<!--<div class="container-2"> -->
 		  <div class="box-3"><h3>Box three</h3></div>
-			<div class="box-5"><h3>Box five</h3></div>
-		<!--</div>  close container-2 -->
-	</div>
+			<div class="title">Underrated Artists</div>
+			<div class="box-5">
+				<div class="album-1">
+					<img src="Jake2.jpg" class="allalbums"/>
+					<br><br>Jake Hope
+				</div>
+				<div class="album-1">
+					<img src="KyleLux.jpg" class="allalbums">
+				</div>
+				<div class="album-1">
+					<img src="AlwaysNever.jpg" class="allalbums">
+
+				</div>
+				<div class="album-1">
+					<img src="Allday.jpg" class="allalbums">
+				</div>
+				<div class="album-1">
+					<img src="Luke.jpg" class="allalbums">
+				</div>
+				<div class="album-1">
+					<img src="Darci.jpg" class="allalbums">
+				</div>
+			</div><!-- close box-5 -->
+			<div class="title">Highest Rated Playlists</div>
+
+
+			<div class="box-6"></div>
+	</div> <!-- close box-1 -->
 	<div class="box-2"><h3>Box two</h3>
-		<!--<div class="container-3">-->
 			<div class="box-4"><h3>Box four</h3></div>
-		<!-- </div> close container-3 -->
 		WHY <br /> Jake Hope
 	</div>
 </div> <!-- close container-1 -->
