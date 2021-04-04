@@ -1,21 +1,13 @@
 <?php
 $host = "webdev.iyaclasses.com";
-$userid = "chenloui_guest";
-$userpw = "ridethebeat!";
+$user = "chenloui_guest";
+$cpanelpassword = "ridethebeat!";
 $db = "chenloui_ridethebeat";
 
-$mysql = new mysqli(
-    $host,
-    $userid,
-    $userpw,
-    $db
-);
-
-if($mysql->connect_errno) {
-    echo "db connection error : " . $mysql->connect_error;
-    exit();
-}
-else {
-    echo "";
+// DB Connection
+$mysqli = new mysqli($host, $user, $cpanelpassword, $db);
+if ( $mysqli->connect_errno ) {
+  echo $mysqli->connect_error;
+  exit();
 }
 ?>
