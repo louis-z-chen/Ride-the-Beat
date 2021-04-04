@@ -12,9 +12,8 @@
       <li class="nav-item"><a class="nav-link" href="dashboard.php">Dashboard</a></li>
     </ul>
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item"><a class="nav-link" href="login.php">Login/Logout</a></li>
       <li class="nav-item"><a class="nav-link" href="signup.php">Sign Up</a></li>
-      <li class="nav-item"><a class="nav-link" href="profile.php">My Profile</a></li>
+      <li class="nav-item"><a class="nav-link" href="logout.php">Log Out</a></li>
     </ul>
   </div>
 </nav>
