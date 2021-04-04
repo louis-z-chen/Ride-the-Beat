@@ -22,27 +22,6 @@
 <body>
 	<?php require "menu.php"; ?>
 
-	<header>
-		<div class="jumbotron jumbotron-fluid">
-			<div class="container">
-				<h1 class="display-4"><strong>Welcome Message<strong></h1>
-			</div>
-		</div>
-	</header>
-
-	<div class="container-fluid container container_custom">
-
-		<div class="container">
-			<div class="row">
-				<div class="col col-12 col-md-4 col-lg-4 info">
-					<h2>heading</h2>
-					<p>insert text here</p>
-				</div>
-			</div>
-		</div>
-
-	</div>
-
 
 
 	<!-- Required meta tags -->

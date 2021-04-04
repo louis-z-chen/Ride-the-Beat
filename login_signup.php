@@ -68,6 +68,7 @@ else {
 	.signup{
 		width:48%
 	}
+
 	#green-button{
 		background-color: #1DB954;
 		width: 100%;

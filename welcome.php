@@ -7,7 +7,7 @@
 
 body {
 
-background: linear-gradient(-45deg, #1DB954, #000000, #000000);
+background: linear-gradient(-45deg, #1DB954, #121212, #121212);
 background-size: 400% 400%;
 animation: gradient 6s ease infinite;
 }
@@ -98,13 +98,14 @@ animation: gradient 6s ease infinite;
 </head>
 <body>
   <div id="logo">
-     <img src="logo3.png" class="logo">
+     <img src="images/logo3.png" class="logo">
 
   </div> <!--div for logo-->
 
 <div id="ridethebeattext">
-   <img src="ridethebeattext.png" class="ridethebeattext">
+   <img src="images/ridethebeattext.png" class="ridethebeattext">
 
+<!--<img src="images/picture.jpg">	The "picture.jpg" file is located in the images folder in the current folder-->
 </div> <!--div for ridethebeattext-->
 
 <div id="maintext">
@@ -116,7 +117,8 @@ animation: gradient 6s ease infinite;
 </div> <!--div for maintext-->
 
 <div id="loginbutton"
-  <h1>DISCOVER NOW</h1>
+  <h1>JUMP IN</h1>
+
 
 </body>
 </html>
