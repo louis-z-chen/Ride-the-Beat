@@ -37,14 +37,15 @@
 		border-radius: 15px;
 	}
 
-	.container-2{
+	/*.container-2{
 		display: flex;
 		justify-content: space-between;
 		padding: 10px;
+
 	}
 
 	.container-2 div{
-		/*border: 1px solid green;*/
+		border: 1px solid green;
 		display: flex;
 		justify-content: space-between;
 		background-color: #535353;
@@ -55,11 +56,10 @@
 		padding: 10px;
 	}
 	.container-3 div{
-		/*border: 1px solid green;*/
 		display: flex;
 		justify-content: space-between;
 		background-color: #535353;
-	}
+	}*/
 
 	.box-1{
 		flex: 2;
@@ -89,6 +89,11 @@
 		height: 250px;
 
 	}
+	.box-5{
+		display: flex;
+		margin: 20px;
+		flex-basis: auto;
+	}
 
 
 </style>
@@ -99,19 +104,15 @@
 <div class="container-1">
   <div class="box-1">
 		<h3>Box one</h3>
-		<div class="container-2">
-		  <div class="box-3">
-				<h3>Box three</h3>
-			</div>
-		</div> <!-- close container-2 -->
+		<!--<div class="container-2"> -->
+		  <div class="box-3"><h3>Box three</h3></div>
+			<div class="box-5"><h3>Box five</h3></div>
+		<!--</div>  close container-2 -->
 	</div>
-	<div class="box-2">
-		<h3>Box two</h3>
-		<div class="container-3">
-			<div class="box-4">
-				<h3>Box four</h3>
-			</div>
-		</div> <!-- close container-3 -->
+	<div class="box-2"><h3>Box two</h3>
+		<!--<div class="container-3">-->
+			<div class="box-4"><h3>Box four</h3></div>
+		<!-- </div> close container-3 -->
 		WHY <br /> Jake Hope
 	</div>
 </div> <!-- close container-1 -->
