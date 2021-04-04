@@ -1,31 +1,12 @@
 <?php
 session_start();
 
-/*
-$loggedin = false;
-$login_attempt = false;
-$correct_password = false;
-
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
-    // Logged in
-    $loggedin = true;
+    // is already logged in
+		header("Location: home.php");
+    exit();
 }
-else if (!empty($_REQUEST["password"])) {
-    $login_attempt = true;
-    if($_REQUEST["password"]=="password") {
-        // Not Logged in but has correct password
-        $_SESSION["loggedin"]= true;
-        $loggedin = true;
-        $correct_password = true;
-    }
-    else {
-        // Not Logged in and has wrong password
-    }
-}
-else {
-    // NOT logged in and has NOT submitted form/login
-}
-*/
+
 ?>
 
 <!DOCTYPE html>

@@ -2,6 +2,12 @@
 
 session_start();
 
+//if someone goes directly to this php get_included_file
+if(empty($_REQUEST["username"]) || empty($_REQUEST["password"])){
+  header('Location: login_signup.php');
+  exit();
+}
+
 //get sign up form responses
 $username = $_REQUEST["username"];
 $password = $_REQUEST["password"];
@@ -36,30 +42,10 @@ if($result->num_rows == 0) {
 
 $statement_username->close();
 
-//validate
-$cred_exists = False;
-$sql_prepared = "SELECT * FROM users WHERE username = ? AND password_hash = ?;";
-$statement = $mysqli->prepare($sql_prepared);
-$statement->bind_param("ss", $username, $hash_pass);
-$executed = $statement->execute();
-
-if(!$executed) {
-    echo $mysqli->error;
-}
-
-$result = $statement->get_result();
-$row = $result -> fetch_assoc();
-
-if($result->num_rows == 1) {
-    $cred_exists = True;
-}
-
-$statement->close();
-$mysqli->close();
-
-//if username exists but credentials are wrong then the password must be wrong
-if(empty($username_not_exist_error) && ($cred_exists == FALSE)){
-    $incorrect_password_error = "Password is incorrect";
+//check if password is correct
+$correct_hash_pass = $row["password_hash"];
+if($hash_pass != $correct_hash_pass){
+  $incorrect_password_error = "Password is incorrect";
 }
 
 if(!empty($username_not_exist_error) && !empty($incorrect_password_error)){
@@ -68,16 +54,41 @@ if(!empty($username_not_exist_error) && !empty($incorrect_password_error)){
     $login_error = "Username and Password are incorrect";
 }
 
+// double check credentials
 $correct_cred = False;
-if(empty($username_not_exist_error) && empty($incorrect_password_error) && empty($login_error) && $cred_exists){
-    $correct_cred = True;
-}
+if(empty($username_not_exist_error) && empty($incorrect_password_error) && empty($login_error)){
+  $sql_prepared = "SELECT * FROM users WHERE username = ? AND password_hash = ?;";
+  $statement = $mysqli->prepare($sql_prepared);
+  $statement->bind_param("ss", $username, $hash_pass);
+  $executed = $statement->execute();
 
+  if(!$executed) {
+      echo $mysqli->error;
+  }
+
+  $result = $statement->get_result();
+  $row = $result -> fetch_assoc();
+
+  if($result->num_rows == 1) {
+      $correct_cred = True;
+  }
+
+  $statement->close();
+}
+$mysqli->close();
 
 //credentials are correct
-if($createdUser == True){
+if($correct_cred == True){
+    session_unset();
+
     //log in
-    //session_unset();
+    $_SESSION["loggedin"] = true;
+		$_SESSION["id"] = $row["id"];
+    $_SESSION["first_name"] = $row["first_name"];
+    $_SESSION["last_name"] = $row["last_name"];
+    $_SESSION["email"] = $row["email"];
+    $_SESSION["security_level"] = $row["security_level"];
+		$_SESSION["username"] = $row["username"];
 
     header("Location: home.php");
     exit();

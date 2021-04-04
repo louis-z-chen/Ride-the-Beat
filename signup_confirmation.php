@@ -2,6 +2,12 @@
 
 session_start();
 
+//if someone goes directly to this php get_included_file
+if(empty($_REQUEST["first_name"]) || empty($_REQUEST["last_name"]) || empty($_REQUEST["email"]) || empty($_REQUEST["username"]) || empty($_REQUEST["password"]) || empty($_REQUEST["password2"])){
+  header('Location: login_signup.php');
+  exit();
+}
+
 //get sign up form responses
 $first_name = $_REQUEST["first_name"];
 $last_name = $_REQUEST["last_name"];
@@ -95,14 +101,44 @@ if(empty($email_format_error) && empty($email_exist_error) && empty($username_ex
     $signup_error = "Account was not successfully created.";
   }
   $statement->close();
-  $mysqli->close();
 }
+
+//check if account is in database
+$account_exist = False;
+if(empty($signup_error)){
+  $sql_prepared = "SELECT * FROM users WHERE username = ? AND password_hash = ?;";
+  $statement = $mysqli->prepare($sql_prepared);
+  $statement->bind_param("ss", $username, $hash_pass);
+  $executed = $statement->execute();
+
+  if(!$executed) {
+      echo $mysqli->error;
+  }
+
+  $result = $statement->get_result();
+  $row = $result -> fetch_assoc();
+
+  if($result->num_rows == 1) {
+      $account_exist = True;
+  }
+
+  $statement->close();
+}
+$mysqli->close();
 
 
 //if account was created then log the user in, if not send back to sign up page with errors
 if($createdUser == True){
+  session_unset();
+
   //log in
-  //session_unset();
+  $_SESSION["loggedin"] = true;
+  $_SESSION["id"] = $row["id"];
+  $_SESSION["first_name"] = $row["first_name"];
+  $_SESSION["last_name"] = $row["last_name"];
+  $_SESSION["email"] = $row["email"];
+  $_SESSION["security_level"] = $row["security_level"];
+  $_SESSION["username"] = $row["username"];
 
   header("Location: home.php");
   exit();
