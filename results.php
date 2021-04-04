@@ -47,16 +47,16 @@ session_start();
 
     <div class="container">
       <div class="row">
-        <div class="col-sm">
+        <div class="col-md">
           One of four columns
         </div>
-        <div class="col-sm">
+        <div class="col-md">
           One of four columns
         </div>
-        <div class="col-sm">
+        <div class="col-md">
           One of four columns
         </div>
-        <div class="col-sm">
+        <div class="col-md">
           One of four columns
         </div>
       </div>
