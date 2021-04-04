@@ -45,7 +45,7 @@ session_start();
     <!-- https://www.w3schools.com/bootstrap/bootstrap_navbar.asp -->
     <form class="navbar-form navbar-left" action="results.php">
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search">
+        <input type="text" class="form-control" placeholder="Search" name="search">
         <div class="input-group-btn">
           <button class="btn btn-success" type="submit">
             <i class="fas fa-search"></i>

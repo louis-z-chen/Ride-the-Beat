@@ -1,7 +1,53 @@
 <?php
 session_start();
 
+$search = "";
+$search = $_REQUEST["search"];
 
+print_r($search);
+
+//if search is empty redirect
+if(empty(trim($search))){
+  header("Location: home.php");
+  exit();
+}
+
+//results Count
+$song_count = 0;
+$artist_count = 0;
+$playlist_count = 0;
+$user_count = 0;
+
+require "database_connection.php";
+
+//Song_artist_view
+
+/*
+$sql_song = "SELECT * FROM song_artists_view WHERE song_name = ?;";
+$statement_song = $mysqli->prepare($sql_song);
+$statement_song->bind_param("s", $search);
+$executed = $statement_song->execute();
+
+if(!$executed) {
+    echo $mysqli->error;
+}
+
+$result = $statement_song->get_result();
+$song_row = $result -> fetch_assoc();
+
+$song_count = $result->num_rows;
+echo $song_count;
+
+$statement_song->close();
+
+//Artist table
+
+//Playlist_users_view
+
+//users table
+
+$mysqli->close();
+*/
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +68,7 @@ session_start();
 		padding: 0;
 		margin:0;
 		height: 100%;
+    background-color: white;
 	}
 	.main-body{
 		width: 80%;
@@ -46,6 +93,7 @@ session_start();
   <div class = "main-body center">
 
     <h2>Results</h2>
+    Total Search Results
 
     <div class="container">
       <!--Database Seearch -->
@@ -94,7 +142,7 @@ session_start();
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
-                <th scope="col">Rating</th>
+                <th scope="col">Creator</th>
               </tr>
             </thead>
             <tbody>
