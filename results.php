@@ -45,19 +45,83 @@ session_start();
 
   <div class = "main-body center">
 
+    <h2>Results</h2>
+
     <div class="container">
+      <!--Database Seearch -->
       <div class="row">
+        <!--Songs Column -->
         <div class="col-md">
-          One of four columns
+          Songs
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Artist</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <div class="col-md">
-          One of four columns
+          Artists
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <div class="col-md">
-          One of four columns
+          Playlists
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Rating</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <div class="col-md">
-          One of four columns
+          Users
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Username</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
