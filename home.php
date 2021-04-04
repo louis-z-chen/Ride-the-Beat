@@ -7,6 +7,8 @@
 <html>
 <head>
 	<title>Ride the Beat</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
 
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
@@ -18,6 +20,7 @@
 <style>
 	body {
         background-color: #121212;
+				font-family: 'Rubik', sans-serif;
     }
 
 	.container-1 {
@@ -84,8 +87,23 @@
 		font-family: rubik;
 		border: 1px solid red;
 		flex-direction: row;
+		justify-content: space-evenly;
 
 	}
+
+	.box-artist{
+		display: flex;
+		margin: 20px;
+		flex-basis: auto;
+		color: #FFFFFF;
+		font-size: 12px;
+		font-family: rubik;
+		border: 1px solid red;
+		flex-direction: row;
+		justify-content: space-evenly;
+
+	}
+
 	.box-6{
 		display: flex;
 		margin: 20px;
@@ -94,6 +112,8 @@
 		font-size: 16px;
 		font-family: rubik;
 		border: 1px solid yellow;
+		justify-content: space-evenly;
+
 	}
 	.album-1{
 		display: flex;
@@ -119,8 +139,17 @@
 		margin:auto;
 		border-radius: 3px;
 	}
-	.artistInfo{
 
+	.artistInfo{
+		margin: 10px;
+		color: #FFFFFF;
+		font-size: 16px;
+
+	}
+
+	.spotlight {
+		flex: 2;
+		flex-basis: auto;
 	}
 
 
@@ -143,7 +172,6 @@
 				<div class="album-1">
 					<img src="images/Jake2.jpg" class="allalbums"/>
 					<br clear="all" />
-					<div class="artistInfo">Jake Hope</div>
 
 				</div>
 				<div class="album-1">
@@ -163,13 +191,15 @@
 					<img src="images/Darci.jpg" class="allalbums">
 				</div>
 			</div><!-- close box-5 -->
+
+
+
 			<div class="title">Highest Rated Playlists</div>
 
 			<div class="box-6">
 				<div class="album-1">
 					<img src="images/internet.jpg" class="allalbums"/>
 					<br clear="all" />
-					<div class="artistInfo">Jake Hope</div>
 
 				</div>
 				<div class="album-1">
@@ -190,12 +220,15 @@
 				</div>
 
 			</div>
+
+
 	</div> <!-- close box-1 -->
 	<div class="box-2">Box two
 			<div class="box-4">Box four
 				<img src="images/jake_hope.jpeg" class="mainalbum">
 			</div>
 			<div class="spotlight">WHY <br /> Jake Hope</div>
+
 
 	</div>
 </div> <!-- close container-1 -->
