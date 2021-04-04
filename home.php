@@ -43,7 +43,7 @@
 
 	}
 	.box-2{
-		margin-right: 60px;
+		margin-right: 80px;
 		margin-left: 20px;
 		flex-basis: 50%;
 		flex: 0 0 10%
@@ -58,15 +58,21 @@
 		background-image: url(images/Khalid_-_Product_Page_Banner.jpg);
 		background-size: cover;
 		height: 250px;
+		padding: 40px;
+		color: white;
 
 	}
 	.box-4{
 		flex: 2;
-		margin: 20px;
 		flex-basis: auto;
-		background-image: url(images/jake_hope.jpeg);
-		background-repeat: no-repeat;
-		height: 250px;
+
+
+	}
+	.mainalbum{
+		display: block;
+		height: 200px;
+		margin: auto;
+		border-radius: 15px;
 
 	}
 	.box-5{
@@ -92,6 +98,10 @@
 	.album-1{
 		display: flex;
 		border: 1px solid green;
+		text-align: left;
+		font-size: 12px;
+		color: #FFFFFF;
+		justify-content: space-between;
 	}
 
 	.line-break {
@@ -101,11 +111,16 @@
 	.title{
 		margin: 20px;
 		color: #FFFFFF;
+		font-size: 16px;
 	}
 	.allalbums{
 		width: 100px;
 		height: 100px;
 		margin:auto;
+		border-radius: 3px;
+	}
+	.artistInfo{
+
 	}
 
 
@@ -118,38 +133,70 @@
 <div class="container-1">
   <div class="box-1">
 		<h3>Box one</h3>
-		  <div class="box-3"><h3>Box three</h3></div>
+		  <div class="box-3">
+				<h6>//TRENDING</h6>
+				<h4>Free Spirit</h4>
+				<h6>- Khalid</h6>
+			</div>
 			<div class="title">Underrated Artists</div>
 			<div class="box-5">
 				<div class="album-1">
-					<img src="Jake2.jpg" class="allalbums"/>
-					<br><br>Jake Hope
-				</div>
-				<div class="album-1">
-					<img src="KyleLux.jpg" class="allalbums">
-				</div>
-				<div class="album-1">
-					<img src="AlwaysNever.jpg" class="allalbums">
+					<img src="images/Jake2.jpg" class="allalbums"/>
+					<br clear="all" />
+					<div class="artistInfo">Jake Hope</div>
 
 				</div>
 				<div class="album-1">
-					<img src="Allday.jpg" class="allalbums">
+					<img src="images/KyleLux.jpg" class="allalbums">
 				</div>
 				<div class="album-1">
-					<img src="Luke.jpg" class="allalbums">
+					<img src="images/AlwaysNever.jpg" class="allalbums">
+
 				</div>
 				<div class="album-1">
-					<img src="Darci.jpg" class="allalbums">
+					<img src="images/Allday.jpg" class="allalbums">
+				</div>
+				<div class="album-1">
+					<img src="images/Luke.jpg" class="allalbums">
+				</div>
+				<div class="album-1">
+					<img src="images/Darci.jpg" class="allalbums">
 				</div>
 			</div><!-- close box-5 -->
 			<div class="title">Highest Rated Playlists</div>
 
+			<div class="box-6">
+				<div class="album-1">
+					<img src="images/internet.jpg" class="allalbums"/>
+					<br clear="all" />
+					<div class="artistInfo">Jake Hope</div>
 
-			<div class="box-6"></div>
+				</div>
+				<div class="album-1">
+					<img src="images/mood.jpg" class="allalbums">
+				</div>
+				<div class="album-1">
+					<img src="images/lofi.jpg" class="allalbums">
+
+				</div>
+				<div class="album-1">
+					<img src="images/mellow.jpg" class="allalbums">
+				</div>
+				<div class="album-1">
+					<img src="images/spring.jpg" class="allalbums">
+				</div>
+				<div class="album-1">
+					<img src="images/chill.jpg" class="allalbums">
+				</div>
+
+			</div>
 	</div> <!-- close box-1 -->
-	<div class="box-2"><h3>Box two</h3>
-			<div class="box-4"><h3>Box four</h3></div>
-		WHY <br /> Jake Hope
+	<div class="box-2">Box two
+			<div class="box-4">Box four
+				<img src="images/jake_hope.jpeg" class="mainalbum">
+			</div>
+			<div class="spotlight">WHY <br /> Jake Hope</div>
+
 	</div>
 </div> <!-- close container-1 -->
 

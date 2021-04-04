@@ -84,6 +84,7 @@ animation: gradient 6s ease infinite;
    margin-left: auto;
    margin-right: auto;
    padding-top: 25px;
+   text-decoration: none;
 
  }
 
@@ -91,6 +92,7 @@ animation: gradient 6s ease infinite;
    background-color: #017100;
    color: #B1E8C7;
    transition: all 0.5s ease-in-out;
+   text-decoration: none;
  }
 
 
@@ -116,9 +118,10 @@ animation: gradient 6s ease infinite;
 
 </div> <!--div for maintext-->
 
+<a href="login_signup.php">
 <div id="loginbutton"
   <h1>JUMP IN</h1>
-
+  </a>
 
 </body>
 </html>
