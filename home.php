@@ -16,11 +16,108 @@
 
 
 <style>
+	body {
+        background-color: #121212;
+    }
+
+	.container-1 {
+		display: flex;
+		padding: 20px;
+		flex-basis: : 100%;
+		justify-content: space-between;
+  	align-items: center;
+		margin: auto;
+		/*flex-basis: 900px;*/
+
+
+	}
+	.container-1 div{
+		/*border: 1px solid white;*/
+		background-color: #535353;
+		border-radius: 15px;
+	}
+
+	.container-2{
+		display: flex;
+		justify-content: space-between;
+		padding: 10px;
+	}
+
+	.container-2 div{
+		/*border: 1px solid green;*/
+		display: flex;
+		justify-content: space-between;
+		background-color: #535353;
+	}
+
+	.container-3{
+		display: flex;
+		padding: 10px;
+	}
+	.container-3 div{
+		/*border: 1px solid green;*/
+		display: flex;
+		justify-content: space-between;
+		background-color: #535353;
+	}
+
+	.box-1{
+		flex: 2;
+		margin: 20px;
+		flex-basis: auto;
+
+	}
+	.box-2{
+		flex: 1;
+
+	}
+	.box-3{
+		flex: 2;
+		margin: 20px;
+		flex-basis: auto;
+		background-image: url(images/Khalid_-_Product_Page_Banner.jpg);
+		background-size: cover;
+		height: 250px;
+
+	}
+	.box-4{
+		flex: 2;
+		margin: 20px;
+		flex-basis: auto;
+		background-image: url(images/jake_hope.jpeg);
+		background-repeat: no-repeat;
+		height: 250px;
+
+	}
+
 
 </style>
 </head>
 <body>
 	<?php require "menu.php"; ?>
+
+<div class="container-1">
+  <div class="box-1">
+		<h3>Box one</h3>
+		<div class="container-2">
+		  <div class="box-3">
+				<h3>Box three</h3>
+			</div>
+		</div> <!-- close container-2 -->
+	</div>
+	<div class="box-2">
+		<h3>Box two</h3>
+		<div class="container-3">
+			<div class="box-4">
+				<h3>Box four</h3>
+			</div>
+		</div> <!-- close container-3 -->
+		WHY <br /> Jake Hope
+	</div>
+</div> <!-- close container-1 -->
+
+
+
 
 
 
