@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-print_r($_SESSION);
 /*
 $loggedin = false;
 $login_attempt = false;
@@ -84,16 +83,23 @@ else {
 		<div class="login_and_signup_container">
 
 			<div class="login">
-				<form method="post" action="" name="loginform">
+				<form method="POST" action="login_confirmation.php" name="loginform">
 					<h2>Login</h2>
 					<br>
 					<div class="form-group">
-						<label for="login_username">Username</label>
-						<input type="text" class="form-control" name="login_username" required>
+						<label for="username">Username
+							<font color="red"><i><?php echo $_SESSION["username_not_exist_error"]; ?></i></font>
+						</label>
+						<input type="text" class="form-control" name="username" value="<?php echo $_SESSION["login_username"]; ?>" required>
 					</div>
 					<div class="form-group">
-						<label for="login_password">Password</label>
-						<input type="password" class="form-control" name="login_password" required>
+						<label for="password">Password
+								<font color="red"><i><?php echo $_SESSION["incorrect_password_error"]; ?></i></font>
+						</label>
+						<input type="password" class="form-control" name="password" required>
+					</div>
+					<div>
+						<font color="red"><i><?php echo $_SESSION["login_error"]; ?></i></font>
 					</div>
 					<br>
 					<div class="form-group">
@@ -112,28 +118,28 @@ else {
 					<br>
 					<div class="form-group">
 						<label for="first_name">First Name</label>
-						<input type="text" class="form-control" name="first_name" required>
+						<input type="text" class="form-control" name="first_name" value="<?php echo $_SESSION["signup_first_name"]; ?>" required>
 					</div>
 					<div class="form-group">
 						<label for="last_name">Last Name</label>
-						<input type="text" class="form-control" name="last_name" required>
+						<input type="text" class="form-control" name="last_name" value="<?php echo $_SESSION["signup_last_name"]; ?>" required>
 					</div>
 					<div class="form-group">
 						<label for="input_email">Email
-							<font color="red"><i><?php echo $_SESSION["$email_format_error"]; ?></i></font>
-							<font color="red"><i><?php echo $_SESSION["$email_exist_error"]; ?></i></font>
+							<font color="red"><i><?php echo $_SESSION["email_format_error"]; ?></i></font>
+							<font color="red"><i><?php echo $_SESSION["email_exist_error"]; ?></i></font>
 						</label>
-						<input type="email" class="form-control" name="email" required>
+						<input type="email" class="form-control" name="email" value="<?php echo $_SESSION["signup_email"]; ?>" required>
 					</div>
 					<div class="form-group">
 						<label for="input_username">Username
-							<font color="red"><i><?php echo $_SESSION["$username_exist_error"]; ?></i></font>
+							<font color="red"><i><?php echo $_SESSION["username_exist_error"]; ?></i></font>
 						</label>
-						<input type="text" class="form-control" name="username" required>
+						<input type="text" class="form-control" name="username" value="<?php echo $_SESSION["signup_username"]; ?>" required>
 					</div>
 					<div class="form-group">
 						<label for="input_password">Password
-							<font color="red"><i><?php echo $_SESSION["$password_mismatch_error"]; ?></i></font>
+							<font color="red"><i><?php echo $_SESSION["password_mismatch_error"]; ?></i></font>
 						</label>
 						<input type="password" class="form-control" name="password" required>
 					</div>
@@ -142,7 +148,7 @@ else {
 						<input type="password" class="form-control" name="password2" required>
 					</div>
 					<div>
-						<font color="red"><i><?php echo $_SESSION["$signup_error"]; ?></i></font>
+						<font color="red"><i><?php echo $_SESSION["signup_error"]; ?></i></font>
 					</div>
 					<br>
 					<div class="form-group">

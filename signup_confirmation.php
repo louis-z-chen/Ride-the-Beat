@@ -15,7 +15,7 @@ $password2 = $_REQUEST["password2"];
 //declare error variables
 $email_format_error = "";
 $email_exist_error = "";
-$sername_exist_error = "";
+$username_exist_error = "";
 $password_mismatch_error ="";
 $signup_error = "";
 
@@ -34,18 +34,7 @@ else{
 }
 
 //database connection
-//require "database_connection.php";
-$host = "webdev.iyaclasses.com";
-$user = "chenloui_guest";
-$cpanelpassword = "ridethebeat!";
-$db = "chenloui_ridethebeat";
-
-// DB Connection
-$mysqli = new mysqli($host, $user, $cpanelpassword, $db);
-if ( $mysqli->connect_errno ) {
-  echo $mysqli->connect_error;
-  exit();
-}
+require "database_connection.php";
 
 //check if email exists in database_connection
 $sql_email = "SELECT * FROM users where email = ?";
@@ -80,7 +69,7 @@ $result = $statement_username->get_result();
   $row = $result -> fetch_assoc();
 
 if($result->num_rows > 0) {
-  $sername_exist_error = "There is already an account associated with this username.";
+  $username_exist_error = "There is already an account associated with this username.";
 }
 
 $statement_username->close();
@@ -88,7 +77,7 @@ $statement_username->close();
 //if no errors, create new user
 $createdUser = False;
 $securitylevel = 1;
-if(empty($email_format_error) && empty($email_exist_error) && empty($sername_exist_error) && empty($password_mismatch_error)){
+if(empty($email_format_error) && empty($email_exist_error) && empty($username_exist_error) && empty($password_mismatch_error)){
   $sql_prepared = "INSERT INTO users (first_name, last_name, email, security_level, username, password_hash)
   VALUES (?,?,?,?,?,?);";
 
@@ -113,14 +102,23 @@ if(empty($email_format_error) && empty($email_exist_error) && empty($sername_exi
 //if account was created then log the user in, if not send back to sign up page with errors
 if($createdUser == True){
   //log in
+  //session_unset();
+
   header("Location: home.php");
   exit();
 }
 
 else{
+  //entered VALUES
+  $_SESSION["signup_first_name"] = $first_name;
+  $_SESSION["signup_last_name"] = $last_name;
+  $_SESSION["signup_email"] = $email;
+  $_SESSION["signup_username"] = $username;
+
+  //errors
   $_SESSION["email_format_error"] = $email_format_error;
   $_SESSION["email_exist_error"] = $email_exist_error;
-  $_SESSION["username_exist_error"] = $sername_exist_error;
+  $_SESSION["username_exist_error"] = $username_exist_error;
   $_SESSION["password_mismatch_error"] = $password_mismatch_error;
   $_SESSION["signup_error"] = $signup_error;
 
