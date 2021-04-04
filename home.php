@@ -39,7 +39,8 @@
 		margin: 20px;
 		flex-basis: 80%;
 		flex-wrap: wrap;
-		flex: 0 0 65%
+		flex: 0 0 65%;
+		height: 700px;
 
 	}
 	.box-2{
@@ -48,6 +49,7 @@
 		flex-basis: 50%;
 		flex: 0 0 10%
 		flex-wrap: wrap;
+		height: 700px;
 
 
 	}
@@ -120,9 +122,23 @@
 		margin:auto;
 		border-radius: 3px;
 	}
-	.artistInfo{
+	.spotlight{
+		display: block;
+		height: 200px;
+		margin-left: 48px;
+		margin-right: 48px;
+		margin-top: 10px;
 
 	}
+	.songName{
+		font-size: 20px;
+		color: #FFFFFF;
+	}
+	.artistName{
+		color: #B3B3B3;
+		font-size: 16px;
+	}
+
 
 
 
@@ -194,7 +210,10 @@
 			<div class="box-4">Box four
 				<img src="images/jake_hope.jpeg" class="mainalbum">
 			</div>
-			<div class="spotlight">WHY <br /> Jake Hope</div>
+			<div class="spotlight">
+				<div class=songName>Why</div>
+				<div class=artistName>Jake Hope</div>
+			</div>
 
 	</div>
 </div> <!-- close container-1 -->
