@@ -98,10 +98,11 @@
 	.album-1{
 		display: flex;
 		border: 1px solid green;
-		text-align: left;
+		text-align: justify;
 		font-size: 12px;
 		color: #FFFFFF;
 		justify-content: space-between;
+		width: 100px;
 	}
 
 	.line-break {
@@ -168,9 +169,7 @@
 			<div class="box-6">
 				<div class="album-1">
 					<img src="images/internet.jpg" class="allalbums"/>
-					<br clear="all" />
-					<div class="artistInfo">Jake Hope</div>
-
+					<p>Jake Hope</p>
 				</div>
 				<div class="album-1">
 					<img src="images/mood.jpg" class="allalbums">
