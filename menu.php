@@ -7,12 +7,23 @@
   </button>
 
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
-      <li class="nav-item"><a class="nav-link" href="dashboard.php">Dashboard</a></li>
-    </ul>
+    <div class="navbar-nav mr-auto">
+      <form class="navbar-form navbar-left" action="results.php">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search" name="search">
+          <div class="input-group-btn">
+            <button class="btn btn-success" type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item"><a class="nav-link" href="signup.php">Sign Up</a></li>
+      <li class="nav-item"><a class="nav-link" href="">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="">Discover</a></li>
+      <li class="nav-item"><a class="nav-link" href="">Playlists</a></li>
+      <li class="nav-item"><a class="nav-link" href="">Profile</a></li>
       <li class="nav-item"><a class="nav-link" href="logout.php">Log Out</a></li>
     </ul>
   </div>
