@@ -28,6 +28,10 @@
 		width:48%
 	}
 
+	.results{
+		background-color: #535353;
+	}
+
 	#green-button{
 		background-color: #1DB954;
 		width: 100%;

@@ -98,36 +98,13 @@ $mysqli->close();
 	<script src="https://kit.fontawesome.com/aef7737b1c.js" crossorigin="anonymous"></script>
 	<link href= "styles.css" rel="stylesheet">
 
-	<!--internal css for now until styles.css is finished -->
-	<style>
-	html, body{
-		padding: 0;
-		margin:0;
-		height: 100%;
-	}
-	.main-body{
-		width: 80%;
-    background-color: lightgrey;
-	}
-	.center {
-	  display: block;
-	  margin-left: auto;
-	  margin-right: auto;
-	}
-  .border-right {
-    border-right: 1px solid black;
-  }
-
-
-	</style>
-
 </head>
 <body>
 	<?php require "menu.php"; ?>
 
-  <div class = "main-body center">
+  <div class = "main-body center results">
 
-    <h2>Results</h2>
+    <h2>Results for "<?php echo $search ?>"</h2>
     Total Search Results: <?php echo $total_count ?>
 
     <div class="container">
@@ -135,7 +112,7 @@ $mysqli->close();
       <div class="row">
         <!--Songs Column -->
         <div class="col-md">
-          Songs <br>
+          <strong>Songs</strong> <br>
           There were <?php echo $song_count ?> song results
           <table class="table">
             <thead>
@@ -158,7 +135,7 @@ $mysqli->close();
         </div>
         <!--Artist Column -->
         <div class="col-md">
-          Artists <br>
+          <strong>Artists</strong> <br>
           There were <?php echo $artist_count ?> artist results
           <table class="table">
             <thead>
@@ -181,7 +158,7 @@ $mysqli->close();
         </div>
         <!--Playlist Column -->
         <div class="col-md">
-          Playlists <br>
+          <strong>Playlists</strong> <br>
           There were <?php echo $artist_count ?> playlist results
           <table class="table">
             <thead>
@@ -204,7 +181,7 @@ $mysqli->close();
         </div>
         <!--User Column -->
         <div class="col-md">
-          Users<br>
+          <strong>Users</strong><br>
           There were <?php echo $user_count ?> username results
           <table class="table">
             <thead>
