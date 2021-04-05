@@ -32,6 +32,40 @@
 		background-color: #535353;
 	}
 
+  .lyrics {
+    display: block;
+    height: 200px;
+    margin: auto;
+    margin-top: 20px;
+    font-size: 14px;
+    flex: 2;
+    flex-basis: auto;
+    color: #b3b3b3;
+    overflow-y: auto;
+    line-height: 20px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+
+  }
+
+.lyrics::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.lyrics::-webkit-scrollbar:vertical {
+    width: 11px;
+}
+
+.lyrics::-webkit-scrollbar:horizontal {
+    height: 11px;
+}
+
+.lyrics::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 2px solid white; 
+    background-color: white;
+}
+
 	#green-button{
 		background-color: #1DB954;
 		width: 100%;
