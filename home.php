@@ -7,6 +7,8 @@
 <html>
 <head>
 	<title>Ride the Beat</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
 
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
@@ -18,9 +20,10 @@
 <style>
 	body {
         background-color: #121212;
+				font-family: 'Rubik', sans-serif;
     }
 
-	.container-1 {
+	.main-container {
 		display: flex;
 		padding: 20px;
 		flex-basis: : 80%;
@@ -29,13 +32,13 @@
 		margin: auto;
 
 	}
-	.container-1 div{
+	.main-container div{
 		background-color: #535353;
 		border-radius: 15px;
 	}
 
 
-	.box-1{
+	.left-box {
 		margin: 20px;
 		flex-basis: 80%;
 		flex-wrap: wrap;
@@ -43,7 +46,7 @@
 		height: 700px;
 
 	}
-	.box-2{
+	.right-box {
 		margin-right: 80px;
 		margin-left: 20px;
 		flex-basis: 50%;
@@ -51,9 +54,8 @@
 		flex-wrap: wrap;
 		height: 700px;
 
-
 	}
-	.box-3{
+	.left-banner {
 		flex: 2;
 		margin: 20px;
 		flex-basis: auto;
@@ -77,7 +79,7 @@
 		border-radius: 15px;
 
 	}
-	.box-5{
+	.underrated-artists {
 		display: flex;
 		margin: 20px;
 		flex-basis: auto;
@@ -86,9 +88,24 @@
 		font-family: rubik;
 		border: 1px solid red;
 		flex-direction: row;
+		justify-content: space-evenly;
 
 	}
-	.box-6{
+
+	.box-artist{
+		display: flex;
+		margin: 20px;
+		flex-basis: auto;
+		color: #FFFFFF;
+		font-size: 12px;
+		font-family: rubik;
+		border: 1px solid red;
+		flex-direction: row;
+		justify-content: space-evenly;
+
+	}
+
+	.playlists {
 		display: flex;
 		margin: 20px;
 		flex-basis: auto;
@@ -96,6 +113,8 @@
 		font-size: 16px;
 		font-family: rubik;
 		border: 1px solid yellow;
+		justify-content: space-evenly;
+
 	}
 	.album-1{
 		display: flex;
@@ -140,6 +159,11 @@
 	}
 
 
+	.spotlight {
+		flex: 2;
+		flex-basis: auto;
+	}
+
 
 
 </style>
@@ -147,20 +171,19 @@
 <body>
 	<?php require "menu.php"; ?>
 
-<div class="container-1">
-  <div class="box-1">
-		<h3>Box one</h3>
-		  <div class="box-3">
+<div class="main-container">
+  <div class="left-box">
+		<h3>Left Box</h3>
+		  <div class="left-banner">
 				<h6>//TRENDING</h6>
 				<h4>Free Spirit</h4>
 				<h6>- Khalid</h6>
 			</div>
 			<div class="title">Underrated Artists</div>
-			<div class="box-5">
+			<div class="underrated-artists">
 				<div class="album-1">
 					<img src="images/Jake2.jpg" class="allalbums"/>
 					<br clear="all" />
-					<div class="artistInfo">Jake Hope</div>
 
 				</div>
 				<div class="album-1">
@@ -180,12 +203,16 @@
 					<img src="images/Darci.jpg" class="allalbums">
 				</div>
 			</div><!-- close box-5 -->
+
+
+
 			<div class="title">Highest Rated Playlists</div>
 
-			<div class="box-6">
+			<div class="playlists">
 				<div class="album-1">
 					<img src="images/internet.jpg" class="allalbums"/>
-					<p>Jake Hope</p>
+					<br clear="all" />
+
 				</div>
 				<div class="album-1">
 					<img src="images/mood.jpg" class="allalbums">
@@ -205,18 +232,21 @@
 				</div>
 
 			</div>
-	</div> <!-- close box-1 -->
-	<div class="box-2">Box two
+
+
+	</div> <!-- close left box -->
+	<div class="right-box">right box
 			<div class="box-4">Box four
 				<img src="images/jake_hope.jpeg" class="mainalbum">
 			</div>
 			<div class="spotlight">
 				<div class=songName>Why</div>
 				<div class=artistName>Jake Hope</div>
-			</div>
+			</div> <!--close right box-->
+
 
 	</div>
-</div> <!-- close container-1 -->
+</div> <!-- close main container -->
 
 
 
