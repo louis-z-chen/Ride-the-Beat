@@ -54,13 +54,22 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
 		width: 100%;
 	}
 
+	.login-signup-main{
+		background-color: #B3B3B3;
+		padding-top: 50px;
+	  padding-right: 20px;
+	  padding-bottom: 50px;
+	  padding-left: 20px;
+		border-radius: 25px;
+	}
+
 	</style>
 
 </head>
 <body>
 	<?php require "menu.php"; ?>
 
-  <div class = "main-body center">
+  <div class = "main-body center login-signup-main">
 		<div class="login_and_signup_container">
 
 			<div class="login">

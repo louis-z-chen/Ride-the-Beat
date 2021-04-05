@@ -98,11 +98,17 @@ $mysqli->close();
 	<script src="https://kit.fontawesome.com/aef7737b1c.js" crossorigin="anonymous"></script>
 	<link href= "styles.css" rel="stylesheet">
 
+<style>
+  .main{
+    background-color: #B3B3B3;
+  }
+</style>
+
 </head>
 <body>
 	<?php require "menu.php"; ?>
 
-  <div class = "main-body center results">
+  <div class = "main-body center main">
 
     <h2>Results for "<?php echo $search ?>"</h2>
     Total Search Results: <?php echo $total_count ?>
