@@ -4,8 +4,6 @@ session_start();
 $search = "";
 $search = $_REQUEST["search"];
 
-print_r($search);
-
 //if search is empty redirect
 if(empty(trim($search))){
   header("Location: home.php");
@@ -18,10 +16,11 @@ $artist_count = 0;
 $playlist_count = 0;
 $user_count = 0;
 
+//database connection
 require "database_connection.php";
 
-//Song_artist_view
-
+//Song column
+/*
 $sql_song = "SELECT * FROM song_artists_view WHERE song_name = ?;";
 $statement_song = $mysqli->prepare($sql_song);
 $statement_song->bind_param("s", $search);
@@ -38,15 +37,53 @@ $song_count = $result->num_rows;
 echo $song_count;
 
 $statement_song->close();
+*/
+$sql_song = "SELECT * FROM song WHERE name LIKE '%" . $search . "%' ORDER BY name;";
 
-//Artist table
+$results_song = $mysqli->query($sql_song);
 
-//Playlist_users_view
+if(!$results_song){
+  echo "SQL Error: " . $mysqli->error;
+  exit();
+}
+$song_count = $results_song->num_rows;
 
-//users table
+//Artist column
+$sql_artist = "SELECT * FROM artist WHERE name LIKE '%" . $search . "%' ORDER BY name;";
+
+$results_artist= $mysqli->query($sql_artist);
+
+if(!$results_artist){
+  echo "SQL Error: " . $mysqli->error;
+  exit();
+}
+$artist_count = $results_artist->num_rows;
+
+//Playlist Column
+$sql_playlist = "SELECT * FROM playlist WHERE name LIKE '%" . $search . "%' ORDER BY name;";
+
+$results_playlist= $mysqli->query($sql_playlist);
+
+if(!$results_playlist){
+  echo "SQL Error: " . $mysqli->error;
+  exit();
+}
+$playlist_count = $results_playlist->num_rows;
+
+//users Column
+$sql_user = "SELECT * FROM users WHERE username LIKE '%" . $search . "%' ORDER BY username;";
+
+$results_user = $mysqli->query($sql_user);
+
+if(!$results_user){
+  echo "SQL Error: " . $mysqli->error;
+  exit();
+}
+$user_count = $results_user->num_rows;
+
+$total_count = $song_count + $artist_count + $playlist_count + $user_count;
 
 $mysqli->close();
-
 ?>
 
 <!DOCTYPE html>
@@ -67,7 +104,6 @@ $mysqli->close();
 		padding: 0;
 		margin:0;
 		height: 100%;
-    background-color: white;
 	}
 	.main-body{
 		width: 80%;
@@ -92,33 +128,15 @@ $mysqli->close();
   <div class = "main-body center">
 
     <h2>Results</h2>
-    Total Search Results
+    Total Search Results: <?php echo $total_count ?>
 
     <div class="container">
       <!--Database Seearch -->
       <div class="row">
         <!--Songs Column -->
         <div class="col-md">
-          Songs
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Artist</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="col-md">
-          Artists
+          Songs <br>
+          There were <?php echo $song_count ?> song results
           <table class="table">
             <thead>
               <tr>
@@ -127,34 +145,67 @@ $mysqli->close();
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
+              <?php $song_results_counter = 1;?>
+              <?php while($row = $results_song->fetch_assoc() ) : ?>
+                <tr>
+                <th scope="row"><?php echo $song_results_counter ?></th>
+                <?php $song_results_counter++;?>
+                <td> <?php echo $row["name"] ?> </td>
               </tr>
+              <?php endwhile; ?>
             </tbody>
           </table>
         </div>
+        <!--Artist Column -->
         <div class="col-md">
-          Playlists
+          Artists <br>
+          There were <?php echo $artist_count ?> artist results
           <table class="table">
             <thead>
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
-                <th scope="col">Creator</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
+              <?php $artist_results_counter = 1;?>
+              <?php while($row = $results_artist->fetch_assoc() ) : ?>
+                <tr>
+                <th scope="row"><?php echo $artist_results_counter ?></th>
+                <?php $artist_results_counter++;?>
+                <td> <?php echo $row["name"] ?> </td>
               </tr>
+              <?php endwhile; ?>
             </tbody>
           </table>
         </div>
+        <!--Playlist Column -->
         <div class="col-md">
-          Users
+          Playlists <br>
+          There were <?php echo $artist_count ?> playlist results
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php $playlist_results_counter = 1;?>
+              <?php while($row = $results_playlist->fetch_assoc() ) : ?>
+                <tr>
+                <th scope="row"><?php echo $playlist_results_counter ?></th>
+                <?php $playlist_results_counter++;?>
+                <td> <?php echo $row["name"] ?> </td>
+              </tr>
+              <?php endwhile; ?>
+            </tbody>
+          </table>
+        </div>
+        <!--User Column -->
+        <div class="col-md">
+          Users<br>
+          There were <?php echo $user_count ?> username results
           <table class="table">
             <thead>
               <tr>
@@ -163,10 +214,14 @@ $mysqli->close();
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
+              <?php $user_results_counter = 1;?>
+              <?php while($row = $results_user->fetch_assoc() ) : ?>
+                <tr>
+                <th scope="row"><?php echo $user_results_counter ?></th>
+                <?php $user_results_counter++;?>
+                <td> <?php echo $row["username"] ?> </td>
               </tr>
+              <?php endwhile; ?>
             </tbody>
           </table>
         </div>
