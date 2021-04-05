@@ -22,7 +22,6 @@ require "database_connection.php";
 
 //Song_artist_view
 
-/*
 $sql_song = "SELECT * FROM song_artists_view WHERE song_name = ?;";
 $statement_song = $mysqli->prepare($sql_song);
 $statement_song->bind_param("s", $search);
@@ -47,7 +46,7 @@ $statement_song->close();
 //users table
 
 $mysqli->close();
-*/
+
 ?>
 
 <!DOCTYPE html>
