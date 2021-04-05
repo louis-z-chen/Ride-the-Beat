@@ -99,8 +99,13 @@ $mysqli->close();
 	<link href= "styles.css" rel="stylesheet">
 
 <style>
-  .main{
+  .results-main{
     background-color: #B3B3B3;
+    padding-top: 50px;
+	  padding-right: 20px;
+	  padding-bottom: 50px;
+	  padding-left: 20px;
+		border-radius: 25px;
   }
 </style>
 
@@ -108,7 +113,7 @@ $mysqli->close();
 <body>
 	<?php require "menu.php"; ?>
 
-  <div class = "main-body center main">
+  <div class = "main-body center results-main">
 
     <h2>Results for "<?php echo $search ?>"</h2>
     Total Search Results: <?php echo $total_count ?>
