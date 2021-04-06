@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top" style="background-color: #212121 !important">
 
   <div class = "container-fluid">
 
@@ -30,7 +30,7 @@
         <li class="nav-item"><a class="nav-link" href="">Discover</a></li>
         <li class="nav-item"><a class="nav-link" href="">Playlists</a></li>
         <li class="nav-item"><a class="nav-link" href="">Profile</a></li>
-        <li class="nav-item"><a class="nav-link btn btn-success navbar-btn green-button" href="logout.php">Log Out</a>
+        <li class="nav-item"><a class="nav-link btn btn-success navbar-btn green-button" href="logout.php" style="color: white !important">Log Out</a>
         </li>
       </ul>
     </div>
