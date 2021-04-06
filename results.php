@@ -98,25 +98,17 @@ $mysqli->close();
 	<script src="https://kit.fontawesome.com/aef7737b1c.js" crossorigin="anonymous"></script>
 	<link href= "styles.css" rel="stylesheet">
 
-<style>
-  .results-main{
-    background-color: #B3B3B3;
-    padding-top: 50px;
-	  padding-right: 20px;
-	  padding-bottom: 50px;
-	  padding-left: 20px;
-		border-radius: 25px;
-  }
-</style>
-
 </head>
 <body>
 	<?php require "menu.php"; ?>
 
   <div class = "main-body center results-main">
 
-    <h2>Results for "<?php echo $search ?>"</h2>
-    Total Search Results: <?php echo $total_count ?>
+    <div class="center-text">
+      <h2>Results for "<?php echo $search ?>"</h2>
+      Total Search Results: <?php echo $total_count ?>
+    </div>
+    <br>
 
     <div class="container">
       <!--Database Seearch -->
@@ -124,12 +116,12 @@ $mysqli->close();
         <!--Songs Column -->
         <div class="col-md">
           <strong>Songs</strong> <br>
-          There were <?php echo $song_count ?> song results
+          <?php echo $song_count ?> song results
           <table class="table">
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Name</th>
+                <th scope="col">Song Name</th>
               </tr>
             </thead>
             <tbody>
@@ -147,12 +139,12 @@ $mysqli->close();
         <!--Artist Column -->
         <div class="col-md">
           <strong>Artists</strong> <br>
-          There were <?php echo $artist_count ?> artist results
+          <?php echo $artist_count ?> artist results
           <table class="table">
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Name</th>
+                <th scope="col">Artist Name</th>
               </tr>
             </thead>
             <tbody>
@@ -170,12 +162,12 @@ $mysqli->close();
         <!--Playlist Column -->
         <div class="col-md">
           <strong>Playlists</strong> <br>
-          There were <?php echo $artist_count ?> playlist results
+          <?php echo $artist_count ?> playlist results
           <table class="table">
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Name</th>
+                <th scope="col">Playlist Name</th>
               </tr>
             </thead>
             <tbody>
@@ -193,7 +185,7 @@ $mysqli->close();
         <!--User Column -->
         <div class="col-md">
           <strong>Users</strong><br>
-          There were <?php echo $user_count ?> username results
+          <?php echo $user_count ?> username results
           <table class="table">
             <thead>
               <tr>
