@@ -1,7 +1,4 @@
-<?php
-	session_start();
-
-?>
+<?php require "login_logic.php"; ?>
 
 <!DOCTYPE html>
 <html>
@@ -17,6 +14,17 @@
 	<script src="https://kit.fontawesome.com/aef7737b1c.js" crossorigin="anonymous"></script>
 	<link href= "styles.css" rel="stylesheet">
 
+	<style>
+		h3{
+		  text-shadow: 2px 2px #1DB954;
+			font-weight: bold;
+		}
+		h5{
+		  text-shadow: 2px 2px #1DB954;
+			font-weight: bold;
+		}
+	</style>
+
 </head>
 <body>
 	<?php require "menu.php"; ?>
@@ -24,9 +32,9 @@
 <div class="main-container">
   <div class="left-box">
 		  <div class="left-banner">
-				<h6>//TRENDING</h6>
-				<h4>Free Spirit</h4>
-				<h6>- Khalid</h6>
+				<h5>//TRENDING</h5>
+				<h3>Free Spirit</h3>
+				<h5>- Khalid</h5>
 			</div>
 			<div class="title">Underrated Artists</div>
 			<div class="underrated-artists">

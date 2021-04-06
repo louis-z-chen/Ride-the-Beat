@@ -1,5 +1,5 @@
 <?php
-session_start();
+require "login_logic.php";
 
 $search = "";
 $search = $_REQUEST["search"];
