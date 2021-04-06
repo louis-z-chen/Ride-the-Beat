@@ -2,7 +2,7 @@
 
   <div class = "container-fluid">
 
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="home.php">
       <img src="images/Logo3.png" height="80" class="d-inline-block pull-left" alt="">
       <span class="name pull-left"><strong>Ride the Beat</strong></span>
 

@@ -17,6 +17,17 @@
 	<script src="https://kit.fontawesome.com/aef7737b1c.js" crossorigin="anonymous"></script>
 	<link href= "styles.css" rel="stylesheet">
 
+	<style>
+	html, body{
+		background-color: #121212;
+		padding: 0;
+		margin:0;
+		height: 100%;
+		font-family: 'Rubik', sans-serif;
+	}
+
+	</style>
+
 </head>
 <body>
 	<?php require "menu.php"; ?>

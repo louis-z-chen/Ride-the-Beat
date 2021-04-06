@@ -115,8 +115,10 @@ $mysqli->close();
       <div class="row">
         <!--Songs Column -->
         <div class="col-md">
-          <strong>Songs</strong> <br>
-          <?php echo $song_count ?> song results
+          <div class = "center-text">
+            <strong>Songs</strong> <br>
+            <?php echo $song_count ?> song results
+          </div>
           <table class="table">
             <thead>
               <tr>
@@ -138,8 +140,10 @@ $mysqli->close();
         </div>
         <!--Artist Column -->
         <div class="col-md">
-          <strong>Artists</strong> <br>
-          <?php echo $artist_count ?> artist results
+          <div class = "center-text">
+            <strong>Artists</strong> <br>
+            <?php echo $artist_count ?> artist results
+          </div>
           <table class="table">
             <thead>
               <tr>
@@ -161,8 +165,10 @@ $mysqli->close();
         </div>
         <!--Playlist Column -->
         <div class="col-md">
-          <strong>Playlists</strong> <br>
-          <?php echo $artist_count ?> playlist results
+          <div class = "center-text">
+            <strong>Playlists</strong> <br>
+            <?php echo $artist_count ?> playlist results
+          </div>
           <table class="table">
             <thead>
               <tr>
@@ -184,8 +190,10 @@ $mysqli->close();
         </div>
         <!--User Column -->
         <div class="col-md">
-          <strong>Users</strong><br>
-          <?php echo $user_count ?> username results
+          <div class = "center-text">
+            <strong>Users</strong><br>
+            <?php echo $user_count ?> username results
+          </div>
           <table class="table">
             <thead>
               <tr>
