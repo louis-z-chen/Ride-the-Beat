@@ -16,50 +16,6 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
 
 	<?php require "../reusable_code/header_files.php"; ?>
 
-	<!--internal css for now until styles.css is finished -->
-	<style>
-	html, body{
-		padding: 0;
-		margin:0;
-		height: 100%;
-	}
-	.main-body{
-		width: 80%;
-	}
-	.center {
-	  display: block;
-	  margin-left: auto;
-	  margin-right: auto;
-	}
-	.login_and_signup_container{
-		display:flex;
-		justify-content: space-between;
-	}
-
-	.login{
-		width:48%
-	}
-
-	.signup{
-		width:48%
-	}
-
-	#green-button{
-		background-color: #1DB954;
-		width: 100%;
-	}
-
-	.login-signup-main{
-		background-color: #B3B3B3;
-		padding-top: 50px;
-	  padding-right: 20px;
-	  padding-bottom: 50px;
-	  padding-left: 20px;
-		border-radius: 25px;
-	}
-
-	</style>
-
 </head>
 <body>
 	<?php require "../reusable_code/menu.php"; ?>

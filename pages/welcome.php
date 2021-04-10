@@ -25,62 +25,6 @@ body {
    }
 }
 
-#maintext {
-  font-family: rubik, sans-serif;
-  font-weight: 400;
-  font-size: 20px;
-  font-style: normal;
-  width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5px;
-  text-align: center;
-  color: #B1E8C7;
-  line-height: 30px;
-}
-
-#logo {
-  width: 200px;
-  margin-left: 50px;
-  margin-top: 30px;
-  float: left;
-}
-
-.logo {
-  width: 180px;
-  position: relative;
-}
-
-#welcome-button:hover{
-  color: black;
-  background-color: #1DB954;
-}
-
-.center-vertical {
-  height: 70%;
-
-  position: absolute;
-  top:0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  margin: auto;
-}
-
-#name-container {
-  height: 70%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.name-img {
-  height: 100%;
-  position: relative;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
 </style>
 
 </head>
@@ -104,7 +48,11 @@ body {
       <i class="fab fa-spotify fa-lg"></i>  Connect your existing Spotify account
       <br>
       <br>
-      <button type="button" class="btn btn-outline-success btn-lg" id="welcome-button" href="login_signup.php"><i class="fas fa-swimmer"></i> Dive in</button>
+			<a href="login_signup.php">
+	      <button type="button" class="btn btn-outline-success btn-lg" id="welcome-button">
+					<i class="fas fa-swimmer"></i> Dive in
+				</button>
+			</a>
 
     </div> <!--div for maintext-->
 

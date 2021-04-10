@@ -7,27 +7,16 @@
 
 	<?php require "../reusable_code/header_files.php"; ?>
 
-	<style>
-		h3{
-		  text-shadow: 2px 2px #1DB954;
-			font-weight: bold;
-		}
-		h5{
-		  text-shadow: 2px 2px #1DB954;
-			font-weight: bold;
-		}
-	</style>
-
 </head>
 <body>
 	<?php require "../reusable_code/menu.php"; ?>
 
-<div class="main-container">
+<div class="home-container">
   <div class="left-box">
 		  <div class="left-banner">
-				<h5>//TRENDING</h5>
-				<h3>Free Spirit</h3>
-				<h5>- Khalid</h5>
+				<h5 class="bannertext">//TRENDING</h5>
+				<h3 class="bannertext">Free Spirit</h3>
+				<h5 class="bannertext">- Khalid</h5>
 			</div>
 			<div class="title">Underrated Artists</div>
 			<div class="underrated-artists">

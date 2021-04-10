@@ -1,265 +1,345 @@
+/* External stylesheet */
 
-	html, body{
-    background-color: #121212;
-		padding: 0;
-		margin:0;
-		height: 100%;
-		font-family: "Rubik", sans-serif;
-	}
+/*
+Universal CSS
+CSS that is used on multiple pages
+*/
+html, body{
+  background-color: #121212;
+	padding: 0;
+	margin:0;
+	height: 100%;
+	font-family: "Rubik", sans-serif;
+}
 
-	.main-body{
-		width: 80%;
-	}
-	.center {
-	  display: block;
-	  margin-left: auto;
-	  margin-right: auto;
-	}
+.main-body{
+	width: 80%;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-	.center-text{
-		text-align: center;
-	}
+.center-text{
+	text-align: center;
+}
 
-	.login_and_signup_container{
-		display:flex;
-		justify-content: space-between;
-	}
+#green-button{
+	background-color: #1DB954;
+	width: 100%;
+	color: white;
+}
 
-	.login{
-		width:48%
-	}
+/*
+Page speific CSS
+CSS that is used on one page
+*/
 
-	.signup{
-		width:48%
-	}
+/* Welcome Page */
+#maintext {
+  font-family: rubik, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  font-style: normal;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  text-align: center;
+  color: #B1E8C7;
+  line-height: 30px;
+}
 
-	.main{
-		background-color: #535353;
-	}
+#logo {
+  width: 200px;
+  margin-left: 50px;
+  margin-top: 30px;
+  float: left;
+}
 
-  .lyrics {
-    display: block;
-    height: 200px;
-    margin: auto;
-    margin-top: 20px;
-    font-size: 14px;
-    flex: 2;
-    flex-basis: auto;
-    color: #b3b3b3;
-    overflow-y: auto;
-    line-height: 20px;
-    padding-left: 10px;
-    padding-bottom: 10px;
+.logo {
+  width: 180px;
+  position: relative;
+}
 
-  }
+#welcome-button:hover{
+  color: black;
+  background-color: #1DB954;
+}
+
+.center-vertical {
+  height: 70%;
+
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  margin: auto;
+}
+
+#name-container {
+  height: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.name-img {
+  height: 100%;
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Login Sign-up Page */
+.login_and_signup_container{
+	display:flex;
+	justify-content: space-between;
+}
+
+.login{
+	width:48%
+}
+
+.signup{
+	width:48%
+}
+
+.login-signup-main{
+	background-color: #B3B3B3;
+	padding-top: 50px;
+	padding-right: 20px;
+	padding-bottom: 50px;
+	padding-left: 20px;
+	border-radius: 25px;
+}
+
+/* Home Page */
+.lyrics {
+  display: block;
+  height: 200px;
+  margin: auto;
+  margin-top: 20px;
+  font-size: 14px;
+  flex: 2;
+  flex-basis: auto;
+  color: #b3b3b3;
+  overflow-y: auto;
+  line-height: 20px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+
+}
 
 .lyrics::-webkit-scrollbar {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
 .lyrics::-webkit-scrollbar:vertical {
-    width: 11px;
+  width: 11px;
 }
 
 .lyrics::-webkit-scrollbar:horizontal {
-    height: 11px;
+  height: 11px;
 }
 
 .lyrics::-webkit-scrollbar-thumb {
-    border-radius: 8px;
-    border: 2px solid white;
-    background-color: white;
+  border-radius: 8px;
+  border: 2px solid white;
+  background-color: white;
 }
 
-	#green-button{
-		background-color: #1DB954;
-		width: 100%;
-		color: white;
-	}
+.left-box {
+	margin: 20px;
+	flex-basis: 80%;
+	flex-wrap: wrap;
+	flex: 0 0 65%;
+	height: 760px;
 
-	.main-container {
-		display: flex;
-		padding: 20px;
-		flex-basis: 80%;
-		justify-content: center;
-  	align-items: center;
-		margin: auto;
-		margin-left: 50px;
+}
+.right-box {
+	margin-right: 80px;
+	margin-left: 20px;
+	flex-basis: 50%;
+	flex: 0 0 10%;
+	flex-wrap: wrap;
+	height: 760px;
 
-	}
-	.main-container div{
-		background-color: #535353;
-		border-radius: 15px;
-	}
+}
+.left-banner {
+	flex: 2;
+	margin: 20px;
+	flex-basis: auto;
+	background-image: url(../images/Khalid_-_Product_Page_Banner.jpg);
+	background-size: cover;
+	height: 250px;
+	padding: 40px;
+	color: white;
 
+}
+.box-4{
+	flex: 2;
+	flex-basis: auto;
+	color: #FFFFFF
+}
 
-	.left-box {
-		margin: 20px;
-		flex-basis: 80%;
-		flex-wrap: wrap;
-		flex: 0 0 65%;
-		height: 760px;
+.mainalbum{
+	display: block;
+	height: 230px;
+	margin: auto;
+	margin-top: 30px;
+	border-radius: 15px;
 
-	}
-	.right-box {
-		margin-right: 80px;
-		margin-left: 20px;
-		flex-basis: 50%;
-		flex: 0 0 10%;
-		flex-wrap: wrap;
-		height: 760px;
+}
+.underrated-artists {
+	display: flex;
+	margin: 20px;
+	flex-basis: auto;
+	color: #FFFFFF;
+	font-size: 16px;
+	font-family: rubik;
+/*	border: 1px solid red; */
+	flex-direction: row;
+	justify-content: space-evenly;
 
-	}
-	.left-banner {
-		flex: 2;
-		margin: 20px;
-		flex-basis: auto;
-		background-image: url(../images/Khalid_-_Product_Page_Banner.jpg);
-		background-size: cover;
-		height: 250px;
-		padding: 40px;
-		color: white;
+}
 
-	}
-	.box-4{
-		flex: 2;
-		flex-basis: auto;
-		color: #FFFFFF
-	}
+.artist-information{
+	display: flex;
+	margin: 20px;
+	flex-basis: auto;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-family: rubik;
+/*	border: 1px solid red; */
+	flex-direction: row;
+	justify-content: space-evenly;
 
-	.mainalbum{
-		display: block;
-		height: 230px;
-		margin: auto;
-		margin-top: 30px;
-		border-radius: 15px;
+}
 
-	}
-	.underrated-artists {
-		display: flex;
-		margin: 20px;
-		flex-basis: auto;
-		color: #FFFFFF;
-		font-size: 16px;
-		font-family: rubik;
-	/*	border: 1px solid red; */
-		flex-direction: row;
-		justify-content: space-evenly;
+.playlists {
+	display: flex;
+	margin: 20px;
+	flex-basis: auto;
+	color: #FFFFFF;
+	font-size: 16px;
+	font-family: rubik;
+/*	border: 1px solid yellow; */
+	justify-content: space-evenly;
 
-	}
-
-	.artist-information{
-		display: flex;
-		margin: 20px;
-		flex-basis: auto;
-		color: #FFFFFF;
-		font-size: 12px;
-		font-family: rubik;
-	/*	border: 1px solid red; */
-		flex-direction: row;
-		justify-content: space-evenly;
-
-	}
-
-	.playlists {
-		display: flex;
-		margin: 20px;
-		flex-basis: auto;
-		color: #FFFFFF;
-		font-size: 16px;
-		font-family: rubik;
-	/*	border: 1px solid yellow; */
-		justify-content: space-evenly;
-
-	}
-	.album-1{
-		display: flex;
+}
+.album-1{
+	display: flex;
 /*		border: 1px solid green; */
-		text-align: justify;
-		font-size: 12px;
-		color: #FFFFFF;
-		justify-content: space-between;
-		width: 100px;
-	}
+	text-align: justify;
+	font-size: 12px;
+	color: #FFFFFF;
+	justify-content: space-between;
+	width: 100px;
+}
 
-	.line-break {
-		flex-basis: 100%;
-  	height: 0;
-	}
-	.title{
-		margin: 20px;
-		color: #FFFFFF;
-		font-size: 16px;
-	}
-	.allalbums{
-		width: 100px;
-		height: 100px;
-		margin:auto;
-		border-radius: 3px;
-	}
+.line-break {
+	flex-basis: 100%;
+	height: 0;
+}
+.title{
+	margin: 20px;
+	color: #FFFFFF;
+	font-size: 16px;
+}
+.allalbums{
+	width: 100px;
+	height: 100px;
+	margin:auto;
+	border-radius: 3px;
+}
 
-	.spotlight{
-		display: block;
-		height: 200px;
-		margin-left: 48px;
-		margin-right: 48px;
-		margin-top: 10px;
+.spotlight{
+	display: block;
+	height: 200px;
+	margin-left: 48px;
+	margin-right: 48px;
+	margin-top: 10px;
 
-	}
-	.songName{
-		font-size: 20px;
-		color: #FFFFFF;
-		text-align: center;
-	}
-	.artistName{
-		color: #B3B3B3;
-		font-size: 16px;
-		text-align: center;
-	}
+}
+.songName{
+	font-size: 20px;
+	color: #FFFFFF;
+	text-align: center;
+}
+.artistName{
+	color: #B3B3B3;
+	font-size: 16px;
+	text-align: center;
+}
 
-	.musicbar {
-		display: block;
-		width: 300px;
-		margin: auto;
-		margin-top: 10px;
-		margin-bottom: 20px;
+.musicbar {
+	display: block;
+	width: 300px;
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 20px;
 
-	}
+}
 
-	.lyrics {
-		display: block;
-		height: 200px;
-		margin: auto;
-		margin-top: 20px;
-		font-size: 14px;
-		flex: 2;
-		flex-basis: auto;
-		color: #b3b3b3;
-		overflow-y: auto;
-		line-height: 20px;
-		padding-left: 10px;
-		padding-bottom: 10px;
+.lyrics {
+	display: block;
+	height: 200px;
+	margin: auto;
+	margin-top: 20px;
+	font-size: 14px;
+	flex: 2;
+	flex-basis: auto;
+	color: #b3b3b3;
+	overflow-y: auto;
+	line-height: 20px;
+	padding-left: 10px;
+	padding-bottom: 10px;
 
-	}
+}
 
 .lyrics::-webkit-scrollbar {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
 .lyrics::-webkit-scrollbar:vertical {
-    width: 11px;
+  width: 11px;
 }
 
 .lyrics::-webkit-scrollbar:horizontal {
-    height: 11px;
+  height: 11px;
 }
 
 .lyrics::-webkit-scrollbar-thumb {
-    border-radius: 8px;
-    border: 2px solid white; /* should match background, can't be transparent */
-    background-color: white;
+  border-radius: 8px;
+  border: 2px solid white; /* should match background, can't be transparent */
+  background-color: white;
 }
 
+.home-container {
+	display: flex;
+	padding: 20px;
+	flex-basis: 80%;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	margin-left: 50px;
+
+}
+.home-container div{
+	background-color: #535353;
+	border-radius: 15px;
+}
+
+.bannertext{
+	text-shadow: 2px 2px #1DB954;
+	font-weight: bold;
+}
+
+/* Results Page */
 .results-main{
 	background-color: #B3B3B3;
 	padding-top: 50px;
