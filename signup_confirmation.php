@@ -40,7 +40,7 @@ else{
 }
 
 //database connection
-require "database_connection.php";
+require "reusable_code/database_connection.php";
 
 //check if email exists in database_connection
 $sql_email = "SELECT * FROM users where email = ?";

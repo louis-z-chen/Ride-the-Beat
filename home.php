@@ -1,4 +1,4 @@
-<?php require "login_logic.php"; ?>
+<?php require "reusable_code/login_logic.php"; ?>
 
 <!DOCTYPE html>
 <html>
@@ -27,7 +27,7 @@
 
 </head>
 <body>
-	<?php require "menu.php"; ?>
+	<?php require "reusable_code/menu.php"; ?>
 
 <div class="main-container">
   <div class="left-box">

@@ -21,7 +21,7 @@ $incorrect_password_error = "";
 $login_error = "";
 
 //database connection
-require "database_connection.php";
+require "reusable_code/database_connection.php";
 
 //check if username exists in database_connection
 $sql_username = "SELECT * FROM users where username = ?";
