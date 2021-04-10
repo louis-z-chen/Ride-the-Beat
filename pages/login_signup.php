@@ -69,13 +69,13 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
 
 </head>
 <body>
-	<?php require "reusable_code/menu.php"; ?>
+	<?php require "../reusable_code/menu.php"; ?>
 
   <div class = "main-body center login-signup-main">
 		<div class="login_and_signup_container">
 
 			<div class="login">
-				<form method="POST" action="login_confirmation.php" name="loginform">
+				<form method="POST" action="../backend/login_confirmation.php" name="loginform">
 					<h2>Login</h2>
 					<br>
 					<div class="form-group">
@@ -105,7 +105,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
 			</div>
 
 			<div class="signup">
-				<form method="POST" action="signup_confirmation.php" name="signupform">
+				<form method="POST" action="../backend/signup_confirmation.php" name="signupform">
 					<h2>Sign up</h2>
 					<br>
 					<div class="form-group">

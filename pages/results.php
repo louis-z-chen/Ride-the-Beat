@@ -1,5 +1,5 @@
 <?php
-require "reusable_code/login_logic.php";
+require "../reusable_code/login_logic.php";
 
 $search = "";
 $search = $_REQUEST["search"];
@@ -17,7 +17,7 @@ $playlist_count = 0;
 $user_count = 0;
 
 //database connection
-require "reusable_code/database_connection.php";
+require "../reusable_code/database_connection.php";
 
 //Song column
 /*
@@ -102,7 +102,7 @@ $mysqli->close();
 
 </head>
 <body>
-	<?php require "reusable_code/menu.php"; ?>
+	<?php require "../reusable_code/menu.php"; ?>
 
   <div class = "main-body center results-main">
 

@@ -5,6 +5,6 @@ session_start();
 unset($_SESSION["loggedin"]);
 session_destroy();
 
-header('Location: welcome.php');
+header('Location: ../pages/welcome.php');
 
 ?>

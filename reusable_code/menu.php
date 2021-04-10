@@ -2,8 +2,8 @@
 
   <div class = "container-fluid">
 
-    <a class="navbar-brand" href="home.php">
-      <img src="images/Logo3.png" height="80" class="d-inline-block pull-left" alt="">
+    <a class="navbar-brand" href="../pages/home.php">
+      <img src="../images/Logo3.png" height="80" class="d-inline-block pull-left" alt="">
       <span class="name pull-left"><strong>Ride the Beat</strong></span>
 
     </a>
@@ -30,7 +30,7 @@
         <li class="nav-item"><a class="nav-link" href="">Discover</a></li>
         <li class="nav-item"><a class="nav-link" href="">Playlists</a></li>
         <li class="nav-item"><a class="nav-link" href="">Profile</a></li>
-        <li class="nav-item"><a class="nav-link btn btn-success navbar-btn green-button" href="logout.php" style="color: white !important">Log Out</a>
+        <li class="nav-item"><a class="nav-link btn btn-success navbar-btn green-button" href="../backend/logout.php" style="color: white !important">Log Out</a>
         </li>
       </ul>
     </div>

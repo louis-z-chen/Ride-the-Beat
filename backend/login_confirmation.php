@@ -21,7 +21,7 @@ $incorrect_password_error = "";
 $login_error = "";
 
 //database connection
-require "reusable_code/database_connection.php";
+require "../reusable_code/database_connection.php";
 
 //check if username exists in database_connection
 $sql_username = "SELECT * FROM users where username = ?";
@@ -90,7 +90,7 @@ if($correct_cred == True){
     $_SESSION["security_level"] = $row["security_level"];
 		$_SESSION["username"] = $row["username"];
 
-    header("Location: home.php");
+    header("Location: ../pages/home.php");
     exit();
 }
 else{
@@ -103,7 +103,7 @@ else{
     $_SESSION["login_error"] = $login_error;
 
     //print_r($_SESSION);
-    header("Location: login_signup.php");
+    header("Location: ../pages/login_signup.php");
     exit();
 
 }

@@ -1,4 +1,4 @@
-<?php require "reusable_code/login_logic.php"; ?>
+<?php require "../reusable_code/login_logic.php"; ?>
 
 <!DOCTYPE html>
 <html>
@@ -27,7 +27,7 @@
 
 </head>
 <body>
-	<?php require "reusable_code/menu.php"; ?>
+	<?php require "../reusable_code/menu.php"; ?>
 
 <div class="main-container">
   <div class="left-box">
@@ -39,25 +39,25 @@
 			<div class="title">Underrated Artists</div>
 			<div class="underrated-artists">
 				<div class="album-1">
-					<img src="images/Jake2.jpg" class="allalbums"/>
+					<img src="../images/Jake2.jpg" class="allalbums"/>
 					<br clear="all" />
 
 				</div>
 				<div class="album-1">
-					<img src="images/KyleLux.jpg" class="allalbums">
+					<img src="../images/KyleLux.jpg" class="allalbums">
 				</div>
 				<div class="album-1">
-					<img src="images/AlwaysNever.jpg" class="allalbums">
+					<img src="../images/AlwaysNever.jpg" class="allalbums">
 
 				</div>
 				<div class="album-1">
-					<img src="images/Allday.jpg" class="allalbums">
+					<img src="../images/Allday.jpg" class="allalbums">
 				</div>
 				<div class="album-1">
-					<img src="images/Luke.jpg" class="allalbums">
+					<img src="../images/Luke.jpg" class="allalbums">
 				</div>
 				<div class="album-1">
-					<img src="images/Darci.jpg" class="allalbums">
+					<img src="../images/Darci.jpg" class="allalbums">
 				</div>
 
 			</div><!-- close underrated artists-->
@@ -94,25 +94,25 @@
 
 			<div class="playlists">
 				<div class="album-1">
-					<img src="images/internet.jpg" class="allalbums"/>
+					<img src="../images/internet.jpg" class="allalbums"/>
 					<br clear="all" />
 
 				</div>
 				<div class="album-1">
-					<img src="images/mood.jpg" class="allalbums">
+					<img src="../images/mood.jpg" class="allalbums">
 				</div>
 				<div class="album-1">
-					<img src="images/lofi.jpg" class="allalbums">
+					<img src="../images/lofi.jpg" class="allalbums">
 
 				</div>
 				<div class="album-1">
-					<img src="images/mellow.jpg" class="allalbums">
+					<img src="../images/mellow.jpg" class="allalbums">
 				</div>
 				<div class="album-1">
-					<img src="images/spring.jpg" class="allalbums">
+					<img src="../images/spring.jpg" class="allalbums">
 				</div>
 				<div class="album-1">
-					<img src="images/chill.jpg" class="allalbums">
+					<img src="../images/chill.jpg" class="allalbums">
 				</div>
 
 			</div>
@@ -148,13 +148,13 @@
 	</div> <!-- close left box -->
 	<div class="right-box">
 			<div class="box-4">
-				<img src="images/jake_hope.jpeg" class="mainalbum">
+				<img src="../images/jake_hope.jpeg" class="mainalbum">
 			</div>
 			<div class="spotlight">
 				<div class=songName>Why</div>
 				<div class=artistName>Jake Hope</div>
 				<div class="box-4">
-					<img src="images/musicplay.png" class="musicbar"/>
+					<img src="../images/musicplay.png" class="musicbar"/>
 				</div>
 				<div class="box-4">
 					<h5 style="padding-left: 10px;">Lyrics</h5>

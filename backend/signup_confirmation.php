@@ -40,7 +40,7 @@ else{
 }
 
 //database connection
-require "reusable_code/database_connection.php";
+require "../reusable_code/database_connection.php";
 
 //check if email exists in database_connection
 $sql_email = "SELECT * FROM users where email = ?";
@@ -140,7 +140,7 @@ if($createdUser == True){
   $_SESSION["security_level"] = $row["security_level"];
   $_SESSION["username"] = $row["username"];
 
-  header("Location: home.php");
+  header("Location: ../pages/home.php");
   exit();
 }
 
@@ -158,7 +158,7 @@ else{
   $_SESSION["password_mismatch_error"] = $password_mismatch_error;
   $_SESSION["signup_error"] = $signup_error;
 
-  header("Location: login_signup.php");
+  header("Location: ../pages/login_signup.php");
   exit();
 
 }

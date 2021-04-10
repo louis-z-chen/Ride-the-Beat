@@ -100,12 +100,12 @@ animation: gradient 6s ease infinite;
 </head>
 <body>
   <div id="logo">
-     <img src="images/logo3.png" class="logo">
+     <img src="../images/logo3.png" class="logo">
 
   </div> <!--div for logo-->
 
 <div id="ridethebeattext">
-   <img src="images/ridethebeattext.png" class="ridethebeattext">
+   <img src="../images/ridethebeattext.png" class="ridethebeattext">
 
 <!--<img src="images/picture.jpg">	The "picture.jpg" file is located in the images folder in the current folder-->
 </div> <!--div for ridethebeattext-->
