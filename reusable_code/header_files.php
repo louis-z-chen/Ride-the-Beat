@@ -13,4 +13,4 @@
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
 
 <!-- External Stylesheet -->
-<link href= "styles.css" rel="stylesheet">
+<link href= "../pages/styles.css" rel="stylesheet">

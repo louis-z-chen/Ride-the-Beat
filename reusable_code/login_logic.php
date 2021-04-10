@@ -6,6 +6,6 @@
 		$logged_in = true;
 	}
 	if($logged_in != true){
-		header('Location: login_signup.php');
+		header('Location: ../pages/login_signup.php');
 	}
 ?>
