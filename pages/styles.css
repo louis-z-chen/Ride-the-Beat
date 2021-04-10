@@ -11,24 +11,91 @@ html, body{
 	height: 100%;
 	font-family: "Rubik", sans-serif;
 }
-
 .main-body{
 	width: 80%;
+  margin-top: 30px;
 }
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
-
 .center-text{
 	text-align: center;
 }
-
 #green-button{
 	background-color: #1DB954;
 	width: 100%;
 	color: white;
+}
+
+/* Template */
+.column{
+  background-color: #535353;
+
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 25px;
+}
+.column-content{
+  padding: 20px 20px 20px 20px;
+}
+
+/* Music Player */
+.music-player-song-pic{
+	width: 80%;
+	border-radius: 15px;
+  margin-bottom: 10px;
+}
+.song-name{
+	font-size: 1.5vw;
+	color: #FFFFFF;
+	text-align: center;
+}
+.artist-name{
+	color: #B3B3B3;
+	font-size: 1vw;
+	text-align: center;
+}
+.musicbar {
+  width: 90%;
+	display: block;
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.lyrics-title{
+  font-size: 1.25vw;
+  display: block;
+  margin: auto;
+  padding-left: 10px;
+  color: #FFFFFF;
+}
+.lyrics {
+  display: block;
+  height: 30vh;
+  margin: auto;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #b3b3b3;
+  overflow-y: auto;
+  line-height: 20px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+.lyrics::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+.lyrics::-webkit-scrollbar:vertical {
+  width: 11px;
+}
+.lyrics::-webkit-scrollbar:horizontal {
+  height: 11px;
+}
+.lyrics::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 2px solid white;
+  background-color: white;
 }
 
 /*
@@ -41,7 +108,6 @@ CSS that is used on one page
   padding-left: 5%;
   padding-right: 5%;
 }
-
 
 /* Welcome Page */
 #maintext {
@@ -57,42 +123,34 @@ CSS that is used on one page
   color: #B1E8C7;
   line-height: 30px;
 }
-
 #logo {
   width: 200px;
   margin-left: 50px;
   margin-top: 30px;
   float: left;
 }
-
 .logo {
   width: 180px;
   position: relative;
 }
-
 #welcome-button:hover{
   color: black;
   background-color: #1DB954;
 }
-
 .welcome-center-vertical {
   height: 70%;
-
   position: absolute;
   top:0;
   bottom: 0;
   left: 0;
   right: 0;
-
   margin: auto;
 }
-
 #name-container {
   height: 70%;
   margin-left: auto;
   margin-right: auto;
 }
-
 .name-img {
   height: 100%;
   position: relative;
@@ -106,15 +164,12 @@ CSS that is used on one page
 	display:flex;
 	justify-content: space-between;
 }
-
 .login{
 	width:48%
 }
-
 .signup{
 	width:48%
 }
-
 .login-signup-main{
 	background-color: #B3B3B3;
 	padding-top: 50px;
@@ -125,233 +180,52 @@ CSS that is used on one page
 }
 
 /* Home Page */
-.lyrics {
-  display: block;
-  height: 200px;
-  margin: auto;
-  margin-top: 20px;
-  font-size: 14px;
-  flex: 2;
-  flex-basis: auto;
-  color: #b3b3b3;
-  overflow-y: auto;
-  line-height: 20px;
-  padding-left: 10px;
-  padding-bottom: 10px;
-
-}
-
-.lyrics::-webkit-scrollbar {
-  -webkit-appearance: none;
-}
-
-.lyrics::-webkit-scrollbar:vertical {
-  width: 11px;
-}
-
-.lyrics::-webkit-scrollbar:horizontal {
-  height: 11px;
-}
-
-.lyrics::-webkit-scrollbar-thumb {
-  border-radius: 8px;
-  border: 2px solid white;
-  background-color: white;
-}
-
-.left-box {
-	margin: 20px;
-	flex-basis: 80%;
-	flex-wrap: wrap;
-	flex: 0 0 65%;
-	height: 760px;
-
-}
-.right-box {
-	margin-right: 80px;
-	margin-left: 20px;
-	flex-basis: 50%;
-	flex: 0 0 10%;
-	flex-wrap: wrap;
-	height: 760px;
-
+.picture-row{
+  margin-top: 15px;
 }
 .left-banner {
-	flex: 2;
-	margin: 20px;
-	flex-basis: auto;
 	background-image: url(../images/Khalid_-_Product_Page_Banner.jpg);
 	background-size: cover;
-	height: 250px;
+	height: 35vh;
 	padding: 40px;
 	color: white;
-
+  border-radius: 15px;
 }
-.box-4{
-	flex: 2;
-	flex-basis: auto;
-	color: #FFFFFF
-}
-
-.mainalbum{
-	display: block;
-	height: 230px;
-	margin: auto;
-	margin-top: 30px;
-	border-radius: 15px;
-
-}
-.underrated-artists {
-	display: flex;
-	margin: 20px;
-	flex-basis: auto;
-	color: #FFFFFF;
-	font-size: 16px;
-	font-family: rubik;
-/*	border: 1px solid red; */
-	flex-direction: row;
-	justify-content: space-evenly;
-
-}
-
-.artist-information{
-	display: flex;
-	margin: 20px;
-	flex-basis: auto;
-	color: #FFFFFF;
-	font-size: 12px;
-	font-family: rubik;
-/*	border: 1px solid red; */
-	flex-direction: row;
-	justify-content: space-evenly;
-
-}
-
-.playlists {
-	display: flex;
-	margin: 20px;
-	flex-basis: auto;
-	color: #FFFFFF;
-	font-size: 16px;
-	font-family: rubik;
-/*	border: 1px solid yellow; */
-	justify-content: space-evenly;
-
-}
-.album-1{
-	display: flex;
-/*		border: 1px solid green; */
-	text-align: justify;
-	font-size: 12px;
-	color: #FFFFFF;
-	justify-content: space-between;
-	width: 100px;
-}
-
-.line-break {
-	flex-basis: 100%;
-	height: 0;
-}
-.title{
-	margin: 20px;
-	color: #FFFFFF;
-	font-size: 16px;
-}
-.allalbums{
-	width: 100px;
-	height: 100px;
-	margin:auto;
-	border-radius: 3px;
-}
-
-.spotlight{
-	display: block;
-	height: 200px;
-	margin-left: 48px;
-	margin-right: 48px;
-	margin-top: 10px;
-
-}
-.songName{
-	font-size: 20px;
-	color: #FFFFFF;
-	text-align: center;
-}
-.artistName{
-	color: #B3B3B3;
-	font-size: 16px;
-	text-align: center;
-}
-
-.musicbar {
-	display: block;
-	width: 300px;
-	margin: auto;
-	margin-top: 10px;
-	margin-bottom: 20px;
-
-}
-
-.lyrics {
-	display: block;
-	height: 200px;
-	margin: auto;
-	margin-top: 20px;
-	font-size: 14px;
-	flex: 2;
-	flex-basis: auto;
-	color: #b3b3b3;
-	overflow-y: auto;
-	line-height: 20px;
-	padding-left: 10px;
-	padding-bottom: 10px;
-
-}
-
-.lyrics::-webkit-scrollbar {
-  -webkit-appearance: none;
-}
-
-.lyrics::-webkit-scrollbar:vertical {
-  width: 11px;
-}
-
-.lyrics::-webkit-scrollbar:horizontal {
-  height: 11px;
-}
-
-.lyrics::-webkit-scrollbar-thumb {
-  border-radius: 8px;
-  border: 2px solid white; /* should match background, can't be transparent */
-  background-color: white;
-}
-
-.home-container {
-	display: flex;
-	padding: 20px;
-	flex-basis: 80%;
-	justify-content: center;
-	align-items: center;
-	margin: auto;
-	margin-left: 50px;
-
-}
-.home-container div{
-	background-color: #535353;
-	border-radius: 15px;
-}
-
 .bannertext{
 	text-shadow: 2px 2px #1DB954;
 	font-weight: bold;
+  font-size: 2vw;
+}
+.row-title{
+  color: #FFFFFF;
+  font-size: 1.5vw;
+}
+.column-pic{
+  width:100%;
+  border-radius: 5px;
+  margin-bottom: 3px;
+}
+.column-title{
+  color: #FFFFFF;
+  font-size: 0.8vw;
+}
+.column-info{
+  font-size: 0.6vw;
 }
 
 /* Results Page */
 .results-main{
+  width: 80%;
+  margin-top: 30px;
+
 	background-color: #B3B3B3;
 	padding-top: 50px;
 	padding-right: 20px;
 	padding-bottom: 50px;
 	padding-left: 20px;
 	border-radius: 25px;
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -79,7 +79,7 @@ $mysqli->close();
 <body>
 	<?php require "../reusable_code/menu.php"; ?>
 
-  <div class = "main-body center results-main">
+  <div class = "results-main">
 
     <div class="center-text">
       <h2>Results for "<?php echo $search ?>"</h2>
