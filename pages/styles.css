@@ -36,6 +36,13 @@ Page speific CSS
 CSS that is used on one page
 */
 
+/* navbar */
+.navbar{
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+
 /* Welcome Page */
 #maintext {
   font-family: rubik, sans-serif;
@@ -68,7 +75,7 @@ CSS that is used on one page
   background-color: #1DB954;
 }
 
-.center-vertical {
+.welcome-center-vertical {
   height: 70%;
 
   position: absolute;

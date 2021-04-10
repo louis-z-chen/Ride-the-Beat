@@ -33,7 +33,7 @@ body {
      <img src="../images/logo3.png" class="logo">
   </div> <!--div for logo-->\
 
-  <div class="center-vertical">
+  <div class="welcome-center-vertical">
     <div id="name-container">
        <img src="../images/ridethebeattext.png" class="name-img">
     <!--<img src="images/picture.jpg">	The "picture.jpg" file is located in the images folder in the current folder-->

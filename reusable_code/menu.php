@@ -29,9 +29,17 @@
         <li class="nav-item"><a class="nav-link" href="">About</a></li>
         <li class="nav-item"><a class="nav-link" href="">Discover</a></li>
         <li class="nav-item"><a class="nav-link" href="">Playlists</a></li>
-        <li class="nav-item"><a class="nav-link" href="">Profile</a></li>
-        <li class="nav-item"><a class="nav-link btn btn-success navbar-btn green-button" href="../backend/logout.php" style="color: white !important">Log Out</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Profile
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Edit Profile</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="../backend/logout.php">Log Out</a>
+          </div>
         </li>
+        <li class="nav-item"><a class="nav-link btn btn-success navbar-btn green-button ml-2" href="" style="color: white !important">Light Mode</a></li>
       </ul>
     </div>
   </div>
