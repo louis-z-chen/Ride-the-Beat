@@ -109,6 +109,14 @@ CSS that is used on one page
   padding-right: 5%;
 }
 
+.navbar-dark{
+  background-color: #212121 !important;
+}
+
+.dropdown-item:active{
+  background-color: #1DB954;
+}
+
 /* Welcome Page */
 #maintext {
   font-family: rubik, sans-serif;

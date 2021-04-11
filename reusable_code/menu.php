@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top" style="background-color: #212121 !important">
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
 
   <div class = "container-fluid">
 
@@ -39,7 +39,7 @@
             <a class="dropdown-item" href="../backend/logout.php">Log Out</a>
           </div>
         </li>
-        <li class="nav-item"><a class="nav-link btn btn-success navbar-btn green-button ml-2" href="" style="color: white !important">Light Mode</a></li>
+        <button class="nav-link btn btn-success navbar-btn green-button ml-2" id="lightmode" style="color: white !important">Light Mode</button>
       </ul>
     </div>
   </div>
