@@ -4,11 +4,11 @@ $("#lightmode").on('click', function() {
 
 function change_colors() {
 
-	var lightmode = false;
+	var lightmode_on = false;
 	if(document.getElementById("lightmode").innerHTML.indexOf("Light") != -1){
 		//person wants lightmode
 		$("#lightmode").html("Dark Mode")
-		lightmode = true;
+		lightmode_on = true;
 	}
 	else{
 		//person wants darkmode
@@ -16,7 +16,6 @@ function change_colors() {
 	}
 
 	var theme = document.getElementById("theme");
-
 	if (theme.getAttribute('href') == '../pages/dark.css') {
 			theme.setAttribute('href', '../pages/light.css');
 	}
@@ -28,10 +27,10 @@ function change_colors() {
 		method: "POST",
 		url: "../reusable_code/lightmode.php",
 		data: {
-			lightmode: lightmode
+			lightmode: lightmode_on
 		}
 	}).done(function( response ) {
-		//alert(response)
+		console.log(lightmode_on);
 	})
 
 }
