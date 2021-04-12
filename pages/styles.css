@@ -5,7 +5,6 @@ Universal CSS
 CSS that is used on multiple pages
 */
 html, body{
-  background-color: #121212;
 	padding: 0;
 	margin:0;
 	height: 100%;
@@ -31,8 +30,6 @@ html, body{
 
 /* Template */
 .column{
-  background-color: #535353;
-
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 25px;
@@ -49,11 +46,9 @@ html, body{
 }
 .song-name{
 	font-size: 1.5vw;
-	color: #FFFFFF;
 	text-align: center;
 }
 .artist-name{
-	color: #B3B3B3;
 	font-size: 1vw;
 	text-align: center;
 }
@@ -69,7 +64,6 @@ html, body{
   display: block;
   margin: auto;
   padding-left: 10px;
-  color: #FFFFFF;
 }
 .lyrics {
   display: block;
@@ -77,7 +71,6 @@ html, body{
   margin: auto;
   margin-top: 20px;
   font-size: 14px;
-  color: #b3b3b3;
   overflow-y: auto;
   line-height: 20px;
   padding-left: 10px;
@@ -94,8 +87,6 @@ html, body{
 }
 .lyrics::-webkit-scrollbar-thumb {
   border-radius: 8px;
-  border: 2px solid white;
-  background-color: white;
 }
 
 /*
@@ -108,11 +99,9 @@ CSS that is used on one page
   padding-left: 5%;
   padding-right: 5%;
 }
+.dropdown-menu{
 
-.navbar-dark{
-  background-color: #212121 !important;
 }
-
 .dropdown-item:active{
   background-color: #1DB954;
 }
@@ -196,7 +185,6 @@ CSS that is used on one page
 	background-size: cover;
 	height: 35vh;
 	padding: 40px;
-	color: white;
   border-radius: 15px;
 }
 .bannertext{
@@ -205,7 +193,6 @@ CSS that is used on one page
   font-size: 2vw;
 }
 .row-title{
-  color: #FFFFFF;
   font-size: 1.5vw;
 }
 .column-pic{
@@ -214,7 +201,6 @@ CSS that is used on one page
   margin-bottom: 3px;
 }
 .column-title{
-  color: #FFFFFF;
   font-size: 0.8vw;
 }
 .column-info{

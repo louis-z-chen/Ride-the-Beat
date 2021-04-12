@@ -39,7 +39,7 @@
             <a class="dropdown-item" href="../backend/logout.php">Log Out</a>
           </div>
         </li>
-        <button class="nav-link btn btn-success navbar-btn green-button ml-2" id="lightmode" style="color: white !important">Light Mode</button>
+        <button class="nav-link btn btn-success navbar-btn ml-2" id="lightmode" style="color: white !important">Light Mode</button>
       </ul>
     </div>
   </div>

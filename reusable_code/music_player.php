@@ -4,8 +4,8 @@
     <img src="../images/jake_hope.jpeg" class="center music-player-song-pic">
   </div>
 
-  <div class=song-name>Why</div>
-  <div class=artist-name>Jake Hope</div>
+  <div class="song-name white-text">Why</div>
+  <div class="artist-name grey-text">Jake Hope</div>
   <div>
     <img src="../images/musicplay.png" class="musicbar center"/>
   </div>
@@ -13,8 +13,8 @@
 
 <!--Lyrics Container -->
 <div class>
-  <h5 class="lyrics-title">Lyrics</h5>
-  <div class="lyrics">
+  <h5 class="lyrics-title white-text">Lyrics</h5>
+  <div class="lyrics grey-text">
     <p>
       Spoke my mind but you stayed silent <br />
       No reply auto pilot <br />

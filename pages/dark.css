@@ -1,0 +1,27 @@
+/* External stylesheet for dark mode*/
+
+body{
+  background-color: #121212;
+}
+
+.column{
+  background-color: #535353;
+}
+
+.navbar-dark{
+  background-color: #212121 !important;
+}
+
+.lyrics::-webkit-scrollbar-thumb {
+  border: 2px solid white;
+  background-color: white;
+}
+
+
+/* Following text for text */
+.white-text{
+  color: #FFFFFF;
+}
+.grey-text{
+  color: #b3b3b3;
+}

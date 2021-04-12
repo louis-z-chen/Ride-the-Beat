@@ -1,0 +1,27 @@
+/* External stylesheet for Light mode*/
+
+body{
+  background-color: #E7E7E7;
+}
+
+.column{
+  background-color: #B3B3B3;
+}
+
+.navbar-dark{
+  background-color: #494A4E !important;
+}
+
+.lyrics::-webkit-scrollbar-thumb {
+  border: 2px solid white;
+  background-color: white;
+}
+
+
+/* Following text for text */
+.white-text{
+  color: #FFFFFF;
+}
+.grey-text{
+  color: #EBE7E7;
+}

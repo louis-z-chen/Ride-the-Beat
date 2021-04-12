@@ -3,36 +3,35 @@ $("#lightmode").on('click', function() {
 })
 
 function change_colors() {
-	//$('body').toggleClass('dark-mode-background')
 
-  if(document.getElementById("lightmode").innerHTML === "Light Mode"){
-    $("#lightmode").html("Light Mode")
-    console.log("fuck")
-  }
-  else{
-    $("#lightmode").html("Dark Mode")
-    console.log("fuck2")
-  }
-
-  /*
-	if($('body').hasClass('dark-mode-background')) {
-		$("#darkmode").html("Light Mode")
-		$("#darkmode").removeClass("btn-dark")
-		$("#darkmode").addClass("btn-light")
-	} else {
-		$("#darkmode").html("Dark Mode")
-		$("#darkmode").removeClass("btn-light")
-		$("#darkmode").addClass("btn-dark")
+	var lightmode = false;
+	if(document.getElementById("lightmode").innerHTML.indexOf("Light") != -1){
+		//person wants lightmode
+		$("#lightmode").html("Dark Mode")
+		lightmode = true;
 	}
-  */
+	else{
+		//person wants darkmode
+		$("#lightmode").html("Light Mode")
+	}
+
+	var theme = document.getElementById("theme");
+
+	if (theme.getAttribute('href') == '../pages/dark.css') {
+			theme.setAttribute('href', '../pages/light.css');
+	}
+	else {
+			theme.setAttribute('href', '../pages/dark.css');
+	}
 
 	$.ajax({
 		method: "POST",
 		url: "../reusable_code/lightmode.php",
 		data: {
-			lightmode: (document.getElementById("lightmode").innerHTML === "Dark Mode")
+			lightmode: lightmode
 		}
 	}).done(function( response ) {
 		//alert(response)
 	})
+
 }

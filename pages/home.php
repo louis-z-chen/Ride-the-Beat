@@ -24,7 +24,7 @@ require "../reusable_code/login_logic.php";
 
             <!--Row 1 -->
             <div class="content-row">
-              <div class="left-banner">
+              <div class="left-banner white-text">
                 <h5 class="bannertext">//TRENDING</h5>
                 <h5 class="bannertext">Free Spirit</h5>
                 <h5 class="bannertext">- Khalid</h5>
@@ -33,97 +33,97 @@ require "../reusable_code/login_logic.php";
 
             <!--Row 2 -->
             <div class="content-row picture-row">
-              <h4 class="row-title">Artist Spotlight</h4>
+              <h4 class="row-title white-text">Artist Spotlight</h4>
               <div class="row">
                 <div class="col-md">
                   <div class="row-column">
                     <img src="../images/Jake2.jpg" class="column-pic"/>
-                    <div class="column-title">Jake Hope</div>
-                    <div class="column-info">Pop</div>
+                    <div class="column-title white-text">Jake Hope</div>
+                    <div class="column-info grey-text">Pop</div>
                   </div>
                 </div>
                 <div class="col-md">
-                  <div class="row-column">
+									<div class="row-column">
                     <img src="../images/Jake2.jpg" class="column-pic"/>
-                    <div class="column-title">Jake Hope</div>
-                    <div class="column-info">Pop</div>
+                    <div class="column-title white-text">Jake Hope</div>
+                    <div class="column-info grey-text">Pop</div>
                   </div>
                 </div>
                 <div class="col-md">
-                  <div class="row-column">
+									<div class="row-column">
                     <img src="../images/Jake2.jpg" class="column-pic"/>
-                    <div class="column-title">Jake Hope</div>
-                    <div class="column-info">Pop</div>
+                    <div class="column-title white-text">Jake Hope</div>
+                    <div class="column-info grey-text">Pop</div>
                   </div>
                 </div>
                 <div class="col-md">
-                  <div class="row-column">
+									<div class="row-column">
                     <img src="../images/Jake2.jpg" class="column-pic"/>
-                    <div class="column-title">Jake Hope</div>
-                    <div class="column-info">Pop</div>
+                    <div class="column-title white-text">Jake Hope</div>
+                    <div class="column-info grey-text">Pop</div>
                   </div>
                 </div>
                 <div class="col-md">
-                  <div class="row-column">
+									<div class="row-column">
                     <img src="../images/Jake2.jpg" class="column-pic"/>
-                    <div class="column-title">Jake Hope</div>
-                    <div class="column-info">Pop</div>
+                    <div class="column-title white-text">Jake Hope</div>
+                    <div class="column-info grey-text">Pop</div>
                   </div>
                 </div>
                 <div class="col-md">
-                  <div class="row-column">
+									<div class="row-column">
                     <img src="../images/Jake2.jpg" class="column-pic"/>
-                    <div class="column-title">Jake Hope</div>
-                    <div class="column-info">Pop</div>
+                    <div class="column-title white-text">Jake Hope</div>
+                    <div class="column-info grey-text">Pop</div>
                   </div>
                 </div>
               </div>
             </div>
 
             <!--Row 3 -->
-            <div class="content-row picture-row">
-              <h4 class="row-title">Artist Spotlight</h4>
+						<div class="content-row picture-row">
+              <h4 class="row-title white-text">Artist Spotlight</h4>
               <div class="row">
                 <div class="col-md">
                   <div class="row-column">
                     <img src="../images/Jake2.jpg" class="column-pic"/>
-                    <div class="column-title">Jake Hope</div>
-                    <div class="column-info">Pop</div>
+                    <div class="column-title white-text">Jake Hope</div>
+                    <div class="column-info grey-text">Pop</div>
                   </div>
                 </div>
                 <div class="col-md">
-                  <div class="row-column">
+									<div class="row-column">
                     <img src="../images/Jake2.jpg" class="column-pic"/>
-                    <div class="column-title">Jake Hope</div>
-                    <div class="column-info">Pop</div>
+                    <div class="column-title white-text">Jake Hope</div>
+                    <div class="column-info grey-text">Pop</div>
                   </div>
                 </div>
                 <div class="col-md">
-                  <div class="row-column">
+									<div class="row-column">
                     <img src="../images/Jake2.jpg" class="column-pic"/>
-                    <div class="column-title">Jake Hope</div>
-                    <div class="column-info">Pop</div>
+                    <div class="column-title white-text">Jake Hope</div>
+                    <div class="column-info grey-text">Pop</div>
                   </div>
                 </div>
                 <div class="col-md">
-                  <div class="row-column">
+									<div class="row-column">
                     <img src="../images/Jake2.jpg" class="column-pic"/>
-                    <div class="column-title">Jake Hope</div>
-                    <div class="column-info">Pop</div>
+                    <div class="column-title white-text">Jake Hope</div>
+                    <div class="column-info grey-text">Pop</div>
                   </div>
                 </div>
                 <div class="col-md">
-                  <div class="row-column">
+									<div class="row-column">
                     <img src="../images/Jake2.jpg" class="column-pic"/>
-                    <div class="column-title">Jake Hope</div>
-                    <div class="column-info">Pop</div>
+                    <div class="column-title white-text">Jake Hope</div>
+                    <div class="column-info grey-text">Pop</div>
                   </div>
                 </div>
                 <div class="col-md">
-                  <div class="row-column">
+									<div class="row-column">
                     <img src="../images/Jake2.jpg" class="column-pic"/>
-                    <div class="column-title">Jake Hope</div>
-                    <div class="column-info">Pop</div>
+                    <div class="column-title white-text">Jake Hope</div>
+                    <div class="column-info grey-text">Pop</div>
                   </div>
                 </div>
               </div>
@@ -145,14 +145,7 @@ require "../reusable_code/login_logic.php";
 	</div>
 
 	<?php require "../reusable_code/footer_files.php"; ?>
-
-	<script src=../reusable_code/lightmode.js></script>
-
-	<script>
-		<?php if($_SESSION["lightmode"] == true) : ?>
-				change_colors()
-		<?php endif; ?>
-	</script>
+	<?php require "../reusable_code/lightmode_files.php"; ?>
 
 </body>
 </html>

@@ -18,7 +18,6 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
 
 </head>
 <body>
-	<?php require "../reusable_code/menu.php"; ?>
 
   <div class = "main-body center login-signup-main">
 		<div class="login_and_signup_container">

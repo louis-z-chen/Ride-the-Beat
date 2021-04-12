@@ -196,6 +196,7 @@ $mysqli->close();
 	</div>
 
 	<?php require "../reusable_code/footer_files.php"; ?>
+  <?php require "../reusable_code/lightmode_files.php"; ?>
 
 </body>
 </html>
