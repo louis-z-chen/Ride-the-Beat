@@ -26,7 +26,7 @@
         </form>
       </div>
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a class="nav-link" href="">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="../pages/about.php">About</a></li>
         <li class="nav-item"><a class="nav-link" href="">Discover</a></li>
         <li class="nav-item"><a class="nav-link" href="">Playlists</a></li>
         <li class="nav-item dropdown">
