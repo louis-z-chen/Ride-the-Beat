@@ -21,7 +21,8 @@ require "../reusable_code/login_logic.php";
         <div class = "column">
           <div class = "column-content">
 
-              Put Stuff Here
+						<div class="white-text">Div with white text</div>
+						<div class="grey-text">Div with grey text</div>
 
           </div>
         </div>
@@ -39,6 +40,7 @@ require "../reusable_code/login_logic.php";
 	</div>
 
 	<?php require "../reusable_code/footer_files.php"; ?>
+	<?php require "../reusable_code/lightmode_files.php"; ?>
 
 </body>
 </html>

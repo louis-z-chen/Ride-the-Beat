@@ -16,12 +16,18 @@ require "../reusable_code/login_logic.php";
   <div class = "main-body center">
     <div class="column">
       <di class="column-content">
-        Put Stuff Here
+
+				<div class="white-text">Div with white text</div>
+				<div class="grey-text">Div with grey text</div>
+
+
+
       </div>
     </div>
 	</div>
 
 	<?php require "../reusable_code/footer_files.php"; ?>
+	<?php require "../reusable_code/lightmode_files.php"; ?>
 
 </body>
 </html>
