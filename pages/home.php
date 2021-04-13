@@ -31,6 +31,10 @@ require "../reusable_code/login_logic.php";
               </div>
             </div>
 
+						<div class= "welcome-message">
+							<h2 class= "white-text">Welcome <?php echo $_SESSION["first_name"] ?>!</h2>
+						</div>
+
             <!--Row 2 -->
             <div class="content-row picture-row">
               <h4 class="row-title white-text">Artist Spotlight</h4>
