@@ -36,7 +36,7 @@ if(isset($_REQUEST["security_level"]) && $_REQUEST["security_level"]!="" && $_RE
 }
 
 //search prepared statement
-$sql_search = "SELECT * FROM users WHERE first_name LIKE ? AND last_name LIKE ? AND username LIKE ? AND email LIKE ? AND security_level LIKE ? ORDER BY first_name;";
+$sql_search = "SELECT * FROM users WHERE first_name LIKE ? AND last_name LIKE ? AND username LIKE ? AND email LIKE ? AND security_level LIKE ? ORDER BY security_level DESC, first_name;";
 $statement_search = $mysqli->prepare($sql_search);
 $statement_search->bind_param('sssss', $first_name, $last_name, $username, $email, $security_level);
 $executed_search = $statement_search->execute();
@@ -47,7 +47,6 @@ if(!$executed_search) {
 
 $results = $statement_search->get_result();
 $user_count = $results->num_rows;
-echo $user_count;
 
 $statement_search->close();
 
@@ -125,63 +124,68 @@ $mysqli->close();
 					</form>
 				</div>
 
-				<br />
+      </div>
 
-				<div class="row">
-					<div class="col-6">
-						<h2 class="white-text">Manage Accounts</h2>
-					</div>
-					<div class="col-6" align="right">
-						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="fas fa-user-plus"></i> <span> Add New User</span></a>
-					</div>
-				</div>
+      <div class="column">
+        <div class="column-content">
 
-				<table class="table table-dark table-hover">
-				  <thead>
-				    <tr>
-				      <th scope="col">#</th>
-				      <th scope="col">Name</th>
-				      <th scope="col">Username</th>
-							<th scope="col">Email</th>
-							<th scope="col">Security Level</th>
-							<th scope="col" class="text-center">Action</th>
-				    </tr>
-				  </thead>
-				  <tbody>
-						<?php $counter = 1;?>
-						<?php while($row = $results->fetch_assoc()) : ?>
-							<tr>
-							<th scope="row"><?php echo $counter ?></th>
-							<?php $counter++;?>
-							<td><?php echo $row["first_name"] . " " . $row["last_name"]?></td>
-							<td><?php echo $row["username"]?></td>
-							<td><?php echo $row["email"]?></td>
-							<td>
-                <?php
-                  $security = $row["security_level"];
-                  $display_security = "";
-                  if($security == 3){
-                    $display_security = "Supreme Leader";
-                  }
-                  else if($security == 2){
-                    $display_security = "Administrator";
-                  }
-                  else{
-                    $display_security = "User";
-                  }
+          <div class="row">
+  					<div class="col-6">
+  						<h2 class="white-text">Manage Accounts</h2>
+              <h5 class="white-text"><?php echo $user_count . " total users";?></h5>
+  					</div>
+  					<div class="col-6" align="right">
+  						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="fas fa-user-plus"></i> <span> Add New User</span></a>
+  					</div>
+  				</div>
 
-                  echo $display_security;
-                ?>
-              </td>
-							<td align="center">
-								<a href="" class="text-warning"><i class="far fa-edit"></i> Edit</a> |
-								<a href="" class="text-danger"><i class="far fa-trash-alt"></i> Delete</a>
-							</td>
-						</tr>
-						<?php endwhile; ?>
-				  </tbody>
-				</table>
+  				<table class="table table-dark table-hover">
+  				  <thead>
+  				    <tr>
+  				      <th scope="col">#</th>
+  				      <th scope="col">Name</th>
+  				      <th scope="col">Username</th>
+  							<th scope="col">Email</th>
+  							<th scope="col">Security Level</th>
+  							<th scope="col" class="text-center">Action</th>
+  				    </tr>
+  				  </thead>
+  				  <tbody>
+  						<?php $counter = 1;?>
+  						<?php while($row = $results->fetch_assoc()) : ?>
+  							<tr>
+  							<th scope="row"><?php echo $counter ?></th>
+  							<?php $counter++;?>
+  							<td><?php echo $row["first_name"] . " " . $row["last_name"]?></td>
+  							<td><?php echo $row["username"]?></td>
+  							<td><?php echo $row["email"]?></td>
+  							<td>
+                  <?php
+                    $security = $row["security_level"];
+                    $display_security = "";
+                    if($security == 3){
+                      $display_security = "Supreme Leader";
+                    }
+                    else if($security == 2){
+                      $display_security = "Administrator";
+                    }
+                    else{
+                      $display_security = "User";
+                    }
 
+                    echo $display_security;
+                  ?>
+                </td>
+  							<td align="center">
+  								<a href="" class="text-warning"><i class="far fa-edit"></i> Edit</a> |
+  								<a href="" class="text-danger"><i class="far fa-trash-alt"></i> Delete</a>
+  							</td>
+  						</tr>
+  						<?php endwhile; ?>
+  				  </tbody>
+  				</table>
+
+        </div>
       </div>
     </div>
 	</div>
