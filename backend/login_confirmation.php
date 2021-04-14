@@ -4,7 +4,7 @@ session_start();
 
 //if someone goes directly to this php get_included_file
 if(empty($_REQUEST["username"]) || empty($_REQUEST["password"])){
-  header('Location: login_signup.php');
+  header('Location: ../pages/login_signup.php');
   exit();
 }
 
