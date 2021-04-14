@@ -27,6 +27,9 @@ body{
 .green-text{
   color: #1DB954 !important;
 }
+.text-danger{
+  color: #FF0000 !important;
+}
 
 /* Following page specfic stuff*/
 .table-dark{
@@ -35,4 +38,8 @@ body{
 
 .table-dark td, .table-dark th{
     border-color: white !important;
+}
+.green-btn{
+	background-color: #1DB954 !important;
+	color: white !important;
 }
