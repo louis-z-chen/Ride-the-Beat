@@ -237,3 +237,8 @@ CSS that is used on one page
 	width:100%;
 	margin-bottom: 3px;
 }
+
+/*admin_user*/
+.btn-space{
+	margin-right: 5px;
+}
