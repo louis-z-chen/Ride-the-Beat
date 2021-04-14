@@ -26,9 +26,7 @@ if(isset($_REQUEST["last_name"]) && $_REQUEST["last_name"]!=""){
 	$last_name = $_REQUEST["last_name"];
 }
 if(isset($_REQUEST["username"]) && $_REQUEST["username"]!=""){
-	$username = "%"+$_REQUEST["username"]+"%";
-	echo $username;
-	echo "fuck";
+	$username = "%".$_REQUEST["username"]."%";
 }
 if(isset($_REQUEST["email"]) && $_REQUEST["email"]!=""){
 	$email = $_REQUEST["email"];
