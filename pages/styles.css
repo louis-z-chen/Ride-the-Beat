@@ -27,6 +27,10 @@ html, body{
 	width: 100%;
 	color: white;
 }
+.green-btn{
+	background-color: #1DB954 !important;
+	color: white !important;
+}
 
 /* Template */
 .column{
@@ -188,7 +192,7 @@ CSS that is used on one page
 .left-banner {
 	background-image: url(../images/Khalid_-_Product_Page_Banner.jpg);
 	background-size: cover;
-	height: 35vh;
+	height: 350px;
 	padding: 40px;
   border-radius: 15px;
 }

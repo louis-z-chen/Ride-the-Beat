@@ -17,11 +17,22 @@ body{
   background-color: white;
 }
 
-
 /* Following text for text */
 .white-text{
   color: #FFFFFF;
 }
 .grey-text{
   color: #b3b3b3;
+}
+.green-text{
+  color: #1DB954 !important;
+}
+
+/* Following page specfic stuff*/
+.table-dark{
+  background-color: #535353;
+}
+
+.table-dark td, .table-dark th{
+    border-color: white !important;
 }
