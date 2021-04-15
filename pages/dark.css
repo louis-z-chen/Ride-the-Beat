@@ -27,9 +27,6 @@ body{
 .green-text{
   color: #1DB954 !important;
 }
-.text-danger{
-  color: #FF0000 !important;
-}
 
 /* Following page specfic stuff*/
 .table-dark{
@@ -42,4 +39,7 @@ body{
 .green-btn{
 	background-color: #1DB954 !important;
 	color: white !important;
+}
+.white-line{
+	background-color: white;
 }

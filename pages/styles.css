@@ -30,8 +30,8 @@ html, body{
 
 /* Template */
 .column{
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
   border-radius: 25px;
 	margin-top: 10px;
 	margin-bottom: 10px;
