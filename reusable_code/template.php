@@ -17,10 +17,9 @@ require "../reusable_code/login_logic.php";
     <div class="column">
       <di class="column-content">
 
+
 				<div class="white-text">Div with white text</div>
 				<div class="grey-text">Div with grey text</div>
-
-
 
       </div>
     </div>
