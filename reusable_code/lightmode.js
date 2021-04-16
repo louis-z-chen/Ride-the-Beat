@@ -16,11 +16,11 @@ function change_colors() {
 	}
 
 	var theme = document.getElementById("theme");
-	if (theme.getAttribute('href') == '../pages/dark.css') {
-			theme.setAttribute('href', '../pages/light.css');
+	if (theme.getAttribute('href') == '../stylesheets/dark.css') {
+			theme.setAttribute('href', '../stylesheets/light.css');
 	}
 	else {
-			theme.setAttribute('href', '../pages/dark.css');
+			theme.setAttribute('href', '../stylesheets/dark.css');
 	}
 
 	$.ajax({
