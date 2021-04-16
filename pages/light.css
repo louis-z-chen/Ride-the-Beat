@@ -30,7 +30,7 @@ body{
 
 /* Following page specfic stuff*/
 .table-dark{
-  background-color: #B3B3B3 !important;
+  background-color: #B3B3B3;
 }
 
 .table-dark td, .table-dark th{
@@ -44,5 +44,5 @@ body{
 	background-color: white;
 }
 .leader{
-  color: white;
+  color: #1DB954;
 }
