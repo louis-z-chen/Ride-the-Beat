@@ -24,3 +24,25 @@ body{
 .grey-text{
   color: #EBE7E7;
 }
+.green-text{
+  color: #1DB954 !important;
+}
+
+/* Following page specfic stuff*/
+.table-dark{
+  background-color: #B3B3B3;
+}
+
+.table-dark td, .table-dark th{
+    border-color: white !important;
+}
+.green-btn{
+	background-color: #1DB954 !important;
+	color: white !important;
+}
+.white-line{
+	background-color: white;
+}
+.leader{
+  color: #1DB954;
+}

@@ -32,7 +32,6 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="../pages/admin_user.php">Edit User Accounts</a>
-            <a class="dropdown-item" href="">Edit Playlists</a>
           </div>
         </li>
         <li class="nav-item"><a class="nav-link" href="../pages/about.php">About</a></li>
