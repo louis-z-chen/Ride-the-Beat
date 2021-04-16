@@ -20,9 +20,11 @@ body{
 /* Following text for text */
 .white-text{
   color: #FFFFFF;
+  text-shadow: 2px 2px 2px #535353;
 }
 .grey-text{
   color: #EBE7E7;
+  text-shadow: 2px 2px 2px #535353;
 }
 .green-text{
   color: #1DB954 !important;
@@ -31,6 +33,7 @@ body{
 /* Following page specfic stuff*/
 .table-dark{
   background-color: #B3B3B3;
+  text-shadow: 2px 2px 2px #535353;
 }
 
 .table-dark td, .table-dark th{
@@ -45,4 +48,5 @@ body{
 }
 .leader{
   color: #1DB954;
+  text-shadow: 0px 0px;
 }

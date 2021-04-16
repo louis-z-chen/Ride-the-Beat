@@ -29,15 +29,15 @@ require "../reusable_code/login_logic.php";
 				<!--end of about us-->
 
 				<!--ABOUT US ROW-->
-								<div class="row justify-content-center">
-									<div class="col grey-text text-center">
-										<br />
-									<h5>Discovering new music has always been a universal challenge. <br /> Our mission is to create a platform that allows users to find quality gems. <br /> By utilizing the Spotify API, users can find new ways to unearth playlists, <br /> top albums, and songs from famous and lesser-known artists. </h5>
-									<br />
-									<br />
-									</div>
-								</div>
-								<!--end of about us-->
+				<div class="row justify-content-center">
+					<div class="col grey-text text-center">
+						<br />
+					<h5>Discovering new music has always been a universal challenge. <br /> Our mission is to create a platform that allows users to find quality gems. <br /> By utilizing the Spotify API, users can find new ways to unearth playlists, <br /> top albums, and songs from famous and lesser-known artists. </h5>
+					<br />
+					<br />
+					</div>
+				</div>
+				<!--end of about us-->
 
 				<!--Row 3 -->
 				<div class="content-row picture-row">
