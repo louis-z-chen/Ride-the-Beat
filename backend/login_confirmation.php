@@ -83,7 +83,7 @@ if($correct_cred == True){
 
     //log in
     $_SESSION["loggedin"] = true;
-		$_SESSION["id"] = $row["id"];
+		$_SESSION["id"] = $row["ID"];
     $_SESSION["first_name"] = $row["first_name"];
     $_SESSION["last_name"] = $row["last_name"];
     $_SESSION["email"] = $row["email"];

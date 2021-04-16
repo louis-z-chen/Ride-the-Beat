@@ -242,3 +242,23 @@ CSS that is used on one page
 .btn-space{
 	margin-right: 5px;
 }
+.leader{
+	color: white;
+	text-decoration: underline;
+}
+.form-messages {
+		background-color: rgb(255, 232, 232);
+		border: 1px solid red;
+		color: red;
+		display: none;
+		font-size: 14px;
+		font-weight: bold;
+		margin-bottom: 10px;
+		padding: 10px 25px;
+}
+.hidden{
+	display: none;
+}
+.display_message{
+	color: #1DB954;
+}
