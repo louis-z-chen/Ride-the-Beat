@@ -1,8 +1,9 @@
 <?php
 require "../reusable_code/login_logic.php";
+require "../reusable_code/curr_user_info.php";
 
 // if not an admin
-if($_SESSION["security_level"] < 2){
+if($curr_security_level < 2){
   header('Location: ../pages/home.php');
   exit();
 }
@@ -316,7 +317,7 @@ $mysqli->close();
     			<div class="modal-content">
     				<form>
     					<div class="modal-header">
-    						<h4 class="modal-title">Delete Employee</h4>
+    						<h4 class="modal-title">Delete User</h4>
     						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
     					</div>
     					<div class="modal-body">

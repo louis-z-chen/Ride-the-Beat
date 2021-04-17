@@ -36,13 +36,13 @@
         </li>
         <li class="nav-item"><a class="nav-link" href="../pages/about.php">About</a></li>
         <li class="nav-item"><a class="nav-link" href="">Discover</a></li>
-        <li class="nav-item"><a class="nav-link" href="">Playlists</a></li>
+        <li class="nav-item"><a class="nav-link" href="../pages/user_playlist.php">Playlists</a></li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Profile
+            Settings
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Edit Profile</a>
+            <a class="dropdown-item" href="../pages/profile.php">Profile</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="../backend/logout.php">Log Out</a>
           </div>

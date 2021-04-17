@@ -1,5 +1,6 @@
 <?php
 require "../reusable_code/login_logic.php";
+require "../reusable_code/curr_user_info.php";
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +33,7 @@ require "../reusable_code/login_logic.php";
             </div>
 
 						<div class= "welcome-message">
-							<h2 class= "white-text">Welcome <?php echo $_SESSION["first_name"] ?>!</h2>
+							<h2 class= "white-text">Welcome <?php echo $curr_first ?>!</h2>
 						</div>
 
             <!--Row 2 -->

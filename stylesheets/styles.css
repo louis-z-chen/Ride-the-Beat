@@ -262,3 +262,8 @@ CSS that is used on one page
 .display_message{
 	color: #1DB954;
 }
+
+/*Profile page*/
+.profile{
+	width: 80%;
+}

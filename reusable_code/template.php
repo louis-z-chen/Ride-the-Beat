@@ -15,7 +15,7 @@ require "../reusable_code/login_logic.php";
 
   <div class = "main-body center">
     <div class="column">
-      <di class="column-content">
+      <div class="column-content">
 
 
 				<div class="white-text">Div with white text</div>

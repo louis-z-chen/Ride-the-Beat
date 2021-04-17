@@ -1,5 +1,5 @@
 <?php
-session_start();
+require "../reusable_code/curr_user_info.php";
 
 $id = (int) trim($_POST['id']);
 $first_name = isset($_POST['first_name']) ? trim($_POST['first_name']) : '';
@@ -73,8 +73,8 @@ $statement->close();
 
 //admin authorization
 //only someone with a higher security level than the user account can make the change unless you are changing your own account
-if($_SESSION["security_level"] <= $existing_security_level){
-  if($_SESSION["id"] != $id){
+if($curr_security_level <= $existing_security_level){
+  if($curr_id != $id){
     $messages[] = "You are not authorized to make changes to this user account";
     $ok = false;
   }
