@@ -37,7 +37,7 @@ if(isset($_REQUEST["security_level"]) && $_REQUEST["security_level"]!="" && $_RE
 }
 
 //define how many table rows per pages
-$results_per_page = 5;
+$results_per_page = 10;
 
 //find out the number of results stored in the database_connection
 $sql = "SELECT * FROM users WHERE first_name LIKE ? AND last_name LIKE ? AND username LIKE ? AND email LIKE ? AND security_level LIKE ?;";
