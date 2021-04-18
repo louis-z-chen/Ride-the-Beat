@@ -18,7 +18,7 @@ require "../reusable_code/curr_user_info.php";
     <div class="column">
       <div class="column-content">
 
-				<h1 class="white-text center-text">Profile</h1>
+				<h1 class="white-text center-text"><i class="fas fa-user-circle"></i> Profile</h1>
 
 				<div class="text-center display_message">
           <i><?php echo $_REQUEST["hidden_message"]; ?></i>

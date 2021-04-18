@@ -36,10 +36,43 @@ if(isset($_REQUEST["security_level"]) && $_REQUEST["security_level"]!="" && $_RE
 	$security_level = "%".$_REQUEST["security_level"]."%";
 }
 
+//define how many table rows per pages
+$results_per_page = 5;
+
+//find out the number of results stored in the database_connection
+$sql = "SELECT * FROM users WHERE first_name LIKE ? AND last_name LIKE ? AND username LIKE ? AND email LIKE ? AND security_level LIKE ?;";
+$statement = $mysqli->prepare($sql);
+$statement->bind_param('sssss', $first_name, $last_name, $username, $email, $security_level);
+$executed = $statement->execute();
+
+if(!$executed) {
+    echo $mysqli->error;
+}
+
+$results = $statement->get_result();
+$number_of_results = $results->num_rows;
+
+$statement->close();
+
+//determine number of total pages available
+$number_of_pages = ceil($number_of_results/$results_per_page);
+
+//determine which page number visitor is currently on
+if(!isset($_GET['page'])){
+  $page = 1;
+}
+else {
+  $page = $_GET['page'];
+}
+
+//determine the sql LIMIT starting number for the results on the displaying page
+$this_page_first_result = ($page-1)*$results_per_page;
+
+//retrieve selected results from database
 //search prepared statement
-$sql_search = "SELECT * FROM users WHERE first_name LIKE ? AND last_name LIKE ? AND username LIKE ? AND email LIKE ? AND security_level LIKE ? ORDER BY security_level DESC, first_name;";
+$sql_search = "SELECT * FROM users WHERE first_name LIKE ? AND last_name LIKE ? AND username LIKE ? AND email LIKE ? AND security_level LIKE ? ORDER BY security_level DESC, first_name LIMIT ?, ?;";
 $statement_search = $mysqli->prepare($sql_search);
-$statement_search->bind_param('sssss', $first_name, $last_name, $username, $email, $security_level);
+$statement_search->bind_param('sssssii', $first_name, $last_name, $username, $email, $security_level, $this_page_first_result, $results_per_page);
 $executed_search = $statement_search->execute();
 
 if(!$executed_search) {
@@ -47,12 +80,43 @@ if(!$executed_search) {
 }
 
 $results = $statement_search->get_result();
-$user_count = $results->num_rows;
+$curr_result_count = $results->num_rows;
 
 $statement_search->close();
 
-//close sqli
 $mysqli->close();
+
+//display the links to the pages
+//always showing 3 pages and numbers change to reflect that
+$first_page = 0;
+$second_page = 0;
+$third_page = 0;
+
+$first_active = false;
+$second_active = false;
+$third_active = false;
+
+//if first page
+if($page == 1){
+  $first_page = 1;
+  $second_page = 2;
+  $third_page = 3;
+  $first_active = true;
+}
+//if last page
+else if($page == $number_of_pages){
+  $third_page = $number_of_pages;
+  $second_page = $third_page - 1;
+  $first_page = $second_page - 1;
+  $third_active = true;
+}
+else{
+  $second_page = $page;
+  $first_page = $second_page - 1;
+  $third_page = $second_page + 1;
+  $second_active = true;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -70,7 +134,7 @@ $mysqli->close();
     <div class="column">
       <div class="column-content">
 
-				<h1 class="white-text center-text">User Accounts</h1>
+				<h1 class="white-text center-text"><i class="fas fa-users"></i> User Accounts</h1>
 
         <!--search bar-->
 				<div class="search white-text">
@@ -137,7 +201,6 @@ $mysqli->close();
         <div class="row">
           <div class="col-6">
             <h2 class="white-text">Manage Accounts</h2>
-            <h5 class="white-text"><?php echo $user_count . " users";?></h5>
           </div>
           <div class="col-6" align="right">
             <!--<a href="#add_user" class="btn btn-success" data-toggle="modal"><i class="fas fa-user-plus"></i> <span> Add New User</span></a>-->
@@ -159,7 +222,7 @@ $mysqli->close();
               </tr>
             </thead>
             <tbody>
-              <?php $counter = 1;?>
+              <?php $counter = $this_page_first_result + 1;?>
               <?php while($row = $results->fetch_assoc()) : ?>
                 <tr>
                 <th scope="row"><?php echo $counter ?></th>
@@ -194,8 +257,33 @@ $mysqli->close();
               <?php endwhile; ?>
             </tbody>
           </table>
+          <div>
+            <div class="row">
+              <div class="col-6">
+                  <h5 class="white-text">Showing <?php echo $this_page_first_result + 1; ?> to <?php echo $this_page_first_result + $curr_result_count; ?> of <?php echo $number_of_results; ?> results</h5>
+              </div>
+              <div class="col-6 text-right">
+                <ul class="pagination justify-content-end">
+                  <li class="page-item">
+                    <a class="page-link" href="admin_user.php?page=1" aria-label="First">
+                      <span aria-hidden="true">&laquo;</span>
+                      <span class="sr-only">First</span>
+                    </a>
+                  </li>
+                  <li class="page-item <?php if($first_active){ echo "active";} ?>"><a class="page-link" href="admin_user.php?page=<?php echo $first_page; ?>"><?php echo $first_page; ?></a></li>
+                  <li class="page-item <?php if($second_active){ echo "active";} ?>"><a class="page-link" href="admin_user.php?page=<?php echo $second_page; ?>"><?php echo $second_page; ?></a></li>
+                  <li class="page-item <?php if($third_active){ echo "active";} ?>"><a class="page-link" href="admin_user.php?page=<?php echo $third_page; ?>"><?php echo $third_page; ?></a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="admin_user.php?page=<?php echo $number_of_pages ?>" aria-label="Last">
+                      <span aria-hidden="true">&raquo;</span>
+                      <span class="sr-only">Last</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-
       </div>
 
       <div class="hidden">
