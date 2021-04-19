@@ -26,14 +26,20 @@
         </form>
       </div>
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="admin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Admin
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="../pages/admin_user.php">Edit User Accounts</a>
-          </div>
-        </li>
+        <?php
+        if($curr_security_level > 1){
+        ?>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="admin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Admin
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="../pages/admin_user.php">Edit User Accounts</a>
+            </div>
+          </li>
+        <?php
+        }
+        ?>
         <li class="nav-item"><a class="nav-link" href="../pages/about.php">About</a></li>
         <li class="nav-item"><a class="nav-link" href="">Discover</a></li>
         <li class="nav-item"><a class="nav-link" href="../pages/user_playlist.php">Playlists</a></li>
