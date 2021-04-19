@@ -55,7 +55,7 @@ body {
         <span>Password</span>
         <input type="password" name="password" id="lpassword">
       </label>
-      <button class="submit" type="button" id="login-btn">Sign In</button>
+			<button type="button" class="btn btn-success" id="login-btn">Sign In</button>
     </div>
 
     <div class="sub-cont">
@@ -109,8 +109,7 @@ body {
         <div class="hidden">
           <input type="text" id="asecurity" value="1">
         </div>
-
-        <button type="button" class="submit" id="add-btn">Sign Up</button>
+				<button type="button" class="btn btn-success" id="add-btn" style="margin-top: 25px !important;">Sign Up</button>
       </div>
     </div>
   </div>

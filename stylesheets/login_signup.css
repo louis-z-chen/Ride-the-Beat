@@ -83,6 +83,13 @@ button{
   cursor: pointer;
 }
 
+button:focus {
+  outline:0;
+  border-style: solid;
+  border-width: medium;
+  border-color: #5cb85c;
+}
+
 .submit{
   margin-top: 40px;
   margin-bottom: 30px;
@@ -322,7 +329,6 @@ button{
 		display: none;
 		font-size: 14px;
 		font-weight: bold;
-		margin-bottom: 10px;
 		padding: 10px 25px;
     width: 80%;
     columns: 2;
@@ -331,4 +337,20 @@ button{
 .center {
   margin-left: auto;
   margin-right: auto;
+}
+.btn{
+    display: block !important;
+    margin: 0 auto !important;
+    width: 260px !important;
+    height: 36px !important;
+    border-radius: 30px !important;
+    color: #fff !important;
+    font-size: 15px !important;
+    cursor: pointer !important;
+    background-color: #1DB954 !important;
+    text-transform: uppercase !important;
+    margin-top: 40px !important;
+    margin-bottom: 30px !important;
+    font-weight: 600 !important;
+    font-family: 'Nunito', sans-serif !important;
 }
