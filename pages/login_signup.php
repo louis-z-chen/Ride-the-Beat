@@ -12,99 +12,110 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
 <!DOCTYPE html>
 <html>
 <head>
+
 	<title>Ride the Beat</title>
+  <link rel="stylesheet" href="https://use.typekit.net/vps8gbz.css">
+  <?php require "../reusable_code/header_files.php"; ?>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/login_signup.css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap" rel="stylesheet">
 
-	<?php require "../reusable_code/header_files.php"; ?>
+<style>
+body {
+  background: linear-gradient(-45deg, #1DB954, #121212, #121212);
+  background-size: 400% 400%;
+  animation: gradient 6s ease infinite;
+}
 
+@keyframes gradient {
+   0% {
+     background-position: 10% 50%;
+   }
+   50% {
+     background-position: 65% 50%;
+   }
+   100% {
+     background-position: 0% 50%;
+   }
+}
+
+</style>
 </head>
+
 <body>
+  <div class="cont">
+    <div class="form sign-in">
+      <h2>Sign In</h2>
+      <br>
+      <ul class="login-messages center" id="login_errors"></ul>
+      <label>
+        <span>Username</span>
+        <input type="text" name="username" id="lusername">
+      </label>
+      <label>
+        <span>Password</span>
+        <input type="password" name="password" id="lpassword">
+      </label>
+      <button class="submit" type="button" id="login-btn">Sign In</button>
+    </div>
 
-  <div class = "main-body center login-signup-main">
-		<div class="login_and_signup_container">
+    <div class="sub-cont">
+      <div class="img">
+        <div class="img-text m-up">
+          <h2>New Here?</h2>
+          <p>Sign up and discover new music from emerging artists and others</p>
+        </div>
+        <div class="img-text m-in">
+          <h2>Welcome Back!</h2>
+          <p>If you already have an account, just sign in. We've missed you!</p>
+        </div>
+        <div class="img-btn">
+          <span class="m-up">Sign Up</span>
+          <span class="m-in">Sign In</span>
+        </div>
+      </div>
+      <div class="form sign-up">
+        <h2>Sign Up</h2>
+        <ul class="signup-messages center" id="add_errors"></ul>
+        <div class="row">
+          <div class="col">
+            <label>
+              <span>First Name</span>
+              <input type="text" id="afirst">
+            </label>
+            <label>
+              <span>Username</span>
+              <input type="text" id="ausername">
+            </label>
+            <label>
+              <span>Password</span>
+              <input type="password" id="apassword">
+            </label>
+          </div>
+          <div class="col">
+            <label>
+              <span>Last Name</span>
+              <input type="text" id="alast">
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" id="aemail">
+            </label>
+            <label>
+              <span>Confirm Password</span>
+              <input type="password" id="apassword2">
+            </label>
+          </div>
+        </div>
+        <div class="hidden">
+          <input type="text" id="asecurity" value="1">
+        </div>
 
-			<div class="login">
-				<form method="POST" action="../backend/login_confirmation.php" name="loginform">
-					<h2>Login</h2>
-					<br>
-					<div class="form-group">
-						<label for="username">Username
-							<font color="red"><i><?php echo $_SESSION["username_not_exist_error"]; ?></i></font>
-						</label>
-						<input type="text" class="form-control" name="username" value="<?php echo $_SESSION["login_username"]; ?>" required>
-					</div>
-					<div class="form-group">
-						<label for="password">Password
-								<font color="red"><i><?php echo $_SESSION["incorrect_password_error"]; ?></i></font>
-						</label>
-						<input type="password" class="form-control" name="password" required>
-					</div>
-					<div>
-						<font color="red"><i><?php echo $_SESSION["login_error"]; ?></i></font>
-					</div>
-					<br>
-					<div class="form-group">
-					  	<button type="submit" class="btn btn-success" id="green-button">
-					  		<i class="fas fa-sign-in-alt"></i>
-					  		Sign In
-					  	</button>
-					</div>
+        <button type="button" class="submit" id="add-btn">Sign Up</button>
+      </div>
+    </div>
+  </div>
 
-				</form>
-			</div>
-
-			<div class="signup">
-				<form method="POST" action="../backend/signup_confirmation.php" name="signupform">
-					<h2>Sign up</h2>
-					<br>
-					<div class="form-group">
-						<label for="first_name">First Name</label>
-						<input type="text" class="form-control" name="first_name" value="<?php echo $_SESSION["signup_first_name"]; ?>" required>
-					</div>
-					<div class="form-group">
-						<label for="last_name">Last Name</label>
-						<input type="text" class="form-control" name="last_name" value="<?php echo $_SESSION["signup_last_name"]; ?>" required>
-					</div>
-					<div class="form-group">
-						<label for="input_email">Email
-							<font color="red"><i><?php echo $_SESSION["email_format_error"]; ?></i></font>
-							<font color="red"><i><?php echo $_SESSION["email_exist_error"]; ?></i></font>
-						</label>
-						<input type="email" class="form-control" name="email" value="<?php echo $_SESSION["signup_email"]; ?>" required>
-					</div>
-					<div class="form-group">
-						<label for="input_username">Username
-							<font color="red"><i><?php echo $_SESSION["username_exist_error"]; ?></i></font>
-						</label>
-						<input type="text" class="form-control" name="username" value="<?php echo $_SESSION["signup_username"]; ?>" required>
-					</div>
-					<div class="form-group">
-						<label for="input_password">Password
-							<font color="red"><i><?php echo $_SESSION["password_mismatch_error"]; ?></i></font>
-						</label>
-						<input type="password" class="form-control" name="password" required>
-					</div>
-					<div class="form-group">
-						<label for="input_password2">Confirm Password</label>
-						<input type="password" class="form-control" name="password2" required>
-					</div>
-					<div>
-						<font color="red"><i><?php echo $_SESSION["signup_error"]; ?></i></font>
-					</div>
-					<br>
-					<div class="form-group">
-					  	<button type="submit" class="btn btn-success" id="green-button">
-					  		<i class="fas fa-user-plus"></i>
-					  		Create Account
-					  	</button>
-					</div>
-				</form>
-			</div>
-
-
-		</div>
-	</div>
-
-	<?php require "../reusable_code/footer_files.php"; ?>
-
+  <?php require "../reusable_code/footer_files.php"; ?>
+  <script src = "../javascript_files/login_signup.js"></script>
 </body>
 </html>

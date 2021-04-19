@@ -129,11 +129,31 @@ if($ok){
   }
   $statement->close();
 }
+
+//get new user id
+$new_user_id;
+if(empty($signup_error)){
+  $sql_prepared = "SELECT * FROM users WHERE username = ? AND password_hash = ?;";
+  $statement = $mysqli->prepare($sql_prepared);
+  $statement->bind_param("ss", $username, $hash_pass);
+  $executed = $statement->execute();
+
+  if(!$executed) {
+      echo $mysqli->error;
+  }
+
+  $result = $statement->get_result();
+  $row = $result -> fetch_assoc();
+  $new_user_id = $row["ID"];
+
+  $statement->close();
+}
 $mysqli->close();
 
 echo json_encode(
   array(
     'add_success' => $add_success,
+    'new_user_id' => $new_user_id,
     'messages' => $messages
   )
 );
