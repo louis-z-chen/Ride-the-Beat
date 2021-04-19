@@ -9,4 +9,6 @@ if($logged_in != true){
 	header('Location: ../pages/login_signup.php');
 	exit();
 }
+
+require "../reusable_code/curr_user_info.php";
 ?>

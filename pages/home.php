@@ -1,6 +1,5 @@
 <?php
 require "../reusable_code/login_logic.php";
-require "../reusable_code/curr_user_info.php";
 ?>
 
 <!DOCTYPE html>
