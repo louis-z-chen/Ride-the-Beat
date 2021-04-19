@@ -18,22 +18,18 @@ require "../reusable_code/login_logic.php";
       <div class="column-content">
 
 
-<!--ABOUT US ROW-->
-				<div class="row justify-content-center">
-					<div class="col white-text text-center">
+				<!--ABOUT US ROW-->
+				<div class="justify-content-center">
+					<div class="white-text text-center">
 						<br />
 					<h1>ABOUT US</h1>
 					<br />
-					</div>
-				</div>
-				<!--end of about us-->
 
 				<!--ABOUT US ROW-->
-				<div class="row justify-content-center">
-					<div class="col grey-text text-center">
+				<div class="justify-content-center">
+					<div class="grey-text text-center">
 						<br />
 					<h5>Discovering new music has always been a universal challenge. <br /> Our mission is to create a platform that allows users to find quality gems. <br /> By utilizing the Spotify API, users can find new ways to unearth playlists, <br /> top albums, and songs from famous and lesser-known artists. </h5>
-					<br />
 					<br />
 					</div>
 				</div>
