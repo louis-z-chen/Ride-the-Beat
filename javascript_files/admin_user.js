@@ -219,3 +219,22 @@ $(document).ready(function(){
 
   });
 });
+
+
+// A $( document ).ready() block.
+$(document).ready(function() {
+    $("#page_num").val("1");
+});
+
+//jquery code for pagination buttons
+$(document).ready(function(){
+  $(document).on('click', '.page-btn', function(){
+    //if(!(this).hasClass("disabled")){
+      event.preventDefault();
+
+      var page_num = $.trim($(this).val());
+      $("#page_num").val(page_num);
+      $("#submit").click();
+    //}
+  });
+});

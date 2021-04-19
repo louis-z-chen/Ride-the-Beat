@@ -50,7 +50,7 @@ if(!$executed) {
 }
 
 $results = $statement->get_result();
-$number_of_results = $results->num_rows;
+$number_of_results = (int)$results->num_rows;
 
 $statement->close();
 
@@ -58,11 +58,11 @@ $statement->close();
 $number_of_pages = ceil($number_of_results/$results_per_page);
 
 //determine which page number visitor is currently on
-if(!isset($_GET['page'])){
+if(!isset($_REQUEST['page'])){
   $page = 1;
 }
 else {
-  $page = $_GET['page'];
+  $page = $_REQUEST['page'];
 }
 
 //determine the sql LIMIT starting number for the results on the displaying page
@@ -96,25 +96,50 @@ $first_active = false;
 $second_active = false;
 $third_active = false;
 
+$second_disable = false;
+$third_disable = false;
+
 //if first page
-if($page == 1){
+if($number_of_pages >= 3){
+  if($page == 1){
+    $first_page = 1;
+    $second_page = 2;
+    $third_page = 3;
+    $first_active = true;
+  }
+  //if last page
+  else if($page == $number_of_pages){
+    $third_page = $number_of_pages;
+    $second_page = $third_page - 1;
+    $first_page = $second_page - 1;
+    $third_active = true;
+  }
+  else{
+    $second_page = $page;
+    $first_page = $second_page - 1;
+    $third_page = $second_page + 1;
+    $second_active = true;
+  }
+}
+else if($number_of_pages == 2){
+  $third_disable = true;
+  $first_page = 1;
+  $second_page = 2;
+  $third_page = 3;
+  if($page == 1){
+    $first_active = true;
+  }
+  else{
+    $second_active = true;
+  }
+}
+else{
+  $second_disable = true;
+  $third_disable = true;
   $first_page = 1;
   $second_page = 2;
   $third_page = 3;
   $first_active = true;
-}
-//if last page
-else if($page == $number_of_pages){
-  $third_page = $number_of_pages;
-  $second_page = $third_page - 1;
-  $first_page = $second_page - 1;
-  $third_active = true;
-}
-else{
-  $second_page = $page;
-  $first_page = $second_page - 1;
-  $third_page = $second_page + 1;
-  $second_active = true;
 }
 
 ?>
@@ -139,8 +164,11 @@ else{
         <!--search bar-->
 				<div class="search white-text">
 					<h2>Find Users</h2>
-					<form method="POST" action="admin_user.php">
+					<form method="POST" action="admin_user.php" id="search_form">
 						<div class="row">
+              <div class="form-group hidden">
+                <input type="text" id="page_num" name="page" class="form-control">
+              </div>
 							<div class="col-sm-2">
 								<div class="form-group">
 									<label>First Name</label>
@@ -260,21 +288,29 @@ else{
           <div>
             <div class="row">
               <div class="col-6">
-                  <h5 class="white-text">Showing <?php echo $this_page_first_result + 1; ?> to <?php echo $this_page_first_result + $curr_result_count; ?> of <?php echo $number_of_results; ?> results</h5>
+                  <h5 class="white-text">
+                    <?php if($curr_result_count > 0){
+                      echo "Showing " . ($this_page_first_result + 1) . " to " . ($this_page_first_result + $curr_result_count) . " of " . $number_of_results . " results";
+                    }
+                    else{
+                      echo "0 results";
+                    }
+                    ?>
+                  </h5>
               </div>
               <div class="col-6 text-right">
                 <ul class="pagination justify-content-end">
-                  <li class="page-item">
-                    <a class="page-link" href="admin_user.php?page=1" aria-label="First">
+                  <li class="page-item page-btn" value = "1">
+                    <a class="page-link" aria-label="First">
                       <span aria-hidden="true">&laquo;</span>
                       <span class="sr-only">First</span>
                     </a>
                   </li>
-                  <li class="page-item <?php if($first_active){ echo "active";} ?>"><a class="page-link" href="admin_user.php?page=<?php echo $first_page; ?>"><?php echo $first_page; ?></a></li>
-                  <li class="page-item <?php if($second_active){ echo "active";} ?>"><a class="page-link" href="admin_user.php?page=<?php echo $second_page; ?>"><?php echo $second_page; ?></a></li>
-                  <li class="page-item <?php if($third_active){ echo "active";} ?>"><a class="page-link" href="admin_user.php?page=<?php echo $third_page; ?>"><?php echo $third_page; ?></a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="admin_user.php?page=<?php echo $number_of_pages ?>" aria-label="Last">
+                  <li class="page-item page-btn <?php if($first_active){ echo "active";} ?>" value = "<?php echo $first_page; ?>"><a class="page-link"><?php echo $first_page; ?></a></li>
+                  <li class="page-item <?php if($second_active){ echo "active";} ?> <?php if($second_disable){ echo "disabled";} else{ echo "page-btn";} ?>" value = "<?php echo $second_page; ?>"><a class="page-link"><?php echo $second_page; ?></a></li>
+                  <li class="page-item <?php if($third_active){ echo "active";} ?> <?php if($third_disable){ echo "disabled";} else{ echo "page-btn";} ?>" value = "<?php echo $third_page; ?>"><a class="page-link"><?php echo $third_page; ?></a></li>
+                  <li class="page-item page-btn" value = "<?php echo $number_of_pages; ?>">
+                    <a class="page-link" aria-label="Last">
                       <span aria-hidden="true">&raquo;</span>
                       <span class="sr-only">Last</span>
                     </a>
@@ -286,6 +322,7 @@ else{
         </div>
       </div>
 
+      <!-- hidden form to display edit and delete messages -->
       <div class="hidden">
         <form method="POST" action="../pages/admin_user.php" id="hidden_form">
           <div class="form-group">
