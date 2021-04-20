@@ -30,7 +30,7 @@ body {
 </head>
 <body>
   <div id="logo">
-     <img src="../images/logo3.png" class="logo">
+     <img src="../images/Logo3.png" class="logo">
   </div> <!--div for logo-->\
 
   <div class="welcome-center-vertical">

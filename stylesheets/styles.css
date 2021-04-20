@@ -158,26 +158,6 @@ CSS that is used on one page
   margin-right: auto;
 }
 
-/* Login Sign-up Page */
-.login_and_signup_container{
-	display:flex;
-	justify-content: space-between;
-}
-.login{
-	width:48%
-}
-.signup{
-	width:48%
-}
-.login-signup-main{
-	background-color: #B3B3B3;
-	padding-top: 50px;
-	padding-right: 20px;
-	padding-bottom: 50px;
-	padding-left: 20px;
-	border-radius: 25px;
-}
-
 /* Home Page */
 .welcome-message{
 	margin-top: 15px;
@@ -210,23 +190,6 @@ CSS that is used on one page
 }
 .column-info{
   font-size: 0.6vw;
-}
-
-/* Results Page */
-.results-main{
-  width: 80%;
-  margin-top: 30px;
-
-	background-color: #B3B3B3;
-	padding-top: 50px;
-	padding-right: 20px;
-	padding-bottom: 50px;
-	padding-left: 20px;
-	border-radius: 25px;
-
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /*User Playlists Page*/

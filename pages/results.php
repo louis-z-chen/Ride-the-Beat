@@ -79,116 +79,137 @@ $mysqli->close();
 <body>
 	<?php require "../reusable_code/menu.php"; ?>
 
-  <div class = "results-main">
+  <div class = "main-body center">
 
-    <div class="center-text">
-      <h2>Results for "<?php echo $search ?>"</h2>
-      Total Search Results: <?php echo $total_count ?>
-    </div>
-    <br>
+    <div class="row">
+      <!--Page Content column -->
+      <div class="col-xl-9 main-column-container">
+        <div class = "column">
+          <div class = "column-content">
 
-    <div class="container">
-      <!--Database Seearch -->
-      <div class="row">
-        <!--Songs Column -->
-        <div class="col-md">
-          <div class = "center-text">
-            <strong>Songs</strong> <br>
-            <?php echo $song_count ?> song results
+            <div class="center-text">
+              <h2 class="white-text">Results for "<?php echo $search ?>"</h2>
+              <div class="grey-text">Total Search Results: <?php echo $total_count ?></div>
+            </div>
+            <br>
+
+            <div class="container">
+              <!--Database Seearch -->
+              <div class="row">
+                <!--Songs Column -->
+                <div class="col-md">
+                  <div class = "center-text">
+                    <div class="white-text"><strong>Songs</strong> <br></div>
+                    <div class="grey-text"><?php echo $song_count ?> song results</div>
+                  </div>
+                  <table class="table table-dark table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Song Name</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php $song_results_counter = 1;?>
+                      <?php while($row = $results_song->fetch_assoc() ) : ?>
+                        <tr>
+                        <th scope="row"><?php echo $song_results_counter ?></th>
+                        <?php $song_results_counter++;?>
+                        <td> <?php echo $row["name"] ?> </td>
+                      </tr>
+                      <?php endwhile; ?>
+                    </tbody>
+                  </table>
+                </div>
+                <!--Artist Column -->
+                <div class="col-md">
+                  <div class = "center-text">
+                    <div class="white-text"><strong>Artists</strong> <br></div>
+                    <div class="grey-text"><?php echo $artist_count ?> artist results</div>
+                  </div>
+                  <table class="table table-dark table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Artist Name</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php $artist_results_counter = 1;?>
+                      <?php while($row = $results_artist->fetch_assoc() ) : ?>
+                        <tr>
+                        <th scope="row"><?php echo $artist_results_counter ?></th>
+                        <?php $artist_results_counter++;?>
+                        <td> <?php echo $row["name"] ?> </td>
+                      </tr>
+                      <?php endwhile; ?>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="row">
+                <!--Playlist Column -->
+                <div class="col-md">
+                  <div class = "center-text">
+                    <div class="white-text"><strong>Playlists</strong> <br></div>
+                    <div class="grey-text"><?php echo $playlist_count ?> playlist results</div>
+                  </div>
+                  <table class="table table-dark table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Playlist Name</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php $playlist_results_counter = 1;?>
+                      <?php while($row = $results_playlist->fetch_assoc() ) : ?>
+                        <tr>
+                        <th scope="row"><?php echo $playlist_results_counter ?></th>
+                        <?php $playlist_results_counter++;?>
+                        <td> <?php echo $row["name"] ?> </td>
+                      </tr>
+                      <?php endwhile; ?>
+                    </tbody>
+                  </table>
+                </div>
+                <!--User Column -->
+                <div class="col-md">
+                  <div class = "center-text">
+                    <div class="white-text"><strong>Users</strong><br></div>
+                    <div class="grey-text"><?php echo $user_count ?> username results</div>
+                  </div>
+                  <table class="table table-dark table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Username</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php $user_results_counter = 1;?>
+                      <?php while($row = $results_user->fetch_assoc() ) : ?>
+                        <tr>
+                        <th scope="row"><?php echo $user_results_counter ?></th>
+                        <?php $user_results_counter++;?>
+                        <td> <?php echo $row["username"] ?> </td>
+                      </tr>
+                      <?php endwhile; ?>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
           </div>
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Song Name</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php $song_results_counter = 1;?>
-              <?php while($row = $results_song->fetch_assoc() ) : ?>
-                <tr>
-                <th scope="row"><?php echo $song_results_counter ?></th>
-                <?php $song_results_counter++;?>
-                <td> <?php echo $row["name"] ?> </td>
-              </tr>
-              <?php endwhile; ?>
-            </tbody>
-          </table>
         </div>
-        <!--Artist Column -->
-        <div class="col-md">
-          <div class = "center-text">
-            <strong>Artists</strong> <br>
-            <?php echo $artist_count ?> artist results
+      </div>
+      <!--Music player and lyrics column -->
+      <div class="col-xl-3 main-column-container">
+        <div class = "column">
+          <div class = "column-content">
+            <?php require "../reusable_code/music_player.php";?>
           </div>
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Artist Name</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php $artist_results_counter = 1;?>
-              <?php while($row = $results_artist->fetch_assoc() ) : ?>
-                <tr>
-                <th scope="row"><?php echo $artist_results_counter ?></th>
-                <?php $artist_results_counter++;?>
-                <td> <?php echo $row["name"] ?> </td>
-              </tr>
-              <?php endwhile; ?>
-            </tbody>
-          </table>
-        </div>
-        <!--Playlist Column -->
-        <div class="col-md">
-          <div class = "center-text">
-            <strong>Playlists</strong> <br>
-            <?php echo $playlist_count ?> playlist results
-          </div>
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Playlist Name</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php $playlist_results_counter = 1;?>
-              <?php while($row = $results_playlist->fetch_assoc() ) : ?>
-                <tr>
-                <th scope="row"><?php echo $playlist_results_counter ?></th>
-                <?php $playlist_results_counter++;?>
-                <td> <?php echo $row["name"] ?> </td>
-              </tr>
-              <?php endwhile; ?>
-            </tbody>
-          </table>
-        </div>
-        <!--User Column -->
-        <div class="col-md">
-          <div class = "center-text">
-            <strong>Users</strong><br>
-            <?php echo $user_count ?> username results
-          </div>
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Username</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php $user_results_counter = 1;?>
-              <?php while($row = $results_user->fetch_assoc() ) : ?>
-                <tr>
-                <th scope="row"><?php echo $user_results_counter ?></th>
-                <?php $user_results_counter++;?>
-                <td> <?php echo $row["username"] ?> </td>
-              </tr>
-              <?php endwhile; ?>
-            </tbody>
-          </table>
         </div>
       </div>
     </div>
