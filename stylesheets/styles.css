@@ -230,3 +230,11 @@ CSS that is used on one page
 .profile{
 	width: 80%;
 }
+
+/*Results page*/
+.spotify-results{
+	display: block;
+}
+.database-results{
+	display: none;
+}
