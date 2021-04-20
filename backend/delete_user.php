@@ -1,5 +1,5 @@
 <?php
-session_start();
+require "../reusable_code/curr_user_info.php";
 
 $id = (int) trim($_POST['id']);
 
@@ -32,15 +32,15 @@ $statement->close();
 
 //admin authorization
 //only someone with a higher security level than the user account can make the change
-if($_SESSION["security_level"] <= $existing_security_level){
-  if($_SESSION["id"] != $id){
+if($curr_security_level <= $existing_security_level){
+  if($curr_id != $id){
     $messages[] = "You are not authorized to delete this user account";
     $ok = false;
   }
 }
 
 //if deleting own account, then delete session and redirect to welcome
-if($_SESSION["id"] == $id){
+if($curr_id == $id){
   $self = true;
 }
 
