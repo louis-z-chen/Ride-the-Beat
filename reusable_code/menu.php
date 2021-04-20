@@ -53,7 +53,8 @@
             <a class="dropdown-item" href="../backend/logout.php">Log Out</a>
           </div>
         </li>
-        <button class="nav-link btn btn-success navbar-btn ml-2 green-btn" id="lightmode">Light Mode</button>
+        <input id="lightmode" type="checkbox" <?php if($_SESSION["lightmode"] == false){ echo "checked";}?> data-toggle="toggle"data-height="35" data-width="145" data-on="<i class='fas fa-moon'></i> Dark Mode" data-off="<i class='fas fa-sun'></i> Light Mode" data-onstyle="success" data-offstyle="dark">
+        <!--<button class="nav-link btn btn-success navbar-btn ml-2 green-btn" id="lightmode">Light Mode</button>-->
       </ul>
     </div>
   </div>

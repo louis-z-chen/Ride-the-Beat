@@ -2,6 +2,6 @@
 
 <script>
   <?php if($_SESSION["lightmode"] == true) : ?>
-      change_colors()
+      change_colors();
   <?php endif; ?>
 </script>
