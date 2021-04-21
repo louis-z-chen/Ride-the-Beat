@@ -37,7 +37,7 @@ $('#login-btn').click(function(){
           dataType:"JSON",
           success:function(result){
             if(result.login_success == true){
-              $(location).attr('href', '../pages/home.php');
+              $(location).attr('href', '../pages/spotify.php');
             }
           }
         })
@@ -99,7 +99,7 @@ $('#add-btn').click(function(){
           dataType:"JSON",
           success:function(result){
             if(result.login_success == true){
-              $(location).attr('href', '../pages/home.php');
+              $(location).attr('href', '../pages/spotify.php');
             }
           }
         })

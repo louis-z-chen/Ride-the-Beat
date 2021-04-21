@@ -25,6 +25,8 @@ $curr_last = $row["last_name"];
 $curr_email = $row["email"];
 $curr_username = $row["username"];
 $curr_security_level = $row["security_level"];
+$curr_access = $row["spotify_access"];
+$curr_refresh = $row["spotify_refresh"];
 
 $statement->close();
 $mysqli->close();

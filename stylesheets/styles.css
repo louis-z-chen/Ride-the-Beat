@@ -238,3 +238,13 @@ CSS that is used on one page
 .database-results{
 	display: none;
 }
+
+/*Spotify connection page */
+.spotify-message{
+	display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+	height: 100px;
+	width: 100%;
+	text-align: center;
+}
