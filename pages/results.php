@@ -87,12 +87,17 @@ $mysqli->close();
         <div class = "column">
           <div class = "column-content">
 
+            <div id="search" class="hidden">
+              <?php echo $search; ?>
+            </div>
+
             <div class="center-text">
               <h1 class="white-text">Results for "<?php echo $search ?>"</h1>
               <input id="toggle-btn" type="checkbox" checked data-toggle="toggle" data-width="150" data-on="<i class='fab fa-spotify'></i> Spotify" data-off="<i class='fas fa-database'></i> Database" data-onstyle="success" data-offstyle="info">
             </div>
             <br>
             <div id="spotify-results" class="spotify-results">
+
               <!--Row 2 -->
               <div class="content-row picture-row">
                 <div class="row">

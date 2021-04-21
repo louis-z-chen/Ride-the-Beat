@@ -9,7 +9,6 @@ $message = "new user";
 if(!empty($curr_access)){
   $message = "existing user";
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -32,28 +31,23 @@ if(!empty($curr_access)){
 </head>
 <body>
 
+	<div class="white-text">
+      <span>
+        <h1>Connecting to Spotify...</h1>
+      </span>
+  </div>
 
+  <div id="code" class="hidden">
+    <?php echo $code; ?>
+  </div>
 
+  <div id="error" class="hidden">
+    <?php echo $error; ?>
+  </div>
 
-		<div class="white-text">
-        <span>
-          <h1>Connecting to Spotify...</h1>
-        </span>
-    </div>
-
-    <div id="code" class="hidden">
-      <?php echo $code; ?>
-    </div>
-
-    <div id="error" class="hidden">
-      <?php echo $error; ?>
-    </div>
-
-    <div id="message" class="hidden">
-      <?php echo $message; ?>
-    </div>
-
-
+  <div id="message" class="hidden">
+    <?php echo $message; ?>
+  </div>
 
 	<?php require "../reusable_code/footer_files.php"; ?>
   <script src = "../javascript_files/spotify_connect.js"></script>
