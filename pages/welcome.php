@@ -25,6 +25,32 @@ body {
    }
 }
 
+
+a:link {
+  color: #1DB954;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #1DB954;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #FFFFFF;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #FFFFFF;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+
 </style>
 
 </head>
@@ -47,6 +73,9 @@ body {
       <br>
       <i class="fab fa-spotify fa-lg"></i>  Connect your existing Spotify account
       <br>
+			<i class="fas fa-pencil-alt"></i> <a class="link" href="https://www.urbandictionary.com/define.php?term=Ride%20the%20beat">Unsure of what Ride The Beat means?</a>
+
+			<br />
       <br>
 			<a href="login_signup.php">
 	      <button type="button" class="btn btn-outline-success btn-lg" id="welcome-button">
