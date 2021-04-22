@@ -13,7 +13,7 @@ $(document).ready(function() {
   var error = $("#error").text();
   error = error.trim();
   if(error != "no error"){
-    console.log("Redirect to error page");
+    $(location).attr('href', '../pages/error.php');
   }
 
   let code = $("#code").text();
