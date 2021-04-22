@@ -195,11 +195,25 @@ CSS that is used on one page
 .bannertext{
 	text-shadow: 2px 2px #1DB954;
 	font-weight: bold;
-  font-size: 2vw;
+  font-size: 30px;
+	/* 2vw before */
 }
 .row-title{
   font-size: 1.5vw;
 }
+
+@@media screen and (max-width: 992px) {
+  .row-title {
+    font-size: 1.5vw;
+  }
+}
+
+@@media screen and (max-width: 600px) {
+  .row-title {
+    font-size: 1.5vw;
+  }
+}
+
 .column-pic{
   width:100%;
   border-radius: 5px;

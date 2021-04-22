@@ -19,12 +19,12 @@ body{
 
 /* Following text for text */
 .white-text{
-  color: #FFFFFF;
-  text-shadow: 2px 2px 2px #535353;
+  color: #000000
+  /* text-shadow: 2px 2px 2px #535353; */
 }
 .grey-text{
-  color: #EBE7E7;
-  text-shadow: 2px 2px 2px #535353;
+  color: #494A4E;
+/*  text-shadow: 2px 2px 2px #535353; */
 }
 .green-text{
   color: #1DB954 !important;

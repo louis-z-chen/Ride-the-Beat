@@ -9,6 +9,118 @@ require "../reusable_code/login_logic.php";
 
 	<?php require "../reusable_code/header_files.php"; ?>
 
+<style>
+
+/*row title*/
+@media(max-width:320px) {
+  .row-title {
+    font-size: 20px;
+    word-break: break-all;
+  }
+}
+
+@media(max-width:767px) {
+  .row-title {
+    font-size: 20px;
+    word-break: break-all;
+  }
+}
+
+@media(max-width:1000px) {
+  .row-title {
+    font-size: 20px;
+    word-break: break-all;
+  }
+}
+
+/*column title*/
+@media(max-width:320px) {
+  .column-title {
+    font-size: 20px;
+    word-break: break-all;
+  }
+}
+
+@media(max-width:767px) {
+  .column-title {
+    font-size: 15px;
+    word-break: break-all;
+  }
+}
+
+@media(max-width:1000px) {
+  .column-title {
+    font-size: 15px;
+    word-break: break-all;
+  }
+}
+
+@media(max-width:1200px) {
+  .column-title {
+    font-size: 15px;
+    word-break: break-all;
+  }
+}
+
+/*column info*/
+@media(max-width:320px) {
+  .column-info {
+    font-size: 20px;
+    word-break: break-all;
+  }
+}
+
+@media(max-width:767px) {
+  .column-info {
+    font-size: 15px;
+    word-break: break-all;
+  }
+}
+
+@media(max-width:1000px) {
+  .column-info {
+    font-size: 15px;
+    word-break: break-all;
+  }
+}
+
+@media(max-width:1200px) {
+  .column-info {
+    font-size: 15px;
+    word-break: break-all;
+  }
+}
+
+/*bannertext*/
+@media(max-width:320px) {
+  .bannertext {
+    font-size: 30px;
+    word-break: break-all;
+  }
+}
+
+@media(max-width:767px) {
+  .bannertext {
+    font-size: 30px;
+    word-break: break-all;
+  }
+}
+
+@media(max-width:1000px) {
+  .bannertext {
+    font-size: 30px;
+    word-break: break-all;
+  }
+}
+
+@media(max-width:1200px) {
+  .bannertext {
+    font-size: 30px;
+    word-break: break-all;
+  }
+}
+
+</style>
 </head>
 <body>
 	<?php require "../reusable_code/menu.php"; ?>
