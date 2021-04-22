@@ -33,34 +33,43 @@ body {
   width: 600px !important;
   margin: auto !important;
   text-align: center !important;
-  color: black !important;
   line-height: 30px !important;
 	border-radius: 15px !important;
   padding-bottom: 50px !important;
   padding-top: 50px !important;
   background-color: white !important;
 }
+.center_on_page {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+}
+.black-text{
+	color: black !important;
+}
 
 </style>
 
 </head>
 <body>
-  <div id="logo">
-     <img src="../images/Logo3.png" class="logo">
-  </div> <!--div for logo-->\
 
-  <div class="welcome-center-vertical">
+  <div class="center_on_page">
 
     <div id="errormessage">
       <br />
       <br />
-<h1>ERROR.</h1> <br /> You must connect your spotify account to this website.
-<br />
-<br />
-<br />
-			<a href=" ">
-	      <button type="button" class="btn btn-outline-success btn-lg" id="welcome-button">
-					<i class="fas fa-sign-in-alt"></i>    LOGIN HERE WITH SPOTIFY
+			<h1 class="black-text">ERROR.</h1>
+			<br>
+			<div class="black-text">
+				You must connect your spotify account to this website.
+			</div>
+			<br />
+			<br />
+			<a href="../pages/spotify.php">
+	      <button type="button" class="btn btn-outline-success btn-lg">
+					<i class="fas fa-sign-in-alt"></i>    CONNECT TO SPOTIFY HERE
 				</button> <!--has not been linked yet-->
 
 			</a>

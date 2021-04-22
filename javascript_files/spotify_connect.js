@@ -98,7 +98,12 @@ $(document).ready(function() {
             },
             dataType:"JSON",
             success:function(data){
-              $(location).attr('href', '../pages/home.php');
+              if(message == "new user"){
+                loadPlaylists(access_token);
+              }
+              else{
+                $(location).attr('href', '../pages/home.php');
+              }
             }
           })
       }
@@ -108,4 +113,45 @@ $(document).ready(function() {
     }
   }
 
-});
+  function loadPlaylists(access_token){
+    $.ajax({
+      url: `https://api.spotify.com/v1/me/playlists?limit=2`,
+      type: 'GET',
+      headers: {
+          'Authorization' : 'Bearer ' + access_token
+      },
+      success: function(data) {
+        var length = data.items.length;
+        for(i = 0; i < length; i++){
+          var image_url = data.items[i].images[0].url;
+          var name = data.items[i].name;
+          var public = 1;
+          var url = data.items[i].external_urls.spotify;
+          var spotify_id = data.items[i].id;
+
+          var playlist_owner = data.items[i].owner.display_name;
+
+          //if creator is not spotify
+          if(playlist_owner != "Spotify"){
+            $.ajax({
+              url:"../backend/add_playlist.php",
+              method:"POST",
+              data:{
+                image_url:image_url,
+                name:name,
+                public:public,
+                url:url,
+                spotify_id:spotify_id
+              },
+              dataType:"JSON",
+              success:function(data){
+              }
+            })
+          }
+        } // end of for loop
+        $(location).attr('href', '../pages/home.php');
+      }
+    });// end of overarching ajax call
+  }
+
+}); // end of document ready
