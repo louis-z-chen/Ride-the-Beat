@@ -74,7 +74,7 @@ a:active {
       <i class="fab fa-spotify fa-lg"></i>  Connect your existing Spotify account
       <br>
 			<br>
-			<i class="fas fa-book"></i> <a class="link" href="https://www.urbandictionary.com/define.php?term=Ride%20the%20beat">Unsure of what Ride The Beat means?</a>
+			<i class="fas fa-book"></i> <a class="link" href="https://www.urbandictionary.com/define.php?term=Ride%20the%20beat">Unsure of what "Ride The Beat" means?</a>
 
 			<br />
       <br>
