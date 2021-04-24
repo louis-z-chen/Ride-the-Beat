@@ -1,3 +1,65 @@
+<html>
+<head>
+<style>
+
+/* media screen adjustments */
+@media(max-width:320px) {
+.song-name {
+	font-size: 30px;
+	word-break: break-all;
+}
+
+.artist-name {
+  font-size: 20px;
+  word-break: break-all;
+}
+
+.lyrics-title {
+  font-size: 20px;
+  word-break: break-all;
+}
+}
+
+
+@media(max-width:767px) {
+.song-name {
+	font-size: 30px;
+	word-break: break-all;
+}
+
+.artist-name {
+  font-size: 20px;
+  word-break: break-all;
+}
+
+.lyrics-title {
+  font-size: 20px;
+  word-break: break-all;
+}
+}
+
+
+@media(max-width:1000px) {
+.song-name {
+	font-size: 30px;
+	word-break: break-all;
+}
+
+.artist-name {
+  font-size: 20px;
+  word-break: break-all;
+}
+
+.lyrics-title {
+  font-size: 20px;
+  word-break: break-all;
+}
+}
+
+</style>
+</head>
+<body>
+
 <!--Song and song controls -->
 <div>
   <div>
@@ -61,3 +123,5 @@
     </p>
   </div>
 </div>
+</body>
+</html>
