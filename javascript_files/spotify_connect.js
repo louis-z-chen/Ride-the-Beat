@@ -20,7 +20,7 @@ $(document).ready(function() {
   code = code.trim();
   let message = $("#message").text();
   message = message.trim();
-  if(code == "no code" && message == "new user"){
+  if(code == "no code" && message == "new user" && error == "no error"){
     window.location.replace(redirect);
   }
   step1 = true;
@@ -31,7 +31,7 @@ $(document).ready(function() {
       fetchAccessToken(code);
     }
     //Step 4: Requesting a refreshed access token
-    else if("existing user"){
+    else if(message == "existing user"){
       refreshAccessToken();
     }
   }
@@ -115,7 +115,7 @@ $(document).ready(function() {
 
   function loadPlaylists(access_token){
     $.ajax({
-      url: `https://api.spotify.com/v1/me/playlists?limit=2`,
+      url: `https://api.spotify.com/v1/me/playlists?limit=10`,
       type: 'GET',
       headers: {
           'Authorization' : 'Bearer ' + access_token
