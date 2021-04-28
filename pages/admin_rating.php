@@ -1,4 +1,5 @@
 <?php
+//exit("hello");
 require "../reusable_code/login_logic.php";
 
 // if not an admin
@@ -158,7 +159,7 @@ else{
           </div>
           <div class="col-6" align="right">
             <!--<a href="#add_user" class="btn btn-success" data-toggle="modal"><i class="fas fa-user-plus"></i> <span> Add New User</span></a>-->
-            <button type="button" class="btn btn-success add"><i class="fas fa-user-plus"></i> Add New User</button>
+            <button type="button" class="btn btn-success add"><i class="fas fa-user-plus"></i> Add Rating</button>
           </div>
         </div>
 
@@ -242,7 +243,7 @@ else{
       </div>
 
       <!-- Add Modal HTML -->
-    	<div id="add_user" class="modal fade">
+    	<div id="add_rating" class="modal fade">
     		<div class="modal-dialog modal-dialog-centered">
     			<div class="modal-content">
     				<form>
@@ -254,36 +255,25 @@ else{
                 <ul class="form-messages" id="add_errors"></ul>
     						<div class="form-group">
     							<label>First Name</label>
-    							<input type="text" class="form-control" id="afirst">
+    							<input type="text" class="form-control" id="rfirst">
     						</div>
                 <div class="form-group">
     							<label>Last Name</label>
-    							<input type="text" class="form-control" id="alast">
-    						</div>
-    						<div class="form-group">
-    							<label>Email</label>
-    							<input type="email" class="form-control" id="aemail">
+    							<input type="text" class="form-control" id="rlast">
     						</div>
     						<div class="form-group">
     							<label>Username</label>
-    							<input type="text" class="form-control" id="ausername">
+    							<input type="username" class="form-control" id="rusername">
+    						</div>
+    						<div class="form-group">
+    							<label>Playlist Name</label>
+    							<input type="text" class="form-control" id="rplaylistname">
     						</div>
                 <div class="form-group">
-    							<label>Password</label>
-    							<input type="password" class="form-control" id="apassword">
+    							<label>Comment</label>
+    							<input type="text" class="form-control" id="rcomment">
     						</div>
-                <div class="form-group">
-                  <label>Confirm Password</label>
-                  <input type="password" class="form-control" id="apassword2">
-                </div>
-                <div class="form-group">
-    							<label>Security Level</label>
-                  <select class="form-control" id="asecurity">
-                    <option value = "1" selected>User</option>
-                    <option value = "2">Administrator</option>
-                    <option value = "3">Supreme Leader</option>
-                  </select>
-    						</div>
+
     					</div>
     					<div class="modal-footer">
     						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
@@ -378,6 +368,6 @@ else{
 
 	<?php require "../reusable_code/footer_files.php"; ?>
 	<?php require "../reusable_code/lightmode_files.php"; ?>
-  <!-- <script src = "../javascript_files/admin_rating.js"></script> -->
+  <script src = "../javascript_files/admin_rating.js"></script>
 </body>
 </html>

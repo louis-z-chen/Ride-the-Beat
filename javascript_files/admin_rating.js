@@ -5,67 +5,63 @@ $(document).on('click', '.add', function(){
   $('#add_errors').css("display","none");
 
   //empty form
-  $("#afirst").val("");
-  $("#alast").val("");
-  $("#aemail").val("");
-  $("#ausername").val("");
-  $("#apassword").val("");
-  $("#apassword2").val("");
-  $("#asecurity").val("1");
+  $("#rfirst").val("");
+  $("#rlast").val("");
+  $("#rusername").val("");
+  $("#rplaylistname").val("");
+  $("#rcomment").val("");
 
   //show modal
-  $('#add_user').modal('show');
+  $('#add_rating').modal('show');
 });
 
 //submit add form
 $('#add-btn').click(function(){
   //prevent page from refreshing
-  event.preventDefault();
+//  event.preventDefault();
 
   //get form values
-  var first_name = $("#afirst").val();
-  var last_name = $("#alast").val();
-  var email = $("#aemail").val();
-  var username = $("#ausername").val();
-  var password = $("#apassword").val();
-  var password2 = $("#apassword2").val();
-  var security = $("#asecurity").val();
+  var rater_first_name = $("#rfirst").val();
+  var rater_last_name = $("#rlast").val();
+  var rater_username = $("#rusername").val();
+  var playlist_name = $("#rplaylistname").val();
+  var comment = $("#rcomment").val();
 
   //call ajax
-  $.ajax({
-    url:"../backend/add_user.php",
-    method:"POST",
-    data:{
-      first_name:first_name,
-      last_name:last_name,
-      email:email,
-      username:username,
-      password:password,
-      password2:password2,
-      security:security
-    },
-    dataType:"JSON",
-    success:function(data){
-      $('#add_errors').empty();
-      $('#add_errors').css("display","none");
-
-      if(data.add_success == true){
-        var message = "User was added successfully!"
-        $("#hidden_message").val(message);
-        $("#hidden_form").submit();
-      }
-      else{
-        $('#add_errors').empty();
-        var message_length = data.messages.length;
-        for(var i = 0; i < message_length; i++){
-          var curr_error = "<li>" + data.messages[i] + "</li>"
-          $('#add_errors').append(curr_error);
-        }
-        $('#add_errors').css("display","block");
-      }
-    }
-  })
-
+//   $.ajax({
+//     url:"../backend/add_playlist.php",
+//     method:"POST",
+//     data:{
+//       creator_id:creator_id,
+//       image_url:image_url,
+//       name:name,
+//       public:public,
+//       url:url,
+//       spotify_id:spotify_id,
+//     },
+//     dataType:"JSON",
+//     success:function(data){
+//      console.log(data);
+//       $('#add_errors').empty();
+//       $('#add_errors').css("display","none");
+//
+//       if(data.add_success == true){
+//         var message = "Playlist was added successfully!"
+//         $("#hidden_message").val(message);
+//         $("#hidden_form").submit();
+//       }
+//       else{
+//         $('#add_errors').empty();
+//         var message_length = data.messages.length;
+//         for(var i = 0; i < message_length; i++){
+//           var curr_error = "<li>" + data.messages[i] + "</li>"
+//           $('#add_errors').append(curr_error);
+//         }
+//         $('#add_errors').css("display","block");
+//       }
+//     }
+//   })
+//
 });
 
 //fill edit modal with data
@@ -117,7 +113,7 @@ $('#edit-btn').click(function(){
 
   //call ajax
   $.ajax({
-    url:"../backend/edit_user.php",
+    url:"../backend/edit_playlist.php",
     method:"POST",
     data:{
       id:id,
@@ -150,76 +146,4 @@ $('#edit-btn').click(function(){
     }
   })
 
-});
-
-//show delete modal
-$(document).on('click', '.delete', function(){
-  //erase previous errors
-  $('#delete_errors').empty();
-  $('#delete_errors').css("display","none");
-
-  //get values from table
-  var id = $.trim($(this).val());
-
-  //put values into form
-  $('#delete_user').modal('show');
-  $("#did").val(id);
-
-});
-
-//jquery code to submit delete form
-$('#delete-btn').click(function(){
-  //prevent page from refreshing
-  event.preventDefault();
-
-  //get form values
-  var id = $("#did").val();
-
-  //call ajax
-  $.ajax({
-    url:"../backend/delete_user.php",
-    method:"POST",
-    data:{
-      id:id,
-    },
-    dataType:"JSON",
-    success:function(data){
-      if(data.delete_success == true){
-        if(data.self == true){
-          $(location).attr('href', '../backend/logout.php')
-        }
-        else{
-          var message = "User account was deleted successfully!"
-          $("#hidden_message").val(message);
-          $("#hidden_form").submit();
-        }
-      }
-      else{
-        $('#delete_errors').empty();
-        var message_length = data.messages.length;
-        for(var i = 0; i < message_length; i++){
-          var curr_error = "<li>" + data.messages[i] + "</li>"
-          $('#delete_errors').append(curr_error);
-        }
-        $('#delete_errors').css("display","block");
-      }
-    }
-  })
-
-});
-
-// A $( document ).ready() block.
-$(document).ready(function() {
-    $("#page_num").val("1");
-});
-
-//jquery code for pagination buttons
-$(document).on('click', '.page-btn', function(){
-  //if(!(this).hasClass("disabled")){
-    event.preventDefault();
-
-    var page_num = $.trim($(this).val());
-    $("#page_num").val(page_num);
-    $("#submit").click();
-  //}
 });
