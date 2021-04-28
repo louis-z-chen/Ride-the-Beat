@@ -11,7 +11,6 @@ require "../reusable_code/login_logic.php";
 
 <style>
 
-/*row title*/
 @media(max-width:320px) {
 .column-info {
 	font-size: 20px;
@@ -166,7 +165,7 @@ require "../reusable_code/login_logic.php";
                   </div>
                 </div>
               </div>
-							
+
             </div>
 
             <!--Row 3 -->

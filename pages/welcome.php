@@ -25,6 +25,19 @@ body {
    }
 }
 
+@media(max-width:320px) {
+.logo {
+	width: 50px;
+}
+
+.name-img {
+	width: 50px;
+}
+
+.maintext {
+	font-size: 15px;
+}
+}
 
 a:link {
   color: #1DB954;
@@ -65,13 +78,13 @@ a:active {
     <!--<img src="images/picture.jpg">	The "picture.jpg" file is located in the images folder in the current folder-->
     </div> <!--div for ridethebeattext-->
 
-    <div id="maintext">
+    <div id="maintext" class="maintext">
 
-      <i class="fas fa-headphones-alt fa-lg"></i>  Discover music from emerging artists
+      <i class="fas fa-headphones-alt fa-lg"></i> Discover music from emerging artists
       <br>
-      <i class="fas fa-music fa-lg"></i>  Manage, rate, and share your playlists
+      <i class="fas fa-music fa-lg"></i> Manage, rate, and share your playlists
       <br>
-      <i class="fab fa-spotify fa-lg"></i>  Connect your existing Spotify account
+      <i class="fab fa-spotify fa-lg"></i> Connect your existing Spotify account
       <br>
 			<br>
 			<i class="fas fa-book"></i> <a class="link" href="https://www.urbandictionary.com/define.php?term=Ride%20the%20beat">Unsure of what "Ride The Beat" means?</a>
