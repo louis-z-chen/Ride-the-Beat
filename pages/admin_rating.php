@@ -267,7 +267,21 @@ else{
     						</div>
     						<div class="form-group">
     							<label>Playlist Name</label>
-    							<input type="text" class="form-control" id="rplaylistname">
+    							<!--<input type="text" class="form-control" id="rplaylistname">-->
+
+                  <select name="playlist_name" id="rplaylistname">
+                          <option value ="all">Select a playlist_name</option>
+                          <option value ="all">---------------</option>
+                          <?php
+                          while($currentrow = $results->fetch_assoc()) {
+                              echo "<option>" . $currentrow["name"] . "</option>";
+                          }
+                          ?>
+                  </select>
+
+
+
+
     						</div>
                 <div class="form-group">
     							<label>Comment</label>
