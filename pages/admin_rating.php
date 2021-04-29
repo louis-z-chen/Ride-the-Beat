@@ -159,7 +159,7 @@ else{
           </div>
           <div class="col-6" align="right">
             <!--<a href="#add_user" class="btn btn-success" data-toggle="modal"><i class="fas fa-user-plus"></i> <span> Add New User</span></a>-->
-            <button type="button" class="btn btn-success add"><i class="fas fa-user-plus"></i> Add Rating</button>
+            <button type="button" class="btn btn-success add"><i class="fas fa-user-plus"></i> Add TEST Rating</button>
           </div>
         </div>
 
