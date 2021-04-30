@@ -115,13 +115,14 @@ $(document).ready(function() {
 
   function loadPlaylists(access_token){
     $.ajax({
-      url: `https://api.spotify.com/v1/me/playlists?limit=10`,
+      url: `https://api.spotify.com/v1/me/playlists?limit=50`,
       type: 'GET',
       headers: {
           'Authorization' : 'Bearer ' + access_token
       },
       success: function(data) {
         var length = data.items.length;
+        console.log(length);
         for(i = 0; i < length; i++){
           var image_url = data.items[i].images[0].url;
           var name = data.items[i].name;
@@ -149,7 +150,7 @@ $(document).ready(function() {
             })
           }
         } // end of for loop
-        $(location).attr('href', '../pages/home.php');
+        setTimeout(function(){$(location).attr('href', '../pages/home.php');},12500);
       }
     });// end of overarching ajax call
   }

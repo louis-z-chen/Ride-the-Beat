@@ -45,7 +45,7 @@ require "../reusable_code/login_logic.php";
 								<br />
 								<div class="col white-text"><h2>Menna Elamroussy</h2></div>
 								<div class="col white-text"><h6>USC <em>Industrial & Systems Engineering</em></h6></div>
-								<div class="col white-text"><h6>Database Administrator, Front-End Developer</h6></div>
+								<div class="col white-text"><h6>Front-End Developer, Web Analyst</h6></div>
 								<br />
 								<div class="col grey-text"><h6>Music has always been a sort of escape for me. I listen to it while studying, cooking, showering, before I sleep and really in any scenario. I love how versatile and therapeutic it is so I wanted to create a way for people to discover and share music that they love because that is something I’ve personally struggled with in the past.</h6></div>
 							</div>
@@ -57,7 +57,7 @@ require "../reusable_code/login_logic.php";
 								<br />
 								<div class="col white-text"><h2>Louis Chen</h2></div>
 								<div class="col white-text"><h6>USC <em>Business & Computer Science</em></h6></div>
-								<div class="col white-text"><h6>Project Manager, Full-Stack Developer</h6></div>
+								<div class="col white-text"><h6>Project Manager, Full-Stack Developer, Database Administrator</h6></div>
 								<br />
 								<div class="col grey-text"><h6>I love listening to music and I use Spotify on a daily basis but there are a lot of things I wished Spotify did differently such as placing more emphasis on smaller artists or making playlists easier to manage. This project is an attempt for us to make our ideal music listening and sharing website. </h6></div>
 							</div>

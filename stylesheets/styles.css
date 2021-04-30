@@ -27,6 +27,16 @@ html, body{
 	width: 100%;
 	color: white;
 }
+.green-button{
+	background-color: #1DB954 !important;
+	color: white !important;
+}
+iframe {
+  border-radius: 15px;
+	width:100%;
+	border: none;
+	height: 80px;
+}
 
 /* Template */
 .column{
@@ -199,6 +209,28 @@ CSS that is used on one page
 .playlist-pic{
 	width:100%;
 	margin-bottom: 3px;
+	object-fit: cover;
+	border-radius: 5px;
+}
+.playlist-main-pic{
+	border-radius: 5px;
+	width: 215px;
+	height: 215px;
+	object-fit: cover;
+}
+.spot-container{
+	width: 20%;
+}
+.spot-title{
+  font-size: .83em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+.spot-info{
+	font-size: .67em;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 /*admin_user*/
@@ -247,4 +279,9 @@ CSS that is used on one page
 	height: 100px;
 	width: 100%;
 	text-align: center;
+}
+
+/*Playlist Page */
+.song{
+	width: 25%;
 }

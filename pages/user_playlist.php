@@ -1,5 +1,42 @@
 <?php
 require "../reusable_code/login_logic.php";
+
+$search_user = isset($_REQUEST['user']) ? trim($_REQUEST['user']) : '';
+
+if(empty($search_user)){
+	$search_user = $curr_id;
+}
+
+//database connection
+require "../reusable_code/database_connection.php";
+
+//get user's name
+$sql_user = "SELECT * FROM users WHERE ID =" . $search_user . ";";
+
+$results_user = $mysqli->query($sql_user);
+
+if(!$results_user){
+  echo "SQL Error: " . $mysqli->error;
+  exit();
+}
+
+$user_row = $results_user->fetch_assoc();
+$fname = $user_row['first_name'];
+$lname = $user_row['last_name'];
+$name = $fname . " " . $lname;
+
+//User playlists
+$sql_playlist = "SELECT * FROM playlist WHERE creator_id =" . $search_user . " ORDER BY name;";
+
+$results_playlist = $mysqli->query($sql_playlist);
+
+if(!$results_playlist){
+  echo "SQL Error: " . $mysqli->error;
+  exit();
+}
+$playlist_count = $results_playlist->num_rows;
+
+$mysqli->close();
 ?>
 
 <!DOCTYPE html>
@@ -18,50 +55,26 @@ require "../reusable_code/login_logic.php";
 			<div class="column-content">
 
 				<!--Row 1 -->
-				<div class="row">
-					<div class="col-3">
-					<img src="../images/ProfilePic.png" class="profile-pic"/>
-					</div>
-					<div class="col-9 white-text"><br /><br />
+				<div class="white-text">
+					<br>
 					USER
-					<h1>Menna Elamroussy</h1>
-					</div>
+					<h1><?php echo $name; ?></h1>
 				</div>
-				<hr>
+				<hr class="white-line">
+
 				<!--Row 2 -->
-				<div class="content-row picture-row">
-					<h4 class="row-title white-text">PUBLIC PLAYLISTS</h4>
-					<div class="row">
-						<div class="col-md">
-							<div class="row-column">
-								<img src="../images/playlist1.jpg" class="playlist-pic"/>
-								<div class="column-title white-text">My Typical Jams</div>
-								<div class="column-info grey-text">0 followers</div>
-							</div>
+				<h4 class="row-title white-text"><?php echo $playlist_count; ?> PUBLIC PLAYLISTS</h4>
+				<div class="d-flex flex-row flex-wrap">
+					<?php while($row = $results_playlist->fetch_assoc() ) : ?>
+						<div class="spot-container p-2">
+							<a href="../pages/playlist.php?id=<?php echo $row['ID']; ?>">
+								<img src="<?php echo $row['image_url']; ?>" class="playlist-pic"/>
+							</a>
+							<div class="spot-title white-text center-text"><?php echo $row['name']; ?></div>
 						</div>
-						<div class="col-md">
-							<div class="row-column">
-								<img src="../images/playlist2.png" class="playlist-pic"/>
-								<div class="column-title white-text">2018 Bops</div>
-								<div class="column-info grey-text">15 followers</div>
-							</div>
-						</div>
-						<div class="col-md">
-							<div class="row-column">
-								<img src="../images/playlist3.jpg" class="playlist-pic"/>
-								<div class="column-title white-text">I'm Texan</div>
-								<div class="column-info grey-text">3 followers</div>
-							</div>
-						</div>
-						<div class="col-md">
-							<div class="row-column">
-								<img src="../images/playlist4.jpg" class="playlist-pic"/>
-								<div class="column-title white-text">Chill Hits</div>
-								<div class="column-info grey-text">100 followers</div>
-							</div>
-						</div>
-					</div>
-				</div> <!-- Close Row 2 -->
+					<?php endwhile; ?>
+				</div>
+
 
 			</div>
 		</div>
@@ -69,6 +82,17 @@ require "../reusable_code/login_logic.php";
 
 	<?php require "../reusable_code/footer_files.php"; ?>
 	<?php require "../reusable_code/lightmode_files.php"; ?>
+	<script>
+	$(document).ready(resize);
+	$(window).resize(resize);
+
+	window.onresize = resize();
+
+	function resize(){
+		var cw = $('.playlist-pic').width();
+		$('.playlist-pic').css({'height':cw+'px'});
+	}
+	</script>
 
 </body>
 </html>

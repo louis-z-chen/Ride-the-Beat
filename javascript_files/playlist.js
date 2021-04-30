@@ -1,25 +1,10 @@
 $(document).ready(function() {
 
-  let search = $("#search").text();
-  search = search.trim();
+  let playlist_id = $("#playlist_id").text();
+  playlist_id = playlist_id.trim();
 
   var access_token;
   getAccessToken();
-
-  $('#toggle-btn').change(function(){
-    var curr = $(this).prop('checked');
-
-    //if true its spotify, if false its database
-    if(curr){
-      $('#spotify-results').css("display","block");
-      $('#database-results').css("display","none");
-    }
-    else{
-      $('#spotify-results').css("display","none");
-      $('#database-results').css("display","block");
-    }
-
-  });
 
   function getAccessToken(){
     $.ajax({
@@ -34,20 +19,19 @@ $(document).ready(function() {
   }
 
   function populateSpotifyResults(){
-    console.log(access_token);
     $.ajax({
-      url: `https://api.spotify.com/v1/search?q=${search}&type=track&limit=50`,
+      url: `https://api.spotify.com/v1/playlists/${playlist_id}/tracks?market=US`,
       type: 'GET',
       headers: {
           'Authorization' : 'Bearer ' + access_token
       },
       success: function(data) {
-        let num_of_tracks = data.tracks.items.length;
+        //data = JSON.parse(data);
+        let num_of_tracks = data.items.length;
         let count = 0;
         const max_songs = 16;
         while(count < max_songs && count < num_of_tracks){
-          let id = data.tracks.items[count].id;
-
+          let id = data.items[count].track.id;
           let src_str = `https://open.spotify.com/embed/track/${id}`;
           let iframe = `<div class="song p-2"><iframe src=${src_str} allow="encrypted-media"></iframe></div>`;
           $("#song-list").append(iframe);

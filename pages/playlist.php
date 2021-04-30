@@ -1,5 +1,62 @@
 <?php
 require "../reusable_code/login_logic.php";
+
+$playlist_id = "";
+$playlist_id = $_REQUEST["id"];
+
+//if search is empty redirect
+if(empty(trim($playlist_id))){
+  header("Location: home.php");
+  exit();
+}
+
+//database connection
+require "../reusable_code/database_connection.php";
+
+//average Rating
+$sql_avg = "SELECT * FROM avg_ratings_view WHERE playlist_id =" . $playlist_id . ";";
+
+$results_avg = $mysqli->query($sql_avg);
+
+if(!$results_avg){
+  echo "SQL Error: " . $mysqli->error;
+  exit();
+}
+$numrows_results_avg = $results_avg->num_rows;
+$row_avg;
+if($numrows_results_avg != 0){
+  $row_avg = $results_avg->fetch_assoc();
+}
+//echo $numrows_results_avg;
+
+//user rating
+$sql_user_rating = "SELECT * FROM ratings_info_view WHERE playlist_id =" . $playlist_id . " AND rater_id =" . $curr_id . ";";
+
+$results_rating = $mysqli->query($sql_user_rating);
+
+if(!$results_rating){
+  echo "SQL Error: " . $mysqli->error;
+  exit();
+}
+$numrows_results_rating = $results_rating->num_rows;
+$row_rating;
+if($numrows_results_rating != 0){
+  $row_rating = $results_rating->fetch_assoc();
+}
+//echo $numrows_results_rating;
+
+//User playlists
+$sql_playlist = "SELECT * FROM playlist_info_view WHERE playlist_id =" . $playlist_id . ";";
+
+$results_playlist = $mysqli->query($sql_playlist);
+
+if(!$results_playlist){
+  echo "SQL Error: " . $mysqli->error;
+  exit();
+}
+$row = $results_playlist->fetch_assoc();
+
+$mysqli->close();
 ?>
 
 <!DOCTYPE html>
@@ -13,169 +70,62 @@ require "../reusable_code/login_logic.php";
 <body>
 	<?php require "../reusable_code/menu.php"; ?>
 
-  <div class = "main-body center">
+	<div class = "main-body center">
+		<div class="column">
+			<div class="column-content">
 
-    <div class="row">
-      <!--Page Content column -->
-      <div class="col-xl-9 main-column-container">
-        <div class = "column">
-          <div class = "column-content">
+        <div id="playlist_id" class="hidden">
+          <?php echo $row['spotify_id']; ?>
+        </div>
 
-            <!--Row 1 -->
-            <div class="row">
-              <div class="col-3">
-              <img src="../images/playlist1.jpg" class="profile-pic"/>
-              </div>
-              <div class="col-9 white-text">
-              PLAYLIST
-              <h1>My Typical Jams</h1>
-              Created by Menna Elamroussy - 15 songs
-              <button class="nav-link btn btn-success navbar-btn ml green-btn" id="lightmode" style="margin-top: 7px;">Play</button>
-              </div>
-
+        <!--Playlist info Remake-->
+        <div class="playlist-info d-flex flex-row flex-wrap">
+          <div class="p-3">
+            <img src="<?php echo $row['image_url']; ?>" class="playlist-main-pic"/>
+          </div>
+          <div class="white-text p-3">
+            PLAYLIST
+            <h1><?php echo $row['name']; ?></h1>
+            <div>
+              Created by <?php echo $row['creator_first_name'];?> <?php echo $row['creator_last_name'];?> - <div style="display:inline;">15 songs</div>
             </div>
-<hr />
-            <!--Row 2 -->
-            <div class="content-row picture-row">
-              <div class="row">
-                <div class="col-md">
-                  <div class="row-column">
-                    <img src="../images/songs/Song1.jpg" class="playlist-pic"/>
-                    <div class="column-title white-text">Do I Wanna Know?</div>
-                    <div class="column-info grey-text">Artic Monkeys</div>
-                  </div>
-                </div>
-                <div class="col-md">
-                  <div class="row-column">
-                    <img src="../images/songs/Song2.png" class="playlist-pic"/>
-                    <div class="column-title white-text">Stuck With U (with Justin Bieber)</div>
-                    <div class="column-info grey-text">Ariana Grande, Justin Bieber</div>
-                  </div>
-                </div>
-                <div class="col-md">
-                  <div class="row-column">
-                    <img src="../images/songs/Song3.jpg" class="playlist-pic"/>
-                    <div class="column-title white-text">Cigarettes on Patios</div>
-                    <div class="column-info grey-text">BabyJake</div>
-                  </div>
-                </div>
-                <div class="col-md">
-                  <div class="row-column">
-                    <img src="../images/songs/Song4.png" class="playlist-pic"/>
-                    <div class="column-title white-text">CITY OF ANGELS</div>
-                    <div class="column-info grey-text">24KGoldn</div>
-                  </div>
-                </div>
-                <div class="col-md">
-                  <div class="row-column">
-                    <img src="../images/songs/Song5.jpg" class="playlist-pic"/>
-                    <div class="column-title white-text">Breezeblocks</div>
-                    <div class="column-info grey-text">alt-J</div>
-                  </div>
-                </div>
-
-              </div>
-            </div> <!-- Close Row 2 -->
-
-            <!--Row 3 -->
-            <div class="content-row picture-row">
-              <div class="row">
-                <div class="col-md">
-                  <div class="row-column">
-                    <img src="../images/songs/Song6.png" class="playlist-pic"/>
-                    <div class="column-title white-text">Vienna</div>
-                    <div class="column-info grey-text">Billy Joel</div>
-                  </div>
-                </div>
-                <div class="col-md">
-                  <div class="row-column">
-                    <img src="../images/songs/Song7.jpg" class="playlist-pic"/>
-                    <div class="column-title white-text">Sunny</div>
-                    <div class="column-info grey-text">Bobby Hebb</div>
-                  </div>
-                </div>
-                <div class="col-md">
-                  <div class="row-column">
-                    <img src="../images/songs/Song8.jpg" class="playlist-pic"/>
-                    <div class="column-title white-text">I.F.L.Y</div>
-                    <div class="column-info grey-text">Bazzi</div>
-                  </div>
-                </div>
-                <div class="col-md">
-                  <div class="row-column">
-                    <img src="../images/songs/Song9.jpg" class="playlist-pic"/>
-                    <div class="column-title white-text">Take Care</div>
-                    <div class="column-info grey-text">Beach House</div>
-                  </div>
-                </div>
-                <div class="col-md">
-                  <div class="row-column">
-                    <img src="../images/songs/Song10.jpg" class="playlist-pic"/>
-                    <div class="column-title white-text">when the party's over</div>
-                    <div class="column-info grey-text">Billie Eilish</div>
-                  </div>
-                </div>
-              </div>
-            </div> <!-- Close Row 3 -->
-
-            <!--Row 4 -->
-            <div class="content-row picture-row">
-              <div class="row">
-                <div class="col-md">
-                  <div class="row-column">
-                    <img src="../images/songs/Song11.png" class="playlist-pic"/>
-                    <div class="column-title white-text">RedBone</div>
-                    <div class="column-info grey-text">Childish Gambino</div>
-                  </div>
-                </div>
-                <div class="col-md">
-                  <div class="row-column">
-                    <img src="../images/songs/Song12.jpg" class="playlist-pic"/>
-                    <div class="column-title white-text">Blessed</div>
-                    <div class="column-info grey-text">Daniel Caesar</div>
-                  </div>
-                </div>
-                <div class="col-md">
-                  <div class="row-column">
-                    <img src="../images/songs/Song13.jpg" class="playlist-pic"/>
-                    <div class="column-title white-text">Electric Love</div>
-                    <div class="column-info grey-text">BØRNS</div>
-                  </div>
-                </div>
-                <div class="col-md">
-                  <div class="row-column">
-                    <img src="../images/songs/Song14.jpg" class="playlist-pic"/>
-                    <div class="column-title white-text">Passionfruit</div>
-                    <div class="column-info grey-text">Drake</div>
-                  </div>
-                </div>
-                <div class="col-md">
-                  <div class="row-column">
-                    <img src="../images/songs/Song15.jpg" class="playlist-pic"/>
-                    <div class="column-title white-text">Hotel California - 2013 Remaster</div>
-                    <div class="column-info grey-text">Eagles</div>
-                  </div>
-                </div>
-              </div>
-            </div> <!-- Close Row 4 -->
-
+            Average Rating - 5.0
+            <br>
+            Your Rating - 5.0
+            <br>
+            <br>
+            <button type="button" class="btn btn-success mr-2 green-button"><i class="fas fa-thumbs-up"></i> Rate</button>
+            <button type="button" class="btn btn-success mr-2 green-button"><i class="fas fa-share-square"></i> Share</button>
+            <a class="btn btn-success mr-2 green-button" href="<?php echo $row['url'];?>" role="button" target="_blank"><i class="fab fa-spotify"></i> Spotify</a>
           </div>
         </div>
-      </div>
-      <!--Music player and lyrics column -->
-      <div class="col-xl-3 main-column-container">
-        <div class = "column">
-          <div class = "column-content">
-            <?php require "../reusable_code/music_player.php";?>
-          </div>
-        </div>
-      </div>
-    </div>
 
-	</div> <!-- close main-body center -->
+				<hr class="white-line">
+        <div class="white-text">
+          Some songs from this playlist
+        </div>
+
+				<!--songs -->
+				<div id="song-list" class="song-list d-flex flex-row flex-wrap"></div>
+
+			</div>
+		</div>
+	</div>
 
 	<?php require "../reusable_code/footer_files.php"; ?>
 	<?php require "../reusable_code/lightmode_files.php"; ?>
+	<script>
+	$(document).ready(resize);
+	$(window).resize(resize);
+
+	window.onresize = resize();
+
+	function resize(){
+		var cw = $('.playlist-pic').width();
+		$('.playlist-pic').css({'height':cw+'px'});
+	}
+	</script>
+	<script src="../javascript_files/playlist.js"></script>
 
 </body>
 </html>
