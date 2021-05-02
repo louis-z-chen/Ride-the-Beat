@@ -1,6 +1,16 @@
 <html>
 <head>
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0DLFKRCNBS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-0DLFKRCNBS');
+    </script>
+
 	<title>Ride the Beat</title>
   <link rel="stylesheet" href="https://use.typekit.net/vps8gbz.css">
   <?php require "../reusable_code/header_files.php"; ?>
