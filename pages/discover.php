@@ -1,12 +1,6 @@
 <?php
 require "../reusable_code/login_logic.php";
 
-$search_user = isset($_REQUEST['user']) ? trim($_REQUEST['user']) : '';
-
-if(empty($search_user)){
-	$search_user = $curr_id;
-}
-
 //database connection
 require "../reusable_code/database_connection.php";
 
