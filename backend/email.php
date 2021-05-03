@@ -2,8 +2,9 @@
 require "../reusable_code/curr_user_info.php";
 
 $from_email = $curr_email;
+$url = isset($_POST['url']) ? trim($_POST['url']) : '';
 $to_email = isset($_POST['email']) ? trim($_POST['email']) : '';
-$message = isset($_POST['message']) ? trim($_POST['message']) : '';
+$input_message = isset($_POST['message']) ? trim($_POST['message']) : '';
 
 $send_success = false;
 $ok = true;
@@ -32,14 +33,27 @@ if (strlen($message) > 70) {
 //if no errors then email
 if($ok){
 
-  $message = $message;
+  $message = "
+  <html>
+  <body>
+  Your Friend sent <a href='" . $url . "'>this playlist recommendation</a>
+  </body>
+  </html>
+  ";
+
+  $message .= "\r\n";
+  $message .= $input_message;
   $message .= "\r\n";
   $message = str_replace("\n.", "\n..", $message);
 
   $to = $to_email;
-  $subject = "Your Friend Sent a Playlist Recommendation";
+  $subject = "Playlist Recommendation";
   $from = $from_email;
-  $headers = "From: $from";
+
+  $headers = "MIME-Version: 1.0" . "\r\n";
+  $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+  $headers .= "From: $from" . "\r\n";
+
   $test = mail($to,$subject,$message,$headers);
 
   if ($test==1) {

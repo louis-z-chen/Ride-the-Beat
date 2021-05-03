@@ -83,6 +83,7 @@ $(document).ready(function() {
     event.preventDefault();
 
     //get form values
+    var url = $("#url").val();
     var email = $("#email").val();
     var message = $("#message").val();
 
@@ -91,6 +92,7 @@ $(document).ready(function() {
       url:"../backend/email.php",
       method:"POST",
       data:{
+        url:url,
         email:email,
         message:message
       },

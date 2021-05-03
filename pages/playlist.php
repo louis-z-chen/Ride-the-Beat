@@ -66,6 +66,9 @@ if(!$results_comments){
 $numrows_results_comments = $results_comments->num_rows;
 
 $mysqli->close();
+
+$protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+$url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 ?>
 
 <!DOCTYPE html>
@@ -207,10 +210,9 @@ $mysqli->close();
 
 			</div>
 
-
       <!-- hidden form to display messages -->
       <div class="hidden">
-        <form method="POST" action="../pages/admin_user.php" id="hidden_form">
+        <form method="POST" action="<?php echo $url;?>" id="hidden_form">
           <div class="form-group">
             <input type="text" class="form-control" id="hidden_message" name="hidden_message">
           </div>
@@ -287,6 +289,9 @@ $mysqli->close();
               </div>
               <div class="modal-body">
                 <ul class="form-messages" id="share_errors"></ul>
+                <div class="form-group">
+                  <input type="hidden" class="form-control" id="url" value="<?php echo $url;?>">
+                </div>
                 <div class="form-group">
                   <label>Email</label>
                   <input type="email" class="form-control" id="email">
