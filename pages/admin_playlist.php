@@ -29,11 +29,11 @@ $sql = "INSERT INTO playlist
         VALUES
         ('" . $_REQUEST["imageurl"] . "' , '" . $_REQUEST["playlistname"] . "' , '" . $_REQUEST["public"] . "' , '" . $_REQUEST["playlisturl"] . "','" . $_REQUEST["playlistid"] . "', $test)";
 
-echo $sql;
+// echo $sql;
 
 if(!empty($_REQUEST["imageurl"]) && !empty($_REQUEST["playlistname"]) && !empty($_REQUEST["public"]) && !empty($_REQUEST["playlisturl"]) && !empty($_REQUEST["playlistid"])) {
   $results = $mysqli->query($sql);
-   echo $sql;
+  // echo $sql;
    if(!$results) {
     echo $mysqli->error;
    }
