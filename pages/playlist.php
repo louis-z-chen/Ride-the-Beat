@@ -223,9 +223,6 @@ $url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
       <div class="hidden">
         <form method="POST" action="" id="hidden_info_form">
           <div class="form-group">
-            <input type="text" class="form-control" id="hidden_rating_id" value="<?php echo $row_rating['rating_id'];?>">
-          </div>
-          <div class="form-group">
             <input type="text" class="form-control" id="hidden_rating" value="<?php echo $row_rating['rating'];?>">
           </div>
           <div class="form-group">
@@ -246,13 +243,13 @@ $url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
               <div class="modal-body">
                 <ul class="form-messages" id="rate_errors"></ul>
                 <div class="form-group">
-                  <input type="hidden" class="form-control" id="rate_playlist_id">
+                  <input type="hidden" class="form-control" id="rate_playlist_id" value="<?php echo $playlist_id;?>">
                 </div>
                 <div class="form-group">
-                  <input type="hidden" class="form-control" id="rate_rater_id">
+                  <input type="hidden" class="form-control" id="rate_rater_id" value="<?php echo $row_rating['rater_id'];?>">
                 </div>
                 <div class="form-group">
-                  <input type="hidden" class="form-control" id="rate_rating_id">
+                  <input type="hidden" class="form-control" id="rate_rating_id" value="<?php echo $row_rating['rating_id'];?>">
                 </div>
                 <div class="form-group">
                   <label>Rating</label>

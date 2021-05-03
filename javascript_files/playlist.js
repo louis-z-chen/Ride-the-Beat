@@ -48,19 +48,63 @@ $(document).ready(function() {
     $('#rate_errors').css("display","none");
 
     //get values from hidden hidden form
-    var rating_id = $.trim($('#hidden_rating_id').val());
     var rating = $.trim($('#hidden_rating').val());
     var comment = $.trim($('#hidden_comment').val());
 
     rating = parseInt(rating);
 
     //put values into hidden form
-    $("#rate_rating_id").val(rating_id);
     $("#rating").val(rating);
     $("#comment").val(comment);
 
     //show modal
     $('#rate').modal('show');
+  });
+
+  //jquery code to submit rate form
+  $('#rate-btn').click(function(){
+    //prevent page from refreshing
+    event.preventDefault();
+
+    //get form values
+    var playlist_id = $('#rate_playlist_id').val();
+    var rater_id = $('#rate_rater_id').val();
+    var rating_id = $('#rate_rating_id').val();
+    var rating = $("#rating").val();
+    var comment = $("#comment").val();
+
+    //call ajax
+    $.ajax({
+      url:"../backend/rate.php",
+      method:"POST",
+      data:{
+        playlist_id:playlist_id,
+        rater_id:rater_id,
+        rating_id:rating_id,
+        rating:rating,
+        comment:comment
+      },
+      dataType:"JSON",
+      success:function(data){
+        $('#rate_errors').empty();
+        $('#rate_errors').css("display","none");
+
+        if(data.rate_success == true){
+          var message = "Rating was updated successfully!"
+          $("#hidden_message").val(message);
+          $("#hidden_form").submit();
+        }
+        else{
+          $('#rate_errors').empty();
+          var message_length = data.messages.length;
+          for(var i = 0; i < message_length; i++){
+            var curr_error = "<li>" + data.messages[i] + "</li>"
+            $('#rate_errors').append(curr_error);
+          }
+          $('#rate_errors').css("display","block");
+        }
+      }
+    })
   });
 
   //show share modal
@@ -117,7 +161,6 @@ $(document).ready(function() {
         }
       }
     })
-
   });
 
 
