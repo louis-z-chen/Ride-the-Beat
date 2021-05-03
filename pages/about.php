@@ -40,7 +40,7 @@ require "../reusable_code/login_logic.php";
 					<div class="row">
 						<div class="col-md">
 							<div class="row-column">
-								<img src="../images/Menna.png" class="playlist-pic"/>
+								<img src="../images/menna.png" class="playlist-pic"/>
 								<br />
 								<br />
 								<div class="col white-text"><h2>Menna Elamroussy</h2></div>

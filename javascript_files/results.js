@@ -28,7 +28,7 @@ $(document).ready(function() {
         data = JSON.parse(data);
         access_token = data.access;
         console.log(access_token);
-        //populateSpotifyResults();
+        populateSpotifyResults();
       }
     })
   }
