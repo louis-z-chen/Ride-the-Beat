@@ -5,7 +5,7 @@ require "../reusable_code/login_logic.php";
 require "../reusable_code/database_connection.php";
 
 //User playlists
-$sql_playlist = "SELECT * FROM avg_ratings_view ORDER BY rating DESC, playlist_name LIMIT 5;";
+$sql_playlist = "SELECT * FROM avg_ratings_view ORDER BY rating DESC, playlist_name  LIMIT 15;";
 
 $results_playlist = $mysqli->query($sql_playlist);
 
@@ -24,36 +24,6 @@ $mysqli->close();
 
 	<?php require "../reusable_code/header_files.php"; ?>
 
-<style>
-
-@media(max-width:320px) {
-.bannertext {
-		font-size: 30px;
-		word-break: break-all;
-	}
-}
-
-@media(max-width:767px) {
-.bannertext {
-		font-size: 30px;
-		word-break: break-all;
-	}
-}
-
-@media(max-width:1000px) {
-.bannertext {
-		font-size: 30px;
-		word-break: break-all;
-	}
-}
-
-@media(max-width:1200px) {
-.bannertext {
-		font-size: 30px;
-		word-break: break-all;
-	}
-}
-</style>
 </head>
 <body>
 	<?php require "../reusable_code/menu.php"; ?>
@@ -62,15 +32,13 @@ $mysqli->close();
 		<div class="column">
 			<div class="column-content">
 
-				<br>
-				<div class="content-row">
-					<div class="left-banner white-text">
-						<h1 class="bannertext">Welcome <?php echo $curr_first ?>!</h1>
-					</div>
+				<div class="white-text">
+					<br>
+					<h1 class="white-text center-text"><i class="fab fa-angellist"></i> Discover</h1>
 				</div>
+				<hr class="white-line">
 
-				<br>
-				<h4 class="white-text">Highly Rated Playlists</h4>
+				<h3 class="white-text">Highly Rated Playlists</h3>
 				<div class="d-flex flex-row flex-wrap">
           <?php while($row = $results_playlist->fetch_assoc() ) : ?>
 						<div class="spot-container p-2">
@@ -83,7 +51,6 @@ $mysqli->close();
 					<?php endwhile; ?>
 				</div>
 
-				<br>
 
 			</div>
 		</div>

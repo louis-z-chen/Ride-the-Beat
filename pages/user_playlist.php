@@ -58,7 +58,7 @@ $mysqli->close();
 				<div class="white-text">
 					<br>
 					USER
-					<h1><?php echo $name; ?></h1>
+					<h1><?php echo $name; ?> (<?php echo $user_row['username']; ?>)</h1>
 				</div>
 				<hr class="white-line">
 

@@ -1,6 +1,10 @@
 $(document).ready(function() {
 
-  setInterval(refreshAccessToken(), 1000 * 60 * 60);
+  const TOKEN = "https://accounts.spotify.com/api/token";
+  let client_id = '48d219031e7a4338bb998f65cd703cbd';
+  let client_secret = 'ec7d4d17003d41ce9194658d600b41d7';
+
+  setInterval(refreshAccessToken(), 1000 * 60 * 30);
 
   function refreshAccessToken(){
     $.ajax({
@@ -64,4 +68,4 @@ $(document).ready(function() {
     }
   }
 
-} // end of document ready
+}); // end of document ready

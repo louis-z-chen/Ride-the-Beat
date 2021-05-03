@@ -13,7 +13,7 @@ $(document).ready(function() {
       success:function(data){
         data = JSON.parse(data);
         access_token = data.access;
-        populateSpotifyResults();
+        //populateSpotifyResults();
       }
     })
   }
@@ -40,5 +40,128 @@ $(document).ready(function() {
       }
     }); // End of Spotify ajax call
   }
+
+  //show rate modal
+  $(document).on('click', '.rate', function(){
+    //erase previous errors
+    $('#rate_errors').empty();
+    $('#rate_errors').css("display","none");
+
+    //get values from hidden hidden form
+    var rating = $.trim($('#hidden_rating').val());
+    var comment = $.trim($('#hidden_comment').val());
+
+    rating = parseInt(rating);
+
+    //put values into hidden form
+    $("#rating").val(rating);
+    $("#comment").val(comment);
+
+    //show modal
+    $('#rate').modal('show');
+  });
+
+  //jquery code to submit rate form
+  $('#rate-btn').click(function(){
+    //prevent page from refreshing
+    event.preventDefault();
+
+    //get form values
+    var playlist_id = $('#rate_playlist_id').val();
+    var rater_id = $('#rate_rater_id').val();
+    var rating_id = $('#rate_rating_id').val();
+    var rating = $("#rating").val();
+    var comment = $("#comment").val();
+
+    //call ajax
+    $.ajax({
+      url:"../backend/rate.php",
+      method:"POST",
+      data:{
+        playlist_id:playlist_id,
+        rater_id:rater_id,
+        rating_id:rating_id,
+        rating:rating,
+        comment:comment
+      },
+      dataType:"JSON",
+      success:function(data){
+        $('#rate_errors').empty();
+        $('#rate_errors').css("display","none");
+
+        if(data.rate_success == true){
+          var message = "Rating was updated successfully!"
+          $("#hidden_message").val(message);
+          $("#hidden_form").submit();
+        }
+        else{
+          $('#rate_errors').empty();
+          var message_length = data.messages.length;
+          for(var i = 0; i < message_length; i++){
+            var curr_error = "<li>" + data.messages[i] + "</li>"
+            $('#rate_errors').append(curr_error);
+          }
+          $('#rate_errors').css("display","block");
+        }
+      }
+    })
+  });
+
+  //show share modal
+  $(document).on('click', '.share', function(){
+    //erase previous errors
+    $('#share_errors').empty();
+    $('#share_errors').css("display","none");
+
+    //clear form
+    $("#email").val("");
+    $("#message").val("");
+
+    //show modal
+    $('#share').modal('show');
+  });
+
+  //jquery code to submit share form
+  $('#share-btn').click(function(){
+    //prevent page from refreshing
+    event.preventDefault();
+
+    //get form values
+    var url = $("#url").val();
+    var email = $("#email").val();
+    var message = $("#message").val();
+
+    //call ajax
+    $.ajax({
+      url:"../backend/email.php",
+      method:"POST",
+      data:{
+        url:url,
+        email:email,
+        message:message
+      },
+      dataType:"JSON",
+      success:function(data){
+        $('#share_errors').empty();
+        $('#share_errors').css("display","none");
+
+        if(data.send_success == true){
+          var message = "Email was sent successfully!"
+          $("#hidden_message").val(message);
+          $("#hidden_form").submit();
+        }
+        else{
+          $('#share_errors').empty();
+          var message_length = data.messages.length;
+          for(var i = 0; i < message_length; i++){
+            var curr_error = "<li>" + data.messages[i] + "</li>"
+            $('#share_errors').append(curr_error);
+          }
+          $('#share_errors').css("display","block");
+        }
+      }
+    })
+  });
+
 
 }); // end of document ready

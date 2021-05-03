@@ -184,7 +184,7 @@ CSS that is used on one page
 }
 
 .left-banner {
-	background-image: url(../images/Khalid_-_Product_Page_Banner.jpg);
+	background-image: url(../images/newbanner3.jpg);
 	background-size: cover;
 	height: 350px;
 	padding: 40px;
@@ -192,9 +192,8 @@ CSS that is used on one page
 }
 
 .bannertext{
-	text-shadow: 2px 2px #1DB954;
+	text-shadow: 3px 3px #1DB954;
 	font-weight: bold;
-  font-size: 2vw;
 }
 .row-title{
   font-size: 1.5vw;
@@ -293,4 +292,31 @@ CSS that is used on one page
 /*Playlist Page */
 .song{
 	width: 25%;
+}
+.fa-star{
+	color: #1DB954;
+}
+.fa-star-half-alt{
+	color: #1DB954;
+}
+.link-name{
+	color:#1DB954;
+}
+.link-name:hover{
+	color:green;
+}
+.link-name-white{
+	color:white;
+	text-decoration: underline;
+}
+.link-name-white:hover{
+	color:grey;
+	text-decoration: underline;
+}
+.td-class {
+  white-space: normal !important;
+  word-wrap: break-word;
+}
+.table-fixed {
+  table-layout: fixed;
 }
