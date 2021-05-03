@@ -184,7 +184,7 @@ CSS that is used on one page
 }
 
 .left-banner {
-	background-image: url(../images/Khalid_-_Product_Page_Banner.jpg);
+	background-image: url(../images/newbanner3.jpg);
 	background-size: cover;
 	height: 350px;
 	padding: 40px;
@@ -192,9 +192,8 @@ CSS that is used on one page
 }
 
 .bannertext{
-	text-shadow: 2px 2px #1DB954;
+	text-shadow: 3px 3px #1DB954;
 	font-weight: bold;
-  font-size: 2vw;
 }
 .row-title{
   font-size: 1.5vw;
