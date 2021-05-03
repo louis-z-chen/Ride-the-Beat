@@ -36,17 +36,17 @@ body {
 }
 
 @media(max-width:320px) {
-.logo {
-	width: 50px;
-}
+  .logo {
+  	width: 50px;
+  }
 
-.name-img {
-	width: 50px;
-}
+  .name-img {
+  	width: 50px;
+  }
 
-.maintext {
-	font-size: 15px;
-}
+  .maintext {
+  	font-size: 15px;
+  }
 }
 
 a:link {
@@ -97,7 +97,7 @@ a:active {
       <i class="fab fa-spotify fa-lg"></i> Connect your existing Spotify account
       <br>
 			<br>
-			<i class="fas fa-book"></i> <a class="link" href="https://www.urbandictionary.com/define.php?term=Ride%20the%20beat">Unsure of what "Ride The Beat" means?</a>
+			<i class="fas fa-book"></i> <a class="link" href="https://www.urbandictionary.com/define.php?term=Ride%20the%20beat" target="_blank">Unsure of what "Ride The Beat" means?</a>
 
 			<br />
       <br>
