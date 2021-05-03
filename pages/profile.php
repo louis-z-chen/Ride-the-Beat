@@ -17,6 +17,7 @@ require "../reusable_code/login_logic.php";
     <div class="column">
       <div class="column-content">
 
+				<br>
 				<h1 class="white-text center-text"><i class="fas fa-user-circle"></i> Profile</h1>
 
 				<div class="text-center display_message">
