@@ -306,6 +306,14 @@ CSS that is used on one page
 .link-name:hover{
 	color:green;
 }
+.link-name-white{
+	color:white;
+	text-decoration: underline;
+}
+.link-name-white:hover{
+	color:grey;
+	text-decoration: underline;
+}
 .td-class {
   white-space: normal !important;
   word-wrap: break-word;

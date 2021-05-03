@@ -19,30 +19,8 @@ $user_count = 0;
 //database connection
 require "../reusable_code/database_connection.php";
 
-//Song column
-$sql_song = "SELECT * FROM song WHERE name LIKE '%" . $search . "%' ORDER BY name;";
-
-$results_song = $mysqli->query($sql_song);
-
-if(!$results_song){
-  echo "SQL Error: " . $mysqli->error;
-  exit();
-}
-$song_count = $results_song->num_rows;
-
-//Artist column
-$sql_artist = "SELECT * FROM artist WHERE name LIKE '%" . $search . "%' ORDER BY name;";
-
-$results_artist= $mysqli->query($sql_artist);
-
-if(!$results_artist){
-  echo "SQL Error: " . $mysqli->error;
-  exit();
-}
-$artist_count = $results_artist->num_rows;
-
 //Playlist Column
-$sql_playlist = "SELECT * FROM playlist WHERE name LIKE '%" . $search . "%' ORDER BY name;";
+$sql_playlist = "SELECT * FROM playlist_info_view WHERE name LIKE '%" . $search . "%' ORDER BY name;";
 
 $results_playlist= $mysqli->query($sql_playlist);
 
@@ -107,58 +85,6 @@ $mysqli->close();
           <div class="container">
             <!--Database Seearch -->
             <div class="row">
-              <!--Songs Column -->
-              <div class="col-md">
-                <div class = "center-text">
-                  <div class="white-text"><strong>Songs</strong> <br></div>
-                  <div class="grey-text"><?php echo $song_count ?> song results</div>
-                </div>
-                <table class="table table-dark table-hover">
-                  <thead>
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">Song Name</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <?php $song_results_counter = 1;?>
-                    <?php while($row = $results_song->fetch_assoc() ) : ?>
-                      <tr>
-                      <th scope="row"><?php echo $song_results_counter ?></th>
-                      <?php $song_results_counter++;?>
-                      <td> <?php echo $row["name"] ?> </td>
-                    </tr>
-                    <?php endwhile; ?>
-                  </tbody>
-                </table>
-              </div>
-              <!--Artist Column -->
-              <div class="col-md">
-                <div class = "center-text">
-                  <div class="white-text"><strong>Artists</strong> <br></div>
-                  <div class="grey-text"><?php echo $artist_count ?> artist results</div>
-                </div>
-                <table class="table table-dark table-hover">
-                  <thead>
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">Artist Name</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <?php $artist_results_counter = 1;?>
-                    <?php while($row = $results_artist->fetch_assoc() ) : ?>
-                      <tr>
-                      <th scope="row"><?php echo $artist_results_counter ?></th>
-                      <?php $artist_results_counter++;?>
-                      <td> <?php echo $row["name"] ?> </td>
-                    </tr>
-                    <?php endwhile; ?>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="row">
               <!--Playlist Column -->
               <div class="col-md">
                 <div class = "center-text">
@@ -170,6 +96,7 @@ $mysqli->close();
                     <tr>
                       <th scope="col">#</th>
                       <th scope="col">Playlist Name</th>
+                      <th scope="col">Creator</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -178,7 +105,8 @@ $mysqli->close();
                       <tr>
                       <th scope="row"><?php echo $playlist_results_counter ?></th>
                       <?php $playlist_results_counter++;?>
-                      <td> <?php echo $row["name"] ?> </td>
+                      <td> <a href="../pages/playlist.php?id=<?php echo $row["playlist_id"]?>" class="link-name-white" target="_blank"><?php echo $row["name"] ?></a> </td>
+                      <td> <a href="../pages/user_playlist.php?user=<?php echo $row["creator_id"] ?>" class="link-name-white" target="_blank"><?php echo $row["creator_first_name"] ?> <?php echo $row["creator_last_name"] ?></a> </td>
                     </tr>
                     <?php endwhile; ?>
                   </tbody>
@@ -195,15 +123,17 @@ $mysqli->close();
                     <tr>
                       <th scope="col">#</th>
                       <th scope="col">Username</th>
+                        <th scope="col">Name</th>
                     </tr>
                   </thead>
                   <tbody>
                     <?php $user_results_counter = 1;?>
                     <?php while($row = $results_user->fetch_assoc() ) : ?>
-                      <tr>
+                    <tr>
                       <th scope="row"><?php echo $user_results_counter ?></th>
                       <?php $user_results_counter++;?>
-                      <td> <?php echo $row["username"] ?> </td>
+                      <td> <a href="../pages/user_playlist.php?user=<?php echo $row["ID"] ?>" class="link-name-white" target="_blank"><?php echo $row["username"] ?></a> </td>
+                      <td> <?php echo $row["first_name"] ?> <?php echo $row["last_name"] ?></td>
                     </tr>
                     <?php endwhile; ?>
                   </tbody>
