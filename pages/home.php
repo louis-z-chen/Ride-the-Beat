@@ -5,7 +5,7 @@ require "../reusable_code/login_logic.php";
 require "../reusable_code/database_connection.php";
 
 //User playlists
-$sql_playlist = "SELECT * FROM avg_ratings_view ORDER BY rating DESC LIMIT 5;";
+$sql_playlist = "SELECT * FROM avg_ratings_view ORDER BY rating DESC, playlist_name LIMIT 5;";
 
 $results_playlist = $mysqli->query($sql_playlist);
 
