@@ -4,8 +4,18 @@ require "../reusable_code/login_logic.php";
 //database connection
 require "../reusable_code/database_connection.php";
 
-//User playlists
-$sql_playlist = "SELECT * FROM avg_ratings_view ORDER BY rating DESC, playlist_name  LIMIT 15;";
+//Artist
+$sql_artist = "SELECT * FROM artist ORDER BY RAND() LIMIT 10;";
+
+$results_artist = $mysqli->query($sql_artist);
+
+if(!$results_artist){
+  echo "SQL Error: " . $mysqli->error;
+  exit();
+}
+
+//Playlists
+$sql_playlist = "SELECT * FROM avg_ratings_view ORDER BY rating DESC, playlist_name  LIMIT 10;";
 
 $results_playlist = $mysqli->query($sql_playlist);
 
@@ -38,7 +48,19 @@ $mysqli->close();
 				</div>
 				<hr class="white-line">
 
-				<h3 class="white-text">Highly Rated Playlists</h3>
+        <h3 class="white-text">Artist Spotlight</h3>
+        <div class="d-flex flex-row flex-wrap">
+          <?php while($row = $results_artist->fetch_assoc() ) : ?>
+            <div class="spot-container p-2">
+              <a href="../pages/artist.php?id=<?php echo $row['spotify_id']; ?>">
+                <img src="<?php echo $row['image_url']; ?>" class="playlist-pic"/>
+              </a>
+              <div class="spot-title white-text center-text"><?php echo $row['name']; ?></div>
+            </div>
+          <?php endwhile; ?>
+        </div>
+
+				<h3 class="white-text">Highest Rated Playlists</h3>
 				<div class="d-flex flex-row flex-wrap">
           <?php while($row = $results_playlist->fetch_assoc() ) : ?>
 						<div class="spot-container p-2">
