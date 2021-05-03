@@ -31,6 +31,7 @@ html, body{
 	background-color: #1DB954 !important;
 	color: white !important;
 }
+
 iframe {
   border-radius: 15px;
 	width:100%;
@@ -119,6 +120,7 @@ CSS that is used on one page
 }
 
 /* Welcome Page */
+
 #maintext {
   font-family: rubik, sans-serif;
   font-weight: 400;
@@ -132,6 +134,7 @@ CSS that is used on one page
   color: #B1E8C7;
   line-height: 30px;
 }
+
 #logo {
   width: 200px;
   margin-left: 50px;
@@ -142,6 +145,7 @@ CSS that is used on one page
   width: 180px;
   position: relative;
 }
+
 #welcome-button:hover{
   color: black;
   background-color: #1DB954;
@@ -155,11 +159,13 @@ CSS that is used on one page
   right: 0;
   margin: auto;
 }
+
 #name-container {
   height: 70%;
   margin-left: auto;
   margin-right: auto;
 }
+
 .name-img {
   height: 100%;
   position: relative;
@@ -172,9 +178,11 @@ CSS that is used on one page
 .welcome-message{
 	margin-top: 15px;
 }
+
 .picture-row{
   margin-top: 15px;
 }
+
 .left-banner {
 	background-image: url(../images/Khalid_-_Product_Page_Banner.jpg);
 	background-size: cover;
@@ -182,6 +190,7 @@ CSS that is used on one page
 	padding: 40px;
   border-radius: 15px;
 }
+
 .bannertext{
 	text-shadow: 2px 2px #1DB954;
 	font-weight: bold;

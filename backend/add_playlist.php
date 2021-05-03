@@ -44,7 +44,7 @@ if($ok){
 
   $statement = $mysqli->prepare($sql_prepared);
   $statement->bind_param("ssisss", $image_url, $name, $public, $url, $spotify_id, $creator_id);
-  $executed = $statement->execute();
+//  $executed = $statement->execute();
 
   if(!$executed) {
     echo $mysqli->error;
