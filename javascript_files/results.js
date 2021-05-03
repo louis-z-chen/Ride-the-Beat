@@ -1,11 +1,5 @@
 $(document).ready(function() {
 
-  let search = $("#search").text();
-  search = search.trim();
-
-  var access_token;
-  getAccessToken();
-
   $('#toggle-btn').change(function(){
     var curr = $(this).prop('checked');
 
@@ -18,8 +12,13 @@ $(document).ready(function() {
       $('#spotify-results').css("display","none");
       $('#database-results').css("display","block");
     }
-
   });
+
+  let search = $("#search").text();
+  search = search.trim();
+
+  var access_token;
+  getAccessToken();
 
   function getAccessToken(){
     $.ajax({
@@ -28,13 +27,13 @@ $(document).ready(function() {
       success:function(data){
         data = JSON.parse(data);
         access_token = data.access;
+        console.log(access_token);
         populateSpotifyResults();
       }
     })
   }
 
   function populateSpotifyResults(){
-    console.log(access_token);
     $.ajax({
       url: `https://api.spotify.com/v1/search?q=${search}&type=track&limit=50`,
       type: 'GET',

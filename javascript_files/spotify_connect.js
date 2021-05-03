@@ -6,7 +6,8 @@ $(document).ready(function() {
   var step1 = false;
   let client_id = '48d219031e7a4338bb998f65cd703cbd';
   let client_secret = 'ec7d4d17003d41ce9194658d600b41d7';
-  let redirect_uri = 'http%3A%2F%2Flocalhost%2FRide-the-Beat%2Fpages%2Fspotify.php';
+  //let redirect_uri = 'http%3A%2F%2Flocalhost%2FRide-the-Beat%2Fpages%2Fspotify.php';
+  let redirect_uri = 'http%3A%2F%2Fwebdev.iyaclasses.com%2F%7Echenloui%2Ffinal_project%2Fpages%2Fspotify.php';
 
   const redirect = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=code&redirect_uri=${redirect_uri}`;
 

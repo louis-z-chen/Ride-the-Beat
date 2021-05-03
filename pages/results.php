@@ -220,6 +220,7 @@ $mysqli->close();
 
 	<?php require "../reusable_code/footer_files.php"; ?>
   <?php require "../reusable_code/lightmode_files.php"; ?>
+  <script src = "../javascript_files/refresh_token.js"></script>
   <script src = "../javascript_files/results.js"></script>
 
 </body>

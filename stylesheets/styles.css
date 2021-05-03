@@ -285,3 +285,22 @@ CSS that is used on one page
 .song{
 	width: 25%;
 }
+.fa-star{
+	color: #1DB954;
+}
+.fa-star-half-alt{
+	color: #1DB954;
+}
+.link-name{
+	color:#1DB954;
+}
+.link-name:hover{
+	color:green;
+}
+.td-class {
+  white-space: normal !important;
+  word-wrap: break-word;
+}
+.table-fixed {
+  table-layout: fixed;
+}
