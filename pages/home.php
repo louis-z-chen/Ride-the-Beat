@@ -124,6 +124,7 @@ $mysqli->close();
 		$('.playlist-pic').css({'height':cw+'px'});
 	}
 	</script>
+  <script src = "../javascript_files/refresh_token.js"></script>
 
 </body>
 </html>
