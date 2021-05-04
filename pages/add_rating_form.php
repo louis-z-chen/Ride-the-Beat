@@ -66,9 +66,26 @@ if($mysql->connect_errno) {
 
                 ?>
 
+                </select><br>
 
+                User: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <select name="rater">
+                    <?php
+                    $sql = "SELECT * FROM users";
+
+                    $results = $mysql ->query($sql);
+
+                    if(!$results){
+                        echo "ERROR";
+                        exit();
+                    }
+
+                    while($currentrow = $results->fetch_assoc()){
+                        echo "<option value='" . $currentrow["ID"] . "'>" . $currentrow["username"] . "</option>";
+                    }
+
+                    ?>
                 </select>
-
 
                 <br>
                 Rating:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

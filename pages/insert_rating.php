@@ -42,15 +42,15 @@ if ($mysql->connect_errno) {
 }
 
 
-//print_r($_REQUEST);
+print_r($_REQUEST);
 
-$rater_id = $_SESSION["id"];
+
 
 //insert a new rating
 $sql = "INSERT INTO playlist_ratings
     (playlist_id, rater_id, rating, comment)
     VALUES
-        (" . $_REQUEST["playlistname"] . ", $rater_id, " . $_REQUEST["rating"] . " , '". $_REQUEST["comment"]. "')
+        (" . $_REQUEST["playlistname"] . ", " . $_REQUEST["rater"] . ", ". $_REQUEST["rating"] . " , '". $_REQUEST["comment"]. "')
 ";
 
 $results = $mysql->query($sql);
