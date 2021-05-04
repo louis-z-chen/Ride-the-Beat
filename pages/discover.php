@@ -45,6 +45,9 @@ $mysqli->close();
 				<div class="white-text">
 					<br>
 					<h1 class="white-text center-text"><i class="fab fa-angellist"></i> Discover</h1>
+          <div class="row justify-content-center">
+            <a class="btn btn-success mr-2 green-button" href="https://bit.ly/3afqBUM" role="button" target="_blank"><i class="fas fa-music"></i> Surprise Song</a>
+          </div>
 				</div>
 				<hr class="white-line">
 
