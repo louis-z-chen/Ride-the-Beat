@@ -42,7 +42,7 @@ if ($mysql->connect_errno) {
 }
 
 
-print_r($_REQUEST);
+//print_r($_REQUEST);
 
 
 
