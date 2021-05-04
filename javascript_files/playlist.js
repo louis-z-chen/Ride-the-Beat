@@ -13,7 +13,7 @@ $(document).ready(function() {
       success:function(data){
         data = JSON.parse(data);
         access_token = data.access;
-        //populateSpotifyResults();
+        populateSpotifyResults();
       }
     })
   }

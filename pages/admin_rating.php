@@ -79,60 +79,6 @@ $this_page_first_result = ($page-1)*$results_per_page;
 
 //display the links to the pages
 //always showing 3 pages and numbers change to reflect that
-$first_page = 0;
-$second_page = 0;
-$third_page = 0;
-
-$first_active = false;
-$second_active = false;
-$third_active = false;
-
-$second_disable = false;
-$third_disable = false;
-
-//if first page
-if($number_of_pages >= 3){
-  if($page == 1){
-    $first_page = 1;
-    $second_page = 2;
-    $third_page = 3;
-    $first_active = true;
-  }
-  //if last page
-  else if($page == $number_of_pages){
-    $third_page = $number_of_pages;
-    $second_page = $third_page - 1;
-    $first_page = $second_page - 1;
-    $third_active = true;
-  }
-  else{
-    $second_page = $page;
-    $first_page = $second_page - 1;
-    $third_page = $second_page + 1;
-    $second_active = true;
-  }
-}
-else if($number_of_pages == 2){
-  $third_disable = true;
-  $first_page = 1;
-  $second_page = 2;
-  $third_page = 3;
-  if($page == 1){
-    $first_active = true;
-  }
-  else{
-    $second_active = true;
-  }
-}
-else{
-  $second_disable = true;
-  $third_disable = true;
-  $first_page = 1;
-  $second_page = 2;
-  $third_page = 3;
-  $first_active = true;
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -159,7 +105,14 @@ else{
           </div>
           <div class="col-6" align="right">
             <!--<a href="#add_user" class="btn btn-success" data-toggle="modal"><i class="fas fa-user-plus"></i> <span> Add New User</span></a>-->
-            <button type="button" class="btn btn-success add"><i class="fas fa-user-plus"></i> Add TEST Rating</button>
+            <button type="button" id="TESTBUTTON" class="btn btn-success add"><i class="fas fa-user-plus"></i> Add Rating</button>
+
+              <script type="text/javascript">
+                  document.getElementById("TESTBUTTON").onclick = function () {
+                      location.href = "add_rating_form.php";
+                  };
+              </script>
+
           </div>
         </div>
 
@@ -190,45 +143,13 @@ else{
                 </td>
                 <td align="center">
                   <button type="button" class="btn btn-outline-warning edit" value="<?php echo $row['ID']; ?>"><i class="far fa-edit"></i> Edit</button>
-                  <button type="button" class="btn btn-outline-danger delete" value="<?php echo $row['ID']; ?>"><i class="far fa-trash-alt"></i> Delete</button>
                 </td>
               </tr>
             <?php } ?>
             </tbody>
           </table>
           <div>
-            <div class="row">
-              <div class="col-6">
-                  <h5 class="white-text">
-                    <?php if($curr_result_count > 0){
-                      echo "Showing " . ($this_page_first_result + 1) . " to " . ($this_page_first_result + $curr_result_count) . " of " . $number_of_results . " results";
-                    }
-                    else{
-                      echo "0 results";
-                    }
-                    ?>
-                  </h5>
-              </div>
-              <div class="col-6 text-right">
-                <ul class="pagination justify-content-end">
-                  <li class="page-item page-btn" value = "1">
-                    <a class="page-link" aria-label="First">
-                      <span aria-hidden="true">&laquo;</span>
-                      <span class="sr-only">First</span>
-                    </a>
-                  </li>
-                  <li class="page-item page-btn <?php if($first_active){ echo "active";} ?>" value = "<?php echo $first_page; ?>"><a class="page-link"><?php echo $first_page; ?></a></li>
-                  <li class="page-item <?php if($second_active){ echo "active";} ?> <?php if($second_disable){ echo "disabled";} else{ echo "page-btn";} ?>" value = "<?php echo $second_page; ?>"><a class="page-link"><?php echo $second_page; ?></a></li>
-                  <li class="page-item <?php if($third_active){ echo "active";} ?> <?php if($third_disable){ echo "disabled";} else{ echo "page-btn";} ?>" value = "<?php echo $third_page; ?>"><a class="page-link"><?php echo $third_page; ?></a></li>
-                  <li class="page-item page-btn" value = "<?php echo $number_of_pages; ?>">
-                    <a class="page-link" aria-label="Last">
-                      <span aria-hidden="true">&raquo;</span>
-                      <span class="sr-only">Last</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+
           </div>
         </div>
       </div>
@@ -242,61 +163,6 @@ else{
         </form>
       </div>
 
-      <!-- Add Modal HTML -->
-    	<div id="add_rating" class="modal fade">
-    		<div class="modal-dialog modal-dialog-centered">
-    			<div class="modal-content">
-    				<form>
-    					<div class="modal-header">
-    						<h4 class="modal-title">Add Rating</h4>
-    						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-    					</div>
-    					<div class="modal-body">
-                <ul class="form-messages" id="add_errors"></ul>
-    						<div class="form-group">
-    							<label>First Name</label>
-    							<input type="text" class="form-control" id="rfirst">
-    						</div>
-                <div class="form-group">
-    							<label>Last Name</label>
-    							<input type="text" class="form-control" id="rlast">
-    						</div>
-    						<div class="form-group">
-    							<label>Username</label>
-    							<input type="username" class="form-control" id="rusername">
-    						</div>
-    						<div class="form-group">
-    							<label>Playlist Name</label>
-    							<!--<input type="text" class="form-control" id="rplaylistname">-->
-
-                  <select name="playlist_name" id="rplaylistname">
-                          <option value ="all">Select a playlist_name</option>
-                          <option value ="all">---------------</option>
-                          <?php
-                          while($currentrow = $results->fetch_assoc()) {
-                              echo "<option>" . $currentrow["name"] . "</option>";
-                          }
-                          ?>
-                  </select>
-
-
-
-
-    						</div>
-                <div class="form-group">
-    							<label>Comment</label>
-    							<input type="text" class="form-control" id="rcomment">
-    						</div>
-
-    					</div>
-    					<div class="modal-footer">
-    						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-    						<input type="submit" class="btn btn-success" id="add-btn" value="Add">
-    					</div>
-    				</form>
-    			</div>
-    		</div>
-    	</div>
 
       <!-- Edit Modal HTML -->
     	<div id="edit_user" class="modal fade">
@@ -350,38 +216,11 @@ else{
     		</div>
     	</div>
 
-    	<!-- Delete Modal HTML -->
-    	<div id="delete_user" class="modal fade">
-    		<div class="modal-dialog modal-dialog-centered">
-    			<div class="modal-content">
-    				<form>
-    					<div class="modal-header">
-    						<h4 class="modal-title">Delete User</h4>
-    						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-    					</div>
-    					<div class="modal-body">
-                <div class="form-group">
-                  <input type="hidden" class="form-control" id="did">
-                </div>
-    						<p>Are you sure you want to delete this user account?</p>
-    						<p class="text-danger"><small>This action cannot be undone. <br>If you are deleting your own account, you will be redirected to the welcome page.</small></p>
-
-                <ul class="form-messages" id="delete_errors"></ul>
-    					</div>
-    					<div class="modal-footer">
-    						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-    						<input type="submit" class="btn btn-danger" id="delete-btn" value="Delete">
-    					</div>
-    				</form>
-    			</div>
-    		</div>
-    	</div>
-
     </div>
 	</div>
 
 	<?php require "../reusable_code/footer_files.php"; ?>
 	<?php require "../reusable_code/lightmode_files.php"; ?>
-  <script src = "../javascript_files/admin_rating.js"></script>
+  <!--<script src = "../javascript_files/admin_rating.js"></script>-->
 </body>
 </html>
