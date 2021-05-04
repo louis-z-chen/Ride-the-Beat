@@ -1,6 +1,11 @@
 <?php
 require "../reusable_code/login_logic.php";
 
+if(empty($curr_access)){
+  header("Location: spotify.php");
+  exit();
+}
+
 //database connection
 require "../reusable_code/database_connection.php";
 

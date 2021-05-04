@@ -66,7 +66,7 @@ $(document).ready(function() {
       success: function(data) {
         let num_of_tracks = data.tracks.length;
         let count = 0;
-        const max_songs = 10;
+        const max_songs = 12;
         while(count < max_songs && count < num_of_tracks){
           let id = data.tracks[count].id;
           let src_str = `https://open.spotify.com/embed/track/${id}`;
