@@ -37,15 +37,42 @@ body {
 
 @media(max-width:320px) {
 .logo {
-	width: 50px;
-}
+		width: 120px;
+	}
 
 .name-img {
-	width: 50px;
+  height: 80%;
+}
 }
 
-.maintext {
-	font-size: 15px;
+@media(max-width:767px) {
+.logo {
+		width: 120px;
+	}
+
+.name-img {
+  height: 80%
+}
+}
+
+@media(max-width:1000px) {
+.logo {
+		width: 150px;
+    margin-top: -30px;
+	}
+
+.name-img {
+  height: 80%
+}
+}
+
+@media(max-width:1200px) {
+.logo {
+		width: 150px;
+	}
+
+.name-img {
+  height: 80%;
 }
 }
 
@@ -88,7 +115,7 @@ a:active {
     <!--<img src="images/picture.jpg">	The "picture.jpg" file is located in the images folder in the current folder-->
     </div> <!--div for ridethebeattext-->
 
-    <div id="maintext" class="maintext">
+    <div class="maintext">
 
       <i class="fas fa-headphones-alt fa-lg"></i> Discover music from emerging artists
       <br>

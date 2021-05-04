@@ -121,7 +121,7 @@ CSS that is used on one page
 
 /* Welcome Page */
 
-#maintext {
+.maintext {
   font-family: rubik, sans-serif;
   font-weight: 400;
   font-size: 20px;
