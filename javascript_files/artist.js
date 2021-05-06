@@ -78,4 +78,68 @@ $(document).ready(function() {
     }); // End of Spotify ajax call
   }
 
+  //add favorites button
+  $(document).on('click', '.add-fav', function(){
+    //prevent page from refreshing
+    event.preventDefault();
+
+    //get form values
+    var user_id = $("#hidden_fav_userid").val();
+    var artist_id = $("#hidden_fav_artistid").val();
+
+    //call ajax
+    $.ajax({
+      url:"../backend/add_artist_favorite.php",
+      method:"POST",
+      data:{
+        user_id:user_id,
+        artist_id:artist_id
+      },
+      dataType:"JSON",
+      success:function(data){
+        if(data.add_success == true){
+          var message = "Favorite was added successfully!"
+          //$("#hidden_message").val(message);
+          $("#hidden_form").submit();
+        }
+        else{
+          var message = "Favorite was not added successfully!"
+          //$("#hidden_message").val(message);
+          $("#hidden_form").submit();
+        }
+      }
+    })
+  });
+
+  //remove favorites button
+  $(document).on('click', '.remove-fav', function(){
+    //prevent page from refreshing
+    event.preventDefault();
+
+    //get form values
+    var fav_id = $("#hidden_fav_id").val();
+
+    //call ajax
+    $.ajax({
+      url:"../backend/remove_artist_favorite.php",
+      method:"POST",
+      data:{
+        fav_id:fav_id
+      },
+      dataType:"JSON",
+      success:function(data){
+        if(data.delete_success == true){
+          var message = "Favorite was removed successfully!"
+          //$("#hidden_message").val(message);
+          $("#hidden_form").submit();
+        }
+        else{
+          var message = "Favorite was not removed successfully!"
+          //$("#hidden_message").val(message);
+          $("#hidden_form").submit();
+        }
+      }
+    })
+  });
+
 }); // end of document ready

@@ -78,8 +78,9 @@ if(!$results) {
                         <th scope="col">Last Name</th>
                         <th scope="col">Username</th>
                         <th scope="col">Playlist Name</th>
-                        ` <th scope="col">Rating</th>
+                        <th scope="col">Rating</th>
                         <th scope="col">Comment</th>
+                        <th scope="col">Actions</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -98,7 +99,7 @@ if(!$results) {
                             </td>
                             <td align="center">
                                 <button type="button"class="btn btn-outline-warning edit editbutton" value="<?php echo $row['rater_id']; ?>"><i class="far fa-edit"></i>
-                                    <a style="text-decoration: none; color: inherit;" href = "edit_ratingNEW.php?ratingid=<?php echo $row['rating_id'];?>" >Edit</a>
+                                    <a style="text-decoration: none; color: inherit;" href = "edit_rating_details.php?ratingid=<?php echo $row['rating_id'];?>" >Edit</a>
 
 
                                 </button>

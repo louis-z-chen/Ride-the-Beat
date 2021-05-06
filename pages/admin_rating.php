@@ -132,6 +132,7 @@ $this_page_first_result = ($page-1)*$results_per_page;
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Playlist Name</th>
+                        <th scope="col">Actions</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -160,138 +161,8 @@ $this_page_first_result = ($page-1)*$results_per_page;
 
                 </div>
             </div>
+
         </div>
-
-        <!-- hidden form to display edit and delete messages -->
-        <div class="hidden">
-            <form method="POST" action="../old_code/admin_ratingOLD.php" id="hidden_form">
-                <div class="form-group">
-                    <input type="text" class="form-control" id="hidden_message" name="hidden_message">
-                </div>
-            </form>
-        </div>
-
-        <!--        <script type="text/javascript">-->
-        <!--            document.getElementsByClassName("EDITBUTTON").addEventListener("click", function () {-->
-        <!--                location.href = "edit_rating.php?id=" + this.value;-->
-        <!--            });-->
-        <!--        </script>-->
-
-        <!-- Edit Modal HTML -->
-        <div id="edit_user" class="modal fade">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <form>
-                        <div class="modal-header">
-                            <h4 class="modal-title">Edit User</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <input type="hidden" class="form-control" id="eid">
-                            </div>
-                            <ul class="form-messages" id="edit_errors"></ul>
-                            <div class="form-group">
-                                <label>First Name</label>
-                                <input type="text" class="form-control" id="efirst">
-                            </div>
-                            <div class="form-group">
-                                <label>Last Name</label>
-                                <input type="text" class="form-control" id="elast">
-                            </div>
-                            <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" class="form-control" id="eemail">
-                            </div>
-                            <div class="form-group">
-                                <label>Username</label>
-                                <input type="text" class="form-control" id="eusername">
-                            </div>
-                            <div class="form-group">
-                                <label>Password</label>
-                                <input type="password" class="form-control" id="epassword">
-                            </div>
-                            <div class="form-group">
-                                <label>Security Level</label>
-                                <select class="form-control" id="esecurity">
-                                    <option value = "1" selected>User</option>
-                                    <option value = "2">Administrator</option>
-                                    <option value = "3">Supreme Leader</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                            <input type="submit" class="btn btn-success" id="edit-btn" value="Save Changes">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" id="hidden_message" name="hidden_message">
-                </div>
-            </form>
-        </div>
-
-        <!--        <script type="text/javascript">-->
-        <!--            document.getElementsByClassName("EDITBUTTON").addEventListener("click", function () {-->
-        <!--                location.href = "edit_rating.php?id=" + this.value;-->
-        <!--            });-->
-        <!--        </script>-->
-
-        <!-- Edit Modal HTML -->
-        <div id="edit_user" class="modal fade">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <form>
-                        <div class="modal-header">
-                            <h4 class="modal-title">Edit User</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <input type="hidden" class="form-control" id="eid">
-                            </div>
-                            <ul class="form-messages" id="edit_errors"></ul>
-                            <div class="form-group">
-                                <label>First Name</label>
-                                <input type="text" class="form-control" id="efirst">
-                            </div>
-                            <div class="form-group">
-                                <label>Last Name</label>
-                                <input type="text" class="form-control" id="elast">
-                            </div>
-                            <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" class="form-control" id="eemail">
-                            </div>
-                            <div class="form-group">
-                                <label>Username</label>
-                                <input type="text" class="form-control" id="eusername">
-                            </div>
-                            <div class="form-group">
-                                <label>Password</label>
-                                <input type="password" class="form-control" id="epassword">
-                            </div>
-                            <div class="form-group">
-                                <label>Security Level</label>
-                                <select class="form-control" id="esecurity">
-                                    <option value = "1" selected>User</option>
-                                    <option value = "2">Administrator</option>
-                                    <option value = "3">Supreme Leader</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                            <input type="submit" class="btn btn-success" id="edit-btn" value="Save Changes">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
     </div>
 </div>
 

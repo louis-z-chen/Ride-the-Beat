@@ -29,41 +29,6 @@ $('#add-btn').click(function(){
   var url = $("#purl").val();
   var spotify_id = $("#pspotifyid").val();
 
-  //call ajax
-//   $.ajax({
-//     url:"../backend/add_playlist.php",
-//     method:"POST",
-//     data:{
-//       creator_id:creator_id,
-//       image_url:image_url,
-//       name:name,
-//       public:public,
-//       url:url,
-//       spotify_id:spotify_id,
-//     },
-//     dataType:"JSON",
-//     success:function(data){
-//      console.log(data);
-//       $('#add_errors').empty();
-//       $('#add_errors').css("display","none");
-//
-//       if(data.add_success == true){
-//         var message = "Playlist was added successfully!"
-//         $("#hidden_message").val(message);
-//         $("#hidden_form").submit();
-//       }
-//       else{
-//         $('#add_errors').empty();
-//         var message_length = data.messages.length;
-//         for(var i = 0; i < message_length; i++){
-//           var curr_error = "<li>" + data.messages[i] + "</li>"
-//           $('#add_errors').append(curr_error);
-//         }
-//         $('#add_errors').css("display","block");
-//       }
-//     }
-//   })
-//
 });
 
 //fill edit modal with data

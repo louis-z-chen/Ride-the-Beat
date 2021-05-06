@@ -47,6 +47,7 @@
         <li class="nav-item"><a class="nav-link" href="../pages/about.php">About</a></li>
         <li class="nav-item"><a class="nav-link" href="../pages/discover.php">Discover</a></li>
         <li class="nav-item"><a class="nav-link" href="../pages/user_playlist.php">Playlists</a></li>
+        <li class="nav-item"><a class="nav-link" href="../pages/favorite.php">Favorites</a></li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Settings

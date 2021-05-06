@@ -15,7 +15,6 @@ require "../reusable_code/database_connection.php";
 
 //average Rating
 $sql_avg = "SELECT * FROM avg_ratings_view WHERE playlist_id =" . $playlist_id . ";";
-
 $results_avg = $mysqli->query($sql_avg);
 
 if(!$results_avg){
@@ -30,7 +29,6 @@ if($numrows_results_avg != 0){
 
 //user rating
 $sql_user_rating = "SELECT * FROM ratings_info_view WHERE playlist_id =" . $playlist_id . " AND rater_id =" . $curr_id . ";";
-
 $results_rating = $mysqli->query($sql_user_rating);
 
 if(!$results_rating){
@@ -45,7 +43,6 @@ if($numrows_results_rating != 0){
 
 //User playlists
 $sql_playlist = "SELECT * FROM playlist_info_view WHERE playlist_id =" . $playlist_id . ";";
-
 $results_playlist = $mysqli->query($sql_playlist);
 
 if(!$results_playlist){
@@ -56,7 +53,6 @@ $row = $results_playlist->fetch_assoc();
 
 //Get comments
 $sql_comments = "SELECT * FROM ratings_info_view WHERE playlist_id =" . $playlist_id . ";";
-
 $results_comments = $mysqli->query($sql_comments);
 
 if(!$results_comments){
@@ -65,10 +61,26 @@ if(!$results_comments){
 }
 $numrows_results_comments = $results_comments->num_rows;
 
-$mysqli->close();
-
 $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 $url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
+//Favorites
+$fav_exist = false;
+$sql_fav = "SELECT * FROM playlist_favorites WHERE playlist_id =" . $playlist_id . " AND user_id =" . $curr_id . ";";
+$results_fav = $mysqli->query($sql_fav);
+
+if(!$results_fav){
+  echo "SQL Error: " . $mysqli->error;
+  exit();
+}
+$numrows_results_fav = $results_fav->num_rows;
+$row_fav;
+if($numrows_results_fav != 0){
+  $fav_exist = true;
+  $row_fav = $results_fav->fetch_assoc();
+}
+
+$mysqli->close();
 ?>
 
 <!DOCTYPE html>
@@ -154,6 +166,18 @@ $url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
             <button type="button" class="btn btn-success mr-2 green-button rate"><i class="fas fa-thumbs-up"></i> Rate</button>
             <button type="button" class="btn btn-success mr-2 green-button share"><i class="fas fa-envelope"></i> Share</button>
             <a class="btn btn-success mr-2 green-button" href="<?php echo $row['url'];?>" role="button" target="_blank"><i class="fab fa-spotify"></i> Spotify</a>
+            <?php
+              if($fav_exist){
+            ?>
+                <button type="button" class="btn btn-success mr-2 green-button remove-fav"><i class="fas fa-minus-square"></i> Remove from Favorites</button>
+            <?php
+              }
+              else{
+            ?>
+                <button type="button" class="btn btn-success mr-2 green-button add-fav"><i class="fas fa-plus-square"></i> Add to Favorites</button>
+            <?php
+              }
+            ?>
           </div>
         </div>
 
@@ -221,7 +245,7 @@ $url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
         </form>
       </div>
 
-      <!-- hidden form to store user's ratings and comment -->
+      <!-- hidden form to store user's ratings and comment and favorites information-->
       <div class="hidden">
         <form method="POST" action="" id="hidden_info_form">
           <div class="form-group">
@@ -229,6 +253,15 @@ $url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
           </div>
           <div class="form-group">
             <input type="text" class="form-control" id="hidden_comment" value="<?php echo $row_rating['comment'];?>">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="hidden_fav_id" value="<?php echo $row_fav['id'];?>">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="hidden_fav_userid" value="<?php echo $curr_id?>">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="hidden_fav_playlistid" value="<?php echo $playlist_id;?>">
           </div>
         </form>
       </div>

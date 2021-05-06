@@ -214,14 +214,6 @@ if(!empty($_REQUEST["imageurl"]) && !empty($_REQUEST["playlistname"]) && !empty(
     							<label>Spotify Playlist ID</label>
     							<input type="text" name="playlistid" class="form-control" id="epassword">
     						</div>
-                <!-- <div class="form-group">
-    							<label>Security Level</label>
-                  <select class="form-control" id="esecurity">
-                    <option value = "1" selected>User</option>
-                    <option value = "2">Administrator</option>
-                    <option value = "3">Supreme Leader</option>
-                  </select>
-    						</div> -->
     					</div>
     					<div class="modal-footer">
     						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
