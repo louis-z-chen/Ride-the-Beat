@@ -200,7 +200,7 @@ $url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
                       <?php echo $row_comments['rater_first_name'];?> <?php echo $row_comments['rater_last_name'];?>
                       <a href="../pages/user_playlist.php?user=<?php echo $row_comments['rater_id'];?>" class="link-name" target="_blank">(<?php echo $row_comments['rater_username'];?>)</a>
                     </td>
-                    <td class="td-class" class="text-center"><?php echo $row_comments['rating'];?></td>
+                    <td class="td-class"><?php echo $row_comments['rating'];?></td>
                     <td class="td-class"><?php echo $row_comments['comment'];?></td>
                   </tr>
 

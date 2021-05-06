@@ -35,6 +35,10 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="../pages/admin_user.php">Edit User Accounts</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="../pages/admin_playlist.php">Edit User Playlists</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="../old_code/admin_ratingOLD.php">Edit User Ratings</a>
             </div>
           </li>
         <?php
