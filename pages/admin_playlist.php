@@ -106,6 +106,7 @@ if(!empty($_REQUEST["imageurl"]) && !empty($_REQUEST["playlistname"]) && !empty(
               </tr>
             </thead>
             <tbody>
+              <?php $counter = $this_page_first_result + 1;?>
               <?php while($row = $results->fetch_assoc()) {?>
                 <tr>
                 <th scope="row"><?php echo $counter ?></th>
