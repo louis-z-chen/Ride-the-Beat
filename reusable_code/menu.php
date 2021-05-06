@@ -38,7 +38,11 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="../pages/admin_playlist.php">Edit User Playlists</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="../old_code/admin_ratingOLD.php">Edit User Ratings</a>
+<<<<<<< HEAD
+                
+=======
+                <a class="dropdown-item" href="../pages/admin_rating.php">Edit User Ratings</a>
+>>>>>>> a14f45a6ade333769a1482c849166afdde180e51
             </div>
           </li>
         <?php
